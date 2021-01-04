@@ -3,14 +3,14 @@ import enum
 
 from pydantic import BaseModel as PydanticModel
 
-{% for req in requirements %}
+{%- for req in requirements %}
 from . import {{ req }}
-{% endfor %}
+{%- endfor %}
 
-{% for cls in classes %}
+{%- for cls in classes %}
 {{ cls }}
 
 {% endfor %}
-{% for name in names %}
+{%- for name in names %}
 {{ name }}.update_forward_refs()
-{% endfor %}
+{%- endfor %}

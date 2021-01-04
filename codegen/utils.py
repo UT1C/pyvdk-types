@@ -15,7 +15,10 @@ def snake_to_camel(text: str) -> str:
 def to_upper_snakecase(text: str) -> str:
     """ Convert text to UPPER_SNAKE_CASE """
 
-    return text.replace(" ", "_").upper()
+    data = text.replace(" ", "_").upper()
+    if data[0].isdigit():
+        data = "_" + data
+    return data
 
 
 def form_render(path: str, **kwargs) -> str:
