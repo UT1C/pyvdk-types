@@ -67,7 +67,7 @@ class Parser:
         else:
             if def_type == "object":
                 self.objects_names.append(def_name)
-            return getattr(Types(def_name, definition), def_type)()
+            return getattr(Types(self, def_name, definition), def_type)()
 
     def parse_ref(
         self,
@@ -96,10 +96,18 @@ class Parser:
 class Types:
     """  """
 
+    parser: "Parser"
     name: str
     definition: dict
 
-    def __init__(self, name: str, definition: dict) -> None:
+    def __init__(
+        self,
+        parser: "Parser",
+        name: str,
+        definition: dict
+    ) -> None:
+
+        self.parser = parser
         self.name = name
         self.definition = definition
 
@@ -107,7 +115,11 @@ class Types:
         return ""
 
     def array(self) -> str:
-        return utils.form_render("array_class.j2", cls=self)
+        return utils.form_render(
+            "array_class.j2",
+            name=self.name,
+            ref=self.parser.parse_ref(self.definition["items"]["$ref"])
+        )
 
     def integer(self) -> str:
         data = {
