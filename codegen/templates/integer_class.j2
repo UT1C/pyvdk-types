@@ -1,0 +1,4 @@
+class {{ name }}(enum.IntEnum):
+{%- for k, v in enum.items() %}
+    {{ k }} = {{ v }}
+{%- endfor %}

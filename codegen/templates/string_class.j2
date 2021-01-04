@@ -1,0 +1,4 @@
+class {{ cls.name }}(enum.Enum):
+{%- for i in cls.definition["enum"] %}
+    {{ i|upper }} = "{{ i }}"
+{%- endfor %}

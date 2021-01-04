@@ -1,0 +1,16 @@
+from typing import Optional, Union, Any, List, Tuple
+import enum
+
+from pydantic import BaseModel as PydanticModel
+
+{% for req in requirements %}
+from . import {{ req }}
+{% endfor %}
+
+{% for cls in classes %}
+{{ cls }}
+
+{% endfor %}
+{% for name in names %}
+{{ name }}.update_forward_refs()
+{% endfor %}
