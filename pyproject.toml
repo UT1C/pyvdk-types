@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pyvdk-types"
+version = "0.0.0.1"
+description = "Types for pyvdk"
+authors = ["lightmanLP <liteman1000@gmail.com>", "mikk357 <mikk357@yandex.ru>"]
+license = "MIT License"
+readme = "README.md"
+keywords = ["pyvdk", "types", "vk"]
+
+[tool.poetry.urls]
+"Github" = "https://github.com/UT1C/pyvdk-types"
+"pyvdk on github" = "https://github.com/UT1C/pyvdk"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydantic = "^1.7.3"
+
+[tool.poetry.dev-dependencies]
+Jinja2 = "^2.11.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
