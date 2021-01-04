@@ -36,10 +36,7 @@ class Generator:
             "main.j2",
             classes=classes,
             requirements=parser.requirements,
-            names=[
-                utils.snake_to_camel(i)
-                for i in data.keys()
-            ]
+            names=parser.objects_names
         )
 
         Path(output_path).write_text(text)
@@ -49,10 +46,12 @@ class Parser:
     """ Весь парсинг """
 
     requirements: List[str]
+    objects_names: List[str]
     file_name: str
 
     def __init__(self, file_name: str) -> None:
         self.requirements = list()
+        self.objects_names = list()
         self.file_name = file_name
 
     def parse_definition(self, def_name: str, definition: dict) -> str:
@@ -66,6 +65,8 @@ class Parser:
             return utils.form_render("ref_clone.j2", name=def_name, ref=ref)
 
         else:
+            if def_type == "object":
+                self.objects_names.append(def_name)
             return getattr(Types(def_name, definition), def_type)()
 
     def parse_ref(

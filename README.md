@@ -7,4 +7,5 @@
 - [ ] auto docstrings
 - [ ] enums const uppercase
 - [ ] if name starts with int
-- [ ] check on type before update_forward_refs
+- [x] check on type before update_forward_refs
+- [ ] split classes templates
