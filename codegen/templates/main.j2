@@ -3,7 +3,7 @@ import enum
 
 from pydantic import BaseModel as PydanticModel
 
-{%- for req in requirements %}
+{% for req in requirements %}
 from . import {{ req }}
 {%- endfor %}
 

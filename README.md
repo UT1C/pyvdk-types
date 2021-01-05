@@ -9,3 +9,4 @@
 - [x] if name starts with int
 - [x] check on type before update_forward_refs
 - [ ] split classes templates
+- [ ] detect array error in responses

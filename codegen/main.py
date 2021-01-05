@@ -1,4 +1,4 @@
-from typing import Tuple, List
+from typing import Tuple, List, Dict
 from pathlib import Path
 import json
 
@@ -48,6 +48,11 @@ class Parser:
     requirements: List[str]
     objects_names: List[str]
     file_name: str
+    names_blacklist: Tuple[str] = (
+        "from",
+        "global",
+        "class"
+    )
 
     def __init__(self, file_name: str) -> None:
         self.requirements = list()
@@ -67,7 +72,7 @@ class Parser:
         else:
             if def_type == "object":
                 self.objects_names.append(def_name)
-            return getattr(Types(self, def_name, definition), def_type)()
+            return getattr(Types(self, def_name, definition), def_type)()  # FIXME: Types -> self.types
 
     def parse_ref(
         self,
@@ -92,6 +97,39 @@ class Parser:
 
         return output
 
+    def parse_object_properties(self, properties: dict) -> List[str]:
+        """  """
+
+        output = list()
+
+        for k, v in properties.items():
+            prop_type = v.get("type")
+
+            name = self.check_property_name(k)
+
+            if prop_type is None:
+                prop_type = self.parse_ref(v["$ref"])
+            elif isinstance(prop_type, list):
+                property_types = PropertiesTypes(self)  # FIXME: proptypes -> self
+                p_types = [
+                    getattr(property_types, i)(v)
+                    for i in prop_type
+                ]
+                prop_type = f"Union[{', '.join(p_types)}]"
+            else:
+                prop_type = getattr(PropertiesTypes(self), prop_type)(v)  # FIXME: proptypes -> self
+
+            output.append(f"{name}: {prop_type}")
+
+        return output
+
+    def check_property_name(self, name: str) -> str:
+        """  """
+
+        if name[0].isdigit() or name in self.names_blacklist:
+            name = "_" + name
+        return name
+
 
 class Types:
     """  """
@@ -112,7 +150,16 @@ class Types:
         self.definition = definition
 
     def object(self) -> str:
-        return ""
+        props = self.definition.get("properties")
+        if props is None:
+            props = ["allOf: Unsupported"]  # TODO: allOf support
+        else:
+            props = self.parser.parse_object_properties(props)
+        return utils.form_render(
+            "object_class.j2",
+            name=self.name,
+            props=props
+        )
 
     def array(self) -> str:
         return utils.form_render(
@@ -139,3 +186,35 @@ class Types:
 
     def boolean(self) -> str:
         return utils.form_render("boolean_class.j2", cls=self)
+
+
+class PropertiesTypes:
+    """  """
+
+    parser: Parser
+
+    def __init__(self, parser: Parser) -> None:
+        self.parser = parser
+
+    def integer(self, prop: dict) -> str:
+        return "int"
+
+    def string(self, prop: dict) -> str:
+        return "str"
+
+    def boolean(self, prop: dict) -> str:
+        return "bool"
+
+    def array(self, prop: dict) -> str:
+        prop_type = prop["items"].get("type")
+        if prop_type is None:
+            ref = self.parser.parse_ref(prop["items"]["$ref"])
+        else:
+            ref = getattr(self, prop_type)(prop["items"])
+        return f"List[{ref}]"
+
+    def object(self, prop: dict) -> str:
+        return "object"  # TODO: CHECK
+
+    def number(self, prop: dict) -> str:
+        return "int"
