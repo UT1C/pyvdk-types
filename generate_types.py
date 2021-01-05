@@ -1,5 +1,11 @@
 from codegen import Generator
 
 
-gen = Generator(r"codegen\vk-api-schema\objects.json")
-gen.write_file(r"pyvdk-types\objects.py")
+files = (
+    "objects",
+    #"responses",
+)
+
+for i in files:
+    gen = Generator(fr"codegen\vk-api-schema\{i}.json")
+    gen.write_file(fr"pyvdk-types\{i}.py")
