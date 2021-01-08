@@ -1,4 +1,4 @@
 class {{ name }}(PydanticModel):
-{%- for i in props %}
-    {{ i }}
+{%- for k, v in props %}
+    {{ k }}: Optional[{{ v }}] = None
 {%- endfor %}

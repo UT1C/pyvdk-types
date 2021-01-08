@@ -1,0 +1,7 @@
+class {{ name }}({{ ", ".join(parents) }}):
+{%- for k, v in props %}
+    {{ k }}: Optional[{{ v }}] = None
+{%- endfor %}
+{%- if props|length == 0 %}
+    pass
+{%- endif %}

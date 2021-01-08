@@ -48,6 +48,7 @@ class Parser:
     requirements: List[str]
     objects_names: List[str]
     file_name: str
+    properties_types: "PropertiesTypes"
     names_blacklist: Tuple[str] = (
         "from",
         "global",
@@ -57,6 +58,7 @@ class Parser:
     def __init__(self, file_name: str) -> None:
         self.requirements = list()
         self.objects_names = list()
+        self.properties_types = PropertiesTypes(self)
         self.file_name = file_name
 
     def parse_definition(self, def_name: str, definition: dict) -> str:
@@ -72,7 +74,7 @@ class Parser:
         else:
             if def_type == "object":
                 self.objects_names.append(def_name)
-            return getattr(Types(self, def_name, definition), def_type)()  # FIXME: Types -> self.types
+            return getattr(Types(self, def_name, definition), def_type)()
 
     def parse_ref(
         self,
@@ -97,7 +99,7 @@ class Parser:
 
         return output
 
-    def parse_object_properties(self, properties: dict) -> List[str]:
+    def parse_object_properties(self, properties: dict) -> List[Tuple[str, str]]:
         """  """
 
         output = list()
@@ -110,18 +112,38 @@ class Parser:
             if prop_type is None:
                 prop_type = self.parse_ref(v["$ref"])
             elif isinstance(prop_type, list):
-                property_types = PropertiesTypes(self)  # FIXME: proptypes -> self
                 p_types = [
-                    getattr(property_types, i)(v)
+                    getattr(self.properties_types, i)(v)
                     for i in prop_type
                 ]
                 prop_type = f"Union[{', '.join(p_types)}]"
             else:
-                prop_type = getattr(PropertiesTypes(self), prop_type)(v)  # FIXME: proptypes -> self
+                prop_type = getattr(self.properties_types, prop_type)(v)
 
-            output.append(f"{name}: {prop_type}")
+            output.append((name, prop_type))
 
         return output
+
+    def parse_all_of(self, all_of: List[dict]) -> Tuple[List[str], List[Tuple[str, str]]]:
+        """
+
+        Returns: Tuple[parents: List[str], props: Dict[str, str]]
+        """
+
+        parents = list()
+        props = list()
+
+        for i in all_of:
+            ref = i.get("$ref")
+            if ref is None:
+                props.extend(self.parse_object_properties(i["properties"]))
+            else:
+                parents.append(self.parse_ref(ref, brackets=False))
+
+        if len(parents) == 0:
+            parents.append("PydanticModel")
+
+        return parents, props
 
     def check_property_name(self, name: str) -> str:
         """  """
@@ -152,14 +174,27 @@ class Types:
     def object(self) -> str:
         props = self.definition.get("properties")
         if props is None:
-            props = ["allOf: Unsupported"]  # TODO: allOf support
+            all_of = self.definition.get("allOf")
+            if all_of is None:
+                return utils.form_render(
+                    "void_object_class.j2",
+                    name=self.name
+                )
+            else:
+                parents, props = self.parser.parse_all_of(all_of)
+                return utils.form_render(
+                    "all_of_object_class.j2",
+                    name=self.name,
+                    parents=parents,
+                    props=props
+                )
         else:
             props = self.parser.parse_object_properties(props)
-        return utils.form_render(
-            "object_class.j2",
-            name=self.name,
-            props=props
-        )
+            return utils.form_render(
+                "object_class.j2",
+                name=self.name,
+                props=props
+            )
 
     def array(self) -> str:
         return utils.form_render(
@@ -199,6 +234,9 @@ class PropertiesTypes:
     def integer(self, prop: dict) -> str:
         return "int"
 
+    def number(self, prop: dict) -> str:
+        return "int"
+
     def string(self, prop: dict) -> str:
         return "str"
 
@@ -206,15 +244,25 @@ class PropertiesTypes:
         return "bool"
 
     def array(self, prop: dict) -> str:
-        prop_type = prop["items"].get("type")
-        if prop_type is None:
-            ref = self.parser.parse_ref(prop["items"]["$ref"])
+        items = prop.get("items")
+
+        if len(items) == 0:
+            return "List[PydanticModel]"
+
         else:
-            ref = getattr(self, prop_type)(prop["items"])
+            prop_type = items.get("type")
+            if prop_type is None:
+                ref = self.parser.parse_ref(prop["items"]["$ref"])
+            else:
+                if isinstance(prop_type, list):
+                    refs = ", ".join([
+                        getattr(self, i)(prop["items"])
+                        for i in prop_type
+                    ])
+                    ref = f"Union[{refs}]"
+                else:
+                    ref = getattr(self, prop_type)(prop["items"])
         return f"List[{ref}]"
 
     def object(self, prop: dict) -> str:
-        return "object"  # TODO: CHECK
-
-    def number(self, prop: dict) -> str:
-        return "int"
+        return "object"  # FIXME: please.

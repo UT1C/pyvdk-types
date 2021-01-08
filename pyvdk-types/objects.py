@@ -5,48 +5,48 @@ from pydantic import BaseModel as PydanticModel
 
 
 class AccountAccountCounters(PydanticModel):
-    app_requests: int
-    events: int
-    faves: int
-    friends: int
-    friends_suggestions: int
-    friends_recommendations: int
-    gifts: int
-    groups: int
-    menu_discover_badge: int
-    menu_clips_badge: int
-    messages: int
-    memories: int
-    notes: int
-    notifications: int
-    photos: int
-    sdk: int
+    app_requests: Optional[int] = None
+    events: Optional[int] = None
+    faves: Optional[int] = None
+    friends: Optional[int] = None
+    friends_suggestions: Optional[int] = None
+    friends_recommendations: Optional[int] = None
+    gifts: Optional[int] = None
+    groups: Optional[int] = None
+    menu_discover_badge: Optional[int] = None
+    menu_clips_badge: Optional[int] = None
+    messages: Optional[int] = None
+    memories: Optional[int] = None
+    notes: Optional[int] = None
+    notifications: Optional[int] = None
+    photos: Optional[int] = None
+    sdk: Optional[int] = None
 
 
 class AccountInfo(PydanticModel):
-    wishlists_ae_promo_banner_show: "BaseBoolInt"
-    _2fa_required: "BaseBoolInt"
-    country: str
-    https_required: "BaseBoolInt"
-    intro: "BaseBoolInt"
-    show_vk_apps_intro: bool
-    mini_apps_ads_slot_id: int
-    qr_promotion: int
-    link_redirects: object
-    lang: int
-    no_wall_replies: "BaseBoolInt"
-    own_posts_default: "BaseBoolInt"
-    subscriptions: List[int]
+    wishlists_ae_promo_banner_show: Optional["BaseBoolInt"] = None
+    _2fa_required: Optional["BaseBoolInt"] = None
+    country: Optional[str] = None
+    https_required: Optional["BaseBoolInt"] = None
+    intro: Optional["BaseBoolInt"] = None
+    show_vk_apps_intro: Optional[bool] = None
+    mini_apps_ads_slot_id: Optional[int] = None
+    qr_promotion: Optional[int] = None
+    link_redirects: Optional[object] = None
+    lang: Optional[int] = None
+    no_wall_replies: Optional["BaseBoolInt"] = None
+    own_posts_default: Optional["BaseBoolInt"] = None
+    subscriptions: Optional[List[int]] = None
 
 
 class AccountNameRequest(PydanticModel):
-    first_name: str
-    id: int
-    last_name: str
-    status: "AccountNameRequestStatus"
-    lang: str
-    link_href: str
-    link_label: str
+    first_name: Optional[str] = None
+    id: Optional[int] = None
+    last_name: Optional[str] = None
+    status: Optional["AccountNameRequestStatus"] = None
+    lang: Optional[str] = None
+    link_href: Optional[str] = None
+    link_label: Optional[str] = None
 
 
 class AccountNameRequestStatus(enum.Enum):
@@ -61,51 +61,51 @@ class AccountNameRequestStatus(enum.Enum):
 
 
 class AccountOffer(PydanticModel):
-    description: str
-    id: int
-    img: str
-    instruction: str
-    instruction_html: str
-    price: int
-    short_description: str
-    tag: str
-    title: str
-    currency_amount: int
-    link_id: int
-    link_type: str
+    description: Optional[str] = None
+    id: Optional[int] = None
+    img: Optional[str] = None
+    instruction: Optional[str] = None
+    instruction_html: Optional[str] = None
+    price: Optional[int] = None
+    short_description: Optional[str] = None
+    tag: Optional[str] = None
+    title: Optional[str] = None
+    currency_amount: Optional[int] = None
+    link_id: Optional[int] = None
+    link_type: Optional[str] = None
 
 
 class AccountPushConversations(PydanticModel):
-    count: int
-    items: List["AccountPushConversationsItem"]
+    count: Optional[int] = None
+    items: Optional[List["AccountPushConversationsItem"]] = None
 
 
 class AccountPushConversationsItem(PydanticModel):
-    disabled_until: int
-    peer_id: int
-    sound: "BaseBoolInt"
+    disabled_until: Optional[int] = None
+    peer_id: Optional[int] = None
+    sound: Optional["BaseBoolInt"] = None
 
 
 class AccountPushParams(PydanticModel):
-    msg: List["AccountPushParamsMode"]
-    chat: List["AccountPushParamsMode"]
-    like: List["AccountPushParamsSettings"]
-    repost: List["AccountPushParamsSettings"]
-    comment: List["AccountPushParamsSettings"]
-    mention: List["AccountPushParamsSettings"]
-    reply: List["AccountPushParamsOnoff"]
-    new_post: List["AccountPushParamsOnoff"]
-    wall_post: List["AccountPushParamsOnoff"]
-    wall_publish: List["AccountPushParamsOnoff"]
-    friend: List["AccountPushParamsOnoff"]
-    friend_found: List["AccountPushParamsOnoff"]
-    friend_accepted: List["AccountPushParamsOnoff"]
-    group_invite: List["AccountPushParamsOnoff"]
-    group_accepted: List["AccountPushParamsOnoff"]
-    birthday: List["AccountPushParamsOnoff"]
-    event_soon: List["AccountPushParamsOnoff"]
-    app_request: List["AccountPushParamsOnoff"]
-    sdk_open: List["AccountPushParamsOnoff"]
+    msg: Optional[List["AccountPushParamsMode"]] = None
+    chat: Optional[List["AccountPushParamsMode"]] = None
+    like: Optional[List["AccountPushParamsSettings"]] = None
+    repost: Optional[List["AccountPushParamsSettings"]] = None
+    comment: Optional[List["AccountPushParamsSettings"]] = None
+    mention: Optional[List["AccountPushParamsSettings"]] = None
+    reply: Optional[List["AccountPushParamsOnoff"]] = None
+    new_post: Optional[List["AccountPushParamsOnoff"]] = None
+    wall_post: Optional[List["AccountPushParamsOnoff"]] = None
+    wall_publish: Optional[List["AccountPushParamsOnoff"]] = None
+    friend: Optional[List["AccountPushParamsOnoff"]] = None
+    friend_found: Optional[List["AccountPushParamsOnoff"]] = None
+    friend_accepted: Optional[List["AccountPushParamsOnoff"]] = None
+    group_invite: Optional[List["AccountPushParamsOnoff"]] = None
+    group_accepted: Optional[List["AccountPushParamsOnoff"]] = None
+    birthday: Optional[List["AccountPushParamsOnoff"]] = None
+    event_soon: Optional[List["AccountPushParamsOnoff"]] = None
+    app_request: Optional[List["AccountPushParamsOnoff"]] = None
+    sdk_open: Optional[List["AccountPushParamsOnoff"]] = None
 
 
 class AccountPushParamsMode(enum.Enum):
@@ -127,31 +127,32 @@ class AccountPushParamsSettings(enum.Enum):
 
 
 class AccountPushSettings(PydanticModel):
-    disabled: "BaseBoolInt"
-    disabled_until: int
-    settings: "AccountPushParams"
-    conversations: "AccountPushConversations"
+    disabled: Optional["BaseBoolInt"] = None
+    disabled_until: Optional[int] = None
+    settings: Optional["AccountPushParams"] = None
+    conversations: Optional["AccountPushConversations"] = None
 
 
-class AccountUserSettings(PydanticModel):
-    allOf: Unsupported
+class AccountUserSettings(UsersUserMin, UsersUserSettingsXtr):
+    photo_200: Optional[str] = None
+    is_service_account: Optional[bool] = None
 
 
 class AccountUserSettingsInterest(PydanticModel):
-    title: str
-    value: str
+    title: Optional[str] = None
+    value: Optional[str] = None
 
 
 class AccountUserSettingsInterests(PydanticModel):
-    activities: "AccountUserSettingsInterest"
-    interests: "AccountUserSettingsInterest"
-    music: "AccountUserSettingsInterest"
-    tv: "AccountUserSettingsInterest"
-    movies: "AccountUserSettingsInterest"
-    books: "AccountUserSettingsInterest"
-    games: "AccountUserSettingsInterest"
-    quotes: "AccountUserSettingsInterest"
-    about: "AccountUserSettingsInterest"
+    activities: Optional["AccountUserSettingsInterest"] = None
+    interests: Optional["AccountUserSettingsInterest"] = None
+    music: Optional["AccountUserSettingsInterest"] = None
+    tv: Optional["AccountUserSettingsInterest"] = None
+    movies: Optional["AccountUserSettingsInterest"] = None
+    books: Optional["AccountUserSettingsInterest"] = None
+    games: Optional["AccountUserSettingsInterest"] = None
+    quotes: Optional["AccountUserSettingsInterest"] = None
+    about: Optional["AccountUserSettingsInterest"] = None
 
 
 class AddressesFields(enum.Enum):
@@ -183,17 +184,17 @@ class AdsAccessRolePublic(enum.Enum):
 
 
 class AdsAccesses(PydanticModel):
-    client_id: str
-    role: "AdsAccessRole"
+    client_id: Optional[str] = None
+    role: Optional["AdsAccessRole"] = None
 
 
 class AdsAccount(PydanticModel):
-    access_role: "AdsAccessRole"
-    account_id: int
-    account_status: "BaseBoolInt"
-    account_type: "AdsAccountType"
-    account_name: str
-    can_view_budget: bool
+    access_role: Optional["AdsAccessRole"] = None
+    account_id: Optional[int] = None
+    account_status: Optional["BaseBoolInt"] = None
+    account_type: Optional["AdsAccountType"] = None
+    account_name: Optional[str] = None
+    can_view_budget: Optional[bool] = None
 
 
 class AdsAccountType(enum.Enum):
@@ -202,28 +203,28 @@ class AdsAccountType(enum.Enum):
 
 
 class AdsAd(PydanticModel):
-    ad_format: int
-    ad_platform: Union[int, str]
-    all_limit: int
-    approved: "AdsAdApproved"
-    campaign_id: int
-    category1_id: int
-    category2_id: int
-    cost_type: "AdsAdCostType"
-    cpc: int
-    cpm: int
-    cpa: int
-    ocpm: int
-    autobidding_max_cost: int
-    disclaimer_medical: "BaseBoolInt"
-    disclaimer_specialist: "BaseBoolInt"
-    disclaimer_supplements: "BaseBoolInt"
-    id: int
-    impressions_limit: int
-    impressions_limited: "BaseBoolInt"
-    name: str
-    status: "AdsAdStatus"
-    video: "BaseBoolInt"
+    ad_format: Optional[int] = None
+    ad_platform: Optional[Union[int, str]] = None
+    all_limit: Optional[int] = None
+    approved: Optional["AdsAdApproved"] = None
+    campaign_id: Optional[int] = None
+    category1_id: Optional[int] = None
+    category2_id: Optional[int] = None
+    cost_type: Optional["AdsAdCostType"] = None
+    cpc: Optional[int] = None
+    cpm: Optional[int] = None
+    cpa: Optional[int] = None
+    ocpm: Optional[int] = None
+    autobidding_max_cost: Optional[int] = None
+    disclaimer_medical: Optional["BaseBoolInt"] = None
+    disclaimer_specialist: Optional["BaseBoolInt"] = None
+    disclaimer_supplements: Optional["BaseBoolInt"] = None
+    id: Optional[int] = None
+    impressions_limit: Optional[int] = None
+    impressions_limited: Optional["BaseBoolInt"] = None
+    name: Optional[str] = None
+    status: Optional["AdsAdStatus"] = None
+    video: Optional["BaseBoolInt"] = None
 
 
 class AdsAdApproved(enum.IntEnum):
@@ -241,18 +242,18 @@ class AdsAdCostType(enum.IntEnum):
 
 
 class AdsAdLayout(PydanticModel):
-    ad_format: int
-    campaign_id: int
-    cost_type: "AdsAdCostType"
-    description: str
-    id: str
-    image_src: str
-    image_src_2x: str
-    link_domain: str
-    link_url: str
-    preview_link: Union[int, str]
-    title: str
-    video: "BaseBoolInt"
+    ad_format: Optional[int] = None
+    campaign_id: Optional[int] = None
+    cost_type: Optional["AdsAdCostType"] = None
+    description: Optional[str] = None
+    id: Optional[str] = None
+    image_src: Optional[str] = None
+    image_src_2x: Optional[str] = None
+    link_domain: Optional[str] = None
+    link_url: Optional[str] = None
+    preview_link: Optional[Union[int, str]] = None
+    title: Optional[str] = None
+    video: Optional["BaseBoolInt"] = None
 
 
 class AdsAdStatus(enum.IntEnum):
@@ -262,14 +263,14 @@ class AdsAdStatus(enum.IntEnum):
 
 
 class AdsCampaign(PydanticModel):
-    all_limit: str
-    day_limit: str
-    id: int
-    name: str
-    start_time: int
-    status: "AdsCampaignStatus"
-    stop_time: int
-    type: "AdsCampaignType"
+    all_limit: Optional[str] = None
+    day_limit: Optional[str] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    start_time: Optional[int] = None
+    status: Optional["AdsCampaignStatus"] = None
+    stop_time: Optional[int] = None
+    type: Optional["AdsCampaignType"] = None
 
 
 class AdsCampaignStatus(enum.IntEnum):
@@ -286,49 +287,49 @@ class AdsCampaignType(enum.Enum):
 
 
 class AdsCategory(PydanticModel):
-    id: int
-    name: str
-    subcategories: List["BaseObjectWithName"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+    subcategories: Optional[List["BaseObjectWithName"]] = None
 
 
 class AdsClient(PydanticModel):
-    all_limit: str
-    day_limit: str
-    id: int
-    name: str
+    all_limit: Optional[str] = None
+    day_limit: Optional[str] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class AdsCriteria(PydanticModel):
-    age_from: int
-    age_to: int
-    apps: str
-    apps_not: str
-    birthday: int
-    cities: str
-    cities_not: str
-    country: int
-    districts: str
-    groups: str
-    interest_categories: str
-    interests: str
-    paying: "BaseBoolInt"
-    positions: str
-    religions: str
-    retargeting_groups: str
-    retargeting_groups_not: str
-    school_from: int
-    school_to: int
-    schools: str
-    sex: "AdsCriteriaSex"
-    stations: str
-    statuses: str
-    streets: str
-    travellers: "BasePropertyExists"
-    uni_from: int
-    uni_to: int
-    user_browsers: str
-    user_devices: str
-    user_os: str
+    age_from: Optional[int] = None
+    age_to: Optional[int] = None
+    apps: Optional[str] = None
+    apps_not: Optional[str] = None
+    birthday: Optional[int] = None
+    cities: Optional[str] = None
+    cities_not: Optional[str] = None
+    country: Optional[int] = None
+    districts: Optional[str] = None
+    groups: Optional[str] = None
+    interest_categories: Optional[str] = None
+    interests: Optional[str] = None
+    paying: Optional["BaseBoolInt"] = None
+    positions: Optional[str] = None
+    religions: Optional[str] = None
+    retargeting_groups: Optional[str] = None
+    retargeting_groups_not: Optional[str] = None
+    school_from: Optional[int] = None
+    school_to: Optional[int] = None
+    schools: Optional[str] = None
+    sex: Optional["AdsCriteriaSex"] = None
+    stations: Optional[str] = None
+    statuses: Optional[str] = None
+    streets: Optional[str] = None
+    travellers: Optional["BasePropertyExists"] = None
+    uni_from: Optional[int] = None
+    uni_to: Optional[int] = None
+    user_browsers: Optional[str] = None
+    user_devices: Optional[str] = None
+    user_os: Optional[str] = None
 
 
 class AdsCriteriaSex(enum.IntEnum):
@@ -338,53 +339,53 @@ class AdsCriteriaSex(enum.IntEnum):
 
 
 class AdsDemoStats(PydanticModel):
-    id: int
-    stats: "AdsDemostatsFormat"
-    type: "AdsObjectType"
+    id: Optional[int] = None
+    stats: Optional["AdsDemostatsFormat"] = None
+    type: Optional["AdsObjectType"] = None
 
 
 class AdsDemostatsFormat(PydanticModel):
-    age: List["AdsStatsAge"]
-    cities: List["AdsStatsCities"]
-    day: str
-    month: str
-    overall: int
-    sex: List["AdsStatsSex"]
-    sex_age: List["AdsStatsSexAge"]
+    age: Optional[List["AdsStatsAge"]] = None
+    cities: Optional[List["AdsStatsCities"]] = None
+    day: Optional[str] = None
+    month: Optional[str] = None
+    overall: Optional[int] = None
+    sex: Optional[List["AdsStatsSex"]] = None
+    sex_age: Optional[List["AdsStatsSexAge"]] = None
 
 
 class AdsFloodStats(PydanticModel):
-    left: int
-    refresh: int
+    left: Optional[int] = None
+    refresh: Optional[int] = None
 
 
 class AdsLinkStatus(PydanticModel):
-    description: str
-    redirect_url: str
-    status: str
+    description: Optional[str] = None
+    redirect_url: Optional[str] = None
+    status: Optional[str] = None
 
 
 class AdsLookalikeRequest(PydanticModel):
-    id: int
-    create_time: int
-    update_time: int
-    scheduled_delete_time: int
-    status: str
-    source_type: str
-    source_retargeting_group_id: int
-    source_name: str
-    audience_count: int
-    save_audience_levels: List["AdsLookalikeRequestSaveAudienceLevel"]
+    id: Optional[int] = None
+    create_time: Optional[int] = None
+    update_time: Optional[int] = None
+    scheduled_delete_time: Optional[int] = None
+    status: Optional[str] = None
+    source_type: Optional[str] = None
+    source_retargeting_group_id: Optional[int] = None
+    source_name: Optional[str] = None
+    audience_count: Optional[int] = None
+    save_audience_levels: Optional[List["AdsLookalikeRequestSaveAudienceLevel"]] = None
 
 
 class AdsLookalikeRequestSaveAudienceLevel(PydanticModel):
-    level: int
-    audience_count: int
+    level: Optional[int] = None
+    audience_count: Optional[int] = None
 
 
 class AdsMusician(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class AdsObjectType(enum.Enum):
@@ -395,82 +396,82 @@ class AdsObjectType(enum.Enum):
 
 
 class AdsParagraphs(PydanticModel):
-    paragraph: str
+    paragraph: Optional[str] = None
 
 
 class AdsPromotedPostReach(PydanticModel):
-    hide: int
-    id: int
-    join_group: int
-    links: int
-    reach_subscribers: int
-    reach_total: int
-    report: int
-    to_group: int
-    unsubscribe: int
-    video_views_100p: int
-    video_views_25p: int
-    video_views_3s: int
-    video_views_50p: int
-    video_views_75p: int
-    video_views_start: int
+    hide: Optional[int] = None
+    id: Optional[int] = None
+    join_group: Optional[int] = None
+    links: Optional[int] = None
+    reach_subscribers: Optional[int] = None
+    reach_total: Optional[int] = None
+    report: Optional[int] = None
+    to_group: Optional[int] = None
+    unsubscribe: Optional[int] = None
+    video_views_100p: Optional[int] = None
+    video_views_25p: Optional[int] = None
+    video_views_3s: Optional[int] = None
+    video_views_50p: Optional[int] = None
+    video_views_75p: Optional[int] = None
+    video_views_start: Optional[int] = None
 
 
 class AdsRejectReason(PydanticModel):
-    comment: str
-    rules: List["AdsRules"]
+    comment: Optional[str] = None
+    rules: Optional[List["AdsRules"]] = None
 
 
 class AdsRules(PydanticModel):
-    paragraphs: List["AdsParagraphs"]
-    title: str
+    paragraphs: Optional[List["AdsParagraphs"]] = None
+    title: Optional[str] = None
 
 
 class AdsStats(PydanticModel):
-    id: int
-    stats: "AdsStatsFormat"
-    type: "AdsObjectType"
-    views_times: "AdsStatsViewsTimes"
+    id: Optional[int] = None
+    stats: Optional["AdsStatsFormat"] = None
+    type: Optional["AdsObjectType"] = None
+    views_times: Optional["AdsStatsViewsTimes"] = None
 
 
 class AdsStatsAge(PydanticModel):
-    clicks_rate: int
-    impressions_rate: int
-    value: str
+    clicks_rate: Optional[int] = None
+    impressions_rate: Optional[int] = None
+    value: Optional[str] = None
 
 
 class AdsStatsCities(PydanticModel):
-    clicks_rate: int
-    impressions_rate: int
-    name: str
-    value: int
+    clicks_rate: Optional[int] = None
+    impressions_rate: Optional[int] = None
+    name: Optional[str] = None
+    value: Optional[int] = None
 
 
 class AdsStatsFormat(PydanticModel):
-    clicks: int
-    day: str
-    impressions: int
-    join_rate: int
-    month: str
-    overall: int
-    reach: int
-    spent: int
-    video_clicks_site: int
-    video_views: int
-    video_views_full: int
-    video_views_half: int
+    clicks: Optional[int] = None
+    day: Optional[str] = None
+    impressions: Optional[int] = None
+    join_rate: Optional[int] = None
+    month: Optional[str] = None
+    overall: Optional[int] = None
+    reach: Optional[int] = None
+    spent: Optional[int] = None
+    video_clicks_site: Optional[int] = None
+    video_views: Optional[int] = None
+    video_views_full: Optional[int] = None
+    video_views_half: Optional[int] = None
 
 
 class AdsStatsSex(PydanticModel):
-    clicks_rate: int
-    impressions_rate: int
-    value: "AdsStatsSexValue"
+    clicks_rate: Optional[int] = None
+    impressions_rate: Optional[int] = None
+    value: Optional["AdsStatsSexValue"] = None
 
 
 class AdsStatsSexAge(PydanticModel):
-    clicks_rate: int
-    impressions_rate: int
-    value: str
+    clicks_rate: Optional[int] = None
+    impressions_rate: Optional[int] = None
+    value: Optional[str] = None
 
 
 class AdsStatsSexValue(enum.Enum):
@@ -479,58 +480,59 @@ class AdsStatsSexValue(enum.Enum):
 
 
 class AdsStatsViewsTimes(PydanticModel):
-    views_ads_times_1: int
-    views_ads_times_2: int
-    views_ads_times_3: int
-    views_ads_times_4: int
-    views_ads_times_5: str
-    views_ads_times_6: int
-    views_ads_times_7: int
-    views_ads_times_8: int
-    views_ads_times_9: int
-    views_ads_times_10: int
-    views_ads_times_11_plus: int
+    views_ads_times_1: Optional[int] = None
+    views_ads_times_2: Optional[int] = None
+    views_ads_times_3: Optional[int] = None
+    views_ads_times_4: Optional[int] = None
+    views_ads_times_5: Optional[str] = None
+    views_ads_times_6: Optional[int] = None
+    views_ads_times_7: Optional[int] = None
+    views_ads_times_8: Optional[int] = None
+    views_ads_times_9: Optional[int] = None
+    views_ads_times_10: Optional[int] = None
+    views_ads_times_11_plus: Optional[int] = None
 
 
-class AdsTargSettings(PydanticModel):
-    allOf: Unsupported
+class AdsTargSettings(AdsCriteria):
+    id: Optional[int] = None
+    campaign_id: Optional[int] = None
 
 
 class AdsTargStats(PydanticModel):
-    audience_count: int
-    recommended_cpc: int
-    recommended_cpm: int
-    recommended_cpc_50: int
-    recommended_cpm_50: int
-    recommended_cpc_70: int
-    recommended_cpm_70: int
-    recommended_cpc_90: int
-    recommended_cpm_90: int
+    audience_count: Optional[int] = None
+    recommended_cpc: Optional[int] = None
+    recommended_cpm: Optional[int] = None
+    recommended_cpc_50: Optional[int] = None
+    recommended_cpm_50: Optional[int] = None
+    recommended_cpc_70: Optional[int] = None
+    recommended_cpm_70: Optional[int] = None
+    recommended_cpc_90: Optional[int] = None
+    recommended_cpm_90: Optional[int] = None
 
 
 class AdsTargSuggestions(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class AdsTargSuggestionsCities(PydanticModel):
-    id: int
-    name: str
-    parent: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    parent: Optional[str] = None
 
 
 class AdsTargSuggestionsRegions(PydanticModel):
-    id: int
-    name: str
-    type: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    type: Optional[str] = None
 
 
 class AdsTargSuggestionsSchools(PydanticModel):
-    desc: str
-    id: int
-    name: str
-    parent: str
-    type: "AdsTargSuggestionsSchoolsType"
+    desc: Optional[str] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    parent: Optional[str] = None
+    type: Optional["AdsTargSuggestionsSchoolsType"] = None
 
 
 class AdsTargSuggestionsSchoolsType(enum.Enum):
@@ -541,90 +543,109 @@ class AdsTargSuggestionsSchoolsType(enum.Enum):
 
 
 class AdsTargetGroup(PydanticModel):
-    audience_count: int
-    domain: str
-    id: int
-    lifetime: int
-    name: str
-    pixel: str
+    audience_count: Optional[int] = None
+    domain: Optional[str] = None
+    id: Optional[int] = None
+    lifetime: Optional[int] = None
+    name: Optional[str] = None
+    pixel: Optional[str] = None
 
 
 class AdsUpdateofficeusersResult(PydanticModel):
-    user_id: int
-    is_success: bool
-    error: "BaseError"
+    user_id: Optional[int] = None
+    is_success: Optional[bool] = None
+    error: Optional["BaseError"] = None
 
 
 class AdsUserSpecification(PydanticModel):
-    user_id: int
-    role: "AdsAccessRolePublic"
-    grant_access_to_all_clients: bool
-    client_ids: List[int]
-    view_budget: bool
+    user_id: Optional[int] = None
+    role: Optional["AdsAccessRolePublic"] = None
+    grant_access_to_all_clients: Optional[bool] = None
+    client_ids: Optional[List[int]] = None
+    view_budget: Optional[bool] = None
 
 
 class AdsUserSpecificationCutted(PydanticModel):
-    user_id: int
-    role: "AdsAccessRolePublic"
-    client_id: int
-    view_budget: bool
+    user_id: Optional[int] = None
+    role: Optional["AdsAccessRolePublic"] = None
+    client_id: Optional[int] = None
+    view_budget: Optional[bool] = None
 
 
 class AdsUsers(PydanticModel):
-    accesses: List["AdsAccesses"]
-    user_id: int
+    accesses: Optional[List["AdsAccesses"]] = None
+    user_id: Optional[int] = None
 
 
 class AdswebGetadcategoriesResponseCategoriesCategory(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class AdswebGetadunitsResponseAdUnitsAdUnit(PydanticModel):
-    id: int
-    site_id: int
-    name: str
+    id: Optional[int] = None
+    site_id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class AdswebGetfraudhistoryResponseEntriesEntry(PydanticModel):
-    site_id: int
-    day: str
+    site_id: Optional[int] = None
+    day: Optional[str] = None
 
 
 class AdswebGetsitesResponseSitesSite(PydanticModel):
-    id: int
-    status_user: str
-    status_moder: str
-    domains: str
+    id: Optional[int] = None
+    status_user: Optional[str] = None
+    status_moder: Optional[str] = None
+    domains: Optional[str] = None
 
 
 class AdswebGetstatisticsResponseItemsItem(PydanticModel):
-    site_id: int
-    ad_unit_id: int
-    overall_count: int
-    months_count: int
-    month_min: str
-    month_max: str
-    days_count: int
-    day_min: str
-    day_max: str
-    hours_count: int
-    hour_min: str
-    hour_max: str
+    site_id: Optional[int] = None
+    ad_unit_id: Optional[int] = None
+    overall_count: Optional[int] = None
+    months_count: Optional[int] = None
+    month_min: Optional[str] = None
+    month_max: Optional[str] = None
+    days_count: Optional[int] = None
+    day_min: Optional[str] = None
+    day_max: Optional[str] = None
+    hours_count: Optional[int] = None
+    hour_min: Optional[str] = None
+    hour_max: Optional[str] = None
 
 
 class AppwidgetsPhoto(PydanticModel):
-    id: str
-    images: List["BaseImage"]
+    id: Optional[str] = None
+    images: Optional[List["BaseImage"]] = None
 
 
 class AppwidgetsPhotos(PydanticModel):
-    count: int
-    items: List["AppwidgetsPhoto"]
+    count: Optional[int] = None
+    items: Optional[List["AppwidgetsPhoto"]] = None
 
 
-class AppsApp(PydanticModel):
-    allOf: Unsupported
+class AppsApp(AppsAppMin):
+    author_url: Optional[str] = None
+    banner_1120: Optional[str] = None
+    banner_560: Optional[str] = None
+    icon_16: Optional[str] = None
+    is_new: Optional["BaseBoolInt"] = None
+    push_enabled: Optional["BaseBoolInt"] = None
+    screen_orientation: Optional[int] = None
+    friends: Optional[List[int]] = None
+    catalog_position: Optional[int] = None
+    description: Optional[str] = None
+    genre: Optional[str] = None
+    genre_id: Optional[int] = None
+    international: Optional[bool] = None
+    is_in_catalog: Optional[int] = None
+    leaderboard_type: Optional["AppsAppLeaderboardType"] = None
+    members_count: Optional[int] = None
+    platform_id: Optional[str] = None
+    published_date: Optional[int] = None
+    screen_name: Optional[str] = None
+    section: Optional[str] = None
 
 
 class AppsAppLeaderboardType(enum.IntEnum):
@@ -634,18 +655,18 @@ class AppsAppLeaderboardType(enum.IntEnum):
 
 
 class AppsAppMin(PydanticModel):
-    type: "AppsAppType"
-    id: int
-    title: str
-    author_owner_id: int
-    is_installed: bool
-    icon_139: str
-    icon_150: str
-    icon_278: str
-    icon_576: str
-    background_loader_color: str
-    loader_icon: str
-    icon_75: str
+    type: Optional["AppsAppType"] = None
+    id: Optional[int] = None
+    title: Optional[str] = None
+    author_owner_id: Optional[int] = None
+    is_installed: Optional[bool] = None
+    icon_139: Optional[str] = None
+    icon_150: Optional[str] = None
+    icon_278: Optional[str] = None
+    icon_576: Optional[str] = None
+    background_loader_color: Optional[str] = None
+    loader_icon: Optional[str] = None
+    icon_75: Optional[str] = None
 
 
 class AppsAppType(enum.Enum):
@@ -660,27 +681,27 @@ class AppsAppType(enum.Enum):
 
 
 class AppsLeaderboard(PydanticModel):
-    level: int
-    points: int
-    score: int
-    user_id: int
+    level: Optional[int] = None
+    points: Optional[int] = None
+    score: Optional[int] = None
+    user_id: Optional[int] = None
 
 
 class AppsScope(PydanticModel):
-    name: str
-    title: str
+    name: Optional[str] = None
+    title: Optional[str] = None
 
 
 class AudioAudio(PydanticModel):
-    artist: str
-    id: int
-    title: str
-    url: str
-    duration: int
-    date: int
-    album_id: int
-    genre_id: int
-    performer: str
+    artist: Optional[str] = None
+    id: Optional[int] = None
+    title: Optional[str] = None
+    url: Optional[str] = None
+    duration: Optional[int] = None
+    date: Optional[int] = None
+    album_id: Optional[int] = None
+    genre_id: Optional[int] = None
+    performer: Optional[str] = None
 
 
 class BaseBoolInt(enum.IntEnum):
@@ -689,130 +710,130 @@ class BaseBoolInt(enum.IntEnum):
 
 
 class BaseCity(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class BaseCommentsInfo(PydanticModel):
-    can_post: "BaseBoolInt"
-    count: int
-    groups_can_post: bool
-    donut: "WallWallpostCommentsDonut"
+    can_post: Optional["BaseBoolInt"] = None
+    count: Optional[int] = None
+    groups_can_post: Optional[bool] = None
+    donut: Optional["WallWallpostCommentsDonut"] = None
 
 
 class BaseCountry(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class BaseCropPhoto(PydanticModel):
-    photo: "PhotosPhoto"
-    crop: "BaseCropPhotoCrop"
-    rect: "BaseCropPhotoRect"
+    photo: Optional["PhotosPhoto"] = None
+    crop: Optional["BaseCropPhotoCrop"] = None
+    rect: Optional["BaseCropPhotoRect"] = None
 
 
 class BaseCropPhotoCrop(PydanticModel):
-    x: int
-    y: int
-    x2: int
-    y2: int
+    x: Optional[int] = None
+    y: Optional[int] = None
+    x2: Optional[int] = None
+    y2: Optional[int] = None
 
 
 class BaseCropPhotoRect(PydanticModel):
-    x: int
-    y: int
-    x2: int
-    y2: int
+    x: Optional[int] = None
+    y: Optional[int] = None
+    x2: Optional[int] = None
+    y2: Optional[int] = None
 
 
 class BaseError(PydanticModel):
-    error_code: int
-    error_subcode: int
-    error_msg: str
-    error_text: str
-    request_params: List["BaseRequestParam"]
+    error_code: Optional[int] = None
+    error_subcode: Optional[int] = None
+    error_msg: Optional[str] = None
+    error_text: Optional[str] = None
+    request_params: Optional[List["BaseRequestParam"]] = None
 
 
 class BaseGeo(PydanticModel):
-    coordinates: "BaseGeoCoordinates"
-    place: "BasePlace"
-    showmap: int
-    type: str
+    coordinates: Optional["BaseGeoCoordinates"] = None
+    place: Optional["BasePlace"] = None
+    showmap: Optional[int] = None
+    type: Optional[str] = None
 
 
 class BaseGeoCoordinates(PydanticModel):
-    latitude: int
-    longitude: int
+    latitude: Optional[int] = None
+    longitude: Optional[int] = None
 
 
 class BaseGradientPoint(PydanticModel):
-    color: str
-    position: int
+    color: Optional[str] = None
+    position: Optional[int] = None
 
 
 class BaseImage(PydanticModel):
-    id: str
-    height: int
-    url: str
-    width: int
+    id: Optional[str] = None
+    height: Optional[int] = None
+    url: Optional[str] = None
+    width: Optional[int] = None
 
 
 class BaseLikes(PydanticModel):
-    count: int
-    user_likes: "BaseBoolInt"
+    count: Optional[int] = None
+    user_likes: Optional["BaseBoolInt"] = None
 
 
 class BaseLikesInfo(PydanticModel):
-    can_like: "BaseBoolInt"
-    can_publish: "BaseBoolInt"
-    count: int
-    user_likes: int
+    can_like: Optional["BaseBoolInt"] = None
+    can_publish: Optional["BaseBoolInt"] = None
+    count: Optional[int] = None
+    user_likes: Optional[int] = None
 
 
 class BaseLink(PydanticModel):
-    application: "BaseLinkApplication"
-    button: "BaseLinkButton"
-    caption: str
-    description: str
-    id: str
-    is_favorite: bool
-    photo: "PhotosPhoto"
-    preview_page: str
-    preview_url: str
-    product: "BaseLinkProduct"
-    rating: "BaseLinkRating"
-    title: str
-    url: str
-    target_object: "LinkTargetObject"
-    is_external: bool
-    video: "VideoVideo"
+    application: Optional["BaseLinkApplication"] = None
+    button: Optional["BaseLinkButton"] = None
+    caption: Optional[str] = None
+    description: Optional[str] = None
+    id: Optional[str] = None
+    is_favorite: Optional[bool] = None
+    photo: Optional["PhotosPhoto"] = None
+    preview_page: Optional[str] = None
+    preview_url: Optional[str] = None
+    product: Optional["BaseLinkProduct"] = None
+    rating: Optional["BaseLinkRating"] = None
+    title: Optional[str] = None
+    url: Optional[str] = None
+    target_object: Optional["LinkTargetObject"] = None
+    is_external: Optional[bool] = None
+    video: Optional["VideoVideo"] = None
 
 
 class BaseLinkApplication(PydanticModel):
-    app_id: int
-    store: "BaseLinkApplicationStore"
+    app_id: Optional[int] = None
+    store: Optional["BaseLinkApplicationStore"] = None
 
 
 class BaseLinkApplicationStore(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class BaseLinkButton(PydanticModel):
-    action: "BaseLinkButtonAction"
-    title: str
-    block_id: str
-    section_id: str
-    curator_id: int
-    owner_id: int
-    icon: str
-    style: "BaseLinkButtonStyle"
+    action: Optional["BaseLinkButtonAction"] = None
+    title: Optional[str] = None
+    block_id: Optional[str] = None
+    section_id: Optional[str] = None
+    curator_id: Optional[int] = None
+    owner_id: Optional[int] = None
+    icon: Optional[str] = None
+    style: Optional["BaseLinkButtonStyle"] = None
 
 
 class BaseLinkButtonAction(PydanticModel):
-    type: "BaseLinkButtonActionType"
-    url: str
-    consume_reason: str
+    type: Optional["BaseLinkButtonActionType"] = None
+    url: Optional[str] = None
+    consume_reason: Optional[str] = None
 
 
 class BaseLinkButtonActionType(enum.Enum):
@@ -825,9 +846,9 @@ class BaseLinkButtonStyle(enum.Enum):
 
 
 class BaseLinkProduct(PydanticModel):
-    price: "MarketPrice"
-    merchant: str
-    orders_count: int
+    price: Optional["MarketPrice"] = None
+    merchant: Optional[str] = None
+    orders_count: Optional[int] = None
 
 
 class BaseLinkProductStatus(enum.Enum):
@@ -839,41 +860,41 @@ class BaseLinkProductStatus(enum.Enum):
 
 
 class BaseLinkRating(PydanticModel):
-    reviews_count: int
-    stars: int
+    reviews_count: Optional[int] = None
+    stars: Optional[int] = None
 
 
 class BaseMessageError(PydanticModel):
-    code: int
-    description: str
+    code: Optional[int] = None
+    description: Optional[str] = None
 
 
 class BaseObject(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class BaseObjectCount(PydanticModel):
-    count: int
+    count: Optional[int] = None
 
 
 class BaseObjectWithName(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class BasePlace(PydanticModel):
-    address: str
-    checkins: int
-    city: str
-    country: str
-    created: int
-    icon: str
-    id: int
-    latitude: int
-    longitude: int
-    title: str
-    type: str
+    address: Optional[str] = None
+    checkins: Optional[int] = None
+    city: Optional[str] = None
+    country: Optional[str] = None
+    created: Optional[int] = None
+    icon: Optional[str] = None
+    id: Optional[int] = None
+    latitude: Optional[int] = None
+    longitude: Optional[int] = None
+    title: Optional[str] = None
+    type: Optional[str] = None
 
 
 class BasePropertyExists(enum.IntEnum):
@@ -881,15 +902,15 @@ class BasePropertyExists(enum.IntEnum):
 
 
 class BaseRepostsInfo(PydanticModel):
-    count: int
-    wall_count: int
-    mail_count: int
-    user_reposted: int
+    count: Optional[int] = None
+    wall_count: Optional[int] = None
+    mail_count: Optional[int] = None
+    user_reposted: Optional[int] = None
 
 
 class BaseRequestParam(PydanticModel):
-    key: str
-    value: str
+    key: Optional[str] = None
+    value: Optional[str] = None
 
 
 class BaseSex(enum.IntEnum):
@@ -899,25 +920,25 @@ class BaseSex(enum.IntEnum):
 
 
 class BaseSticker(PydanticModel):
-    sticker_id: int
-    product_id: int
-    images: List["BaseImage"]
-    images_with_background: List["BaseImage"]
-    animation_url: str
-    animations: List["BaseStickerAnimation"]
-    is_allowed: bool
+    sticker_id: Optional[int] = None
+    product_id: Optional[int] = None
+    images: Optional[List["BaseImage"]] = None
+    images_with_background: Optional[List["BaseImage"]] = None
+    animation_url: Optional[str] = None
+    animations: Optional[List["BaseStickerAnimation"]] = None
+    is_allowed: Optional[bool] = None
 
 
 class BaseStickerAnimation(PydanticModel):
-    type: str
-    url: str
+    type: Optional[str] = None
+    url: Optional[str] = None
 
 
 BaseStickersList = List["BaseSticker"]
 
 
 class BaseUploadServer(PydanticModel):
-    upload_url: str
+    upload_url: Optional[str] = None
 
 
 class BaseUserGroupFields(enum.Enum):
@@ -1024,7 +1045,7 @@ class BaseUserGroupFields(enum.Enum):
 
 
 class BaseUserId(PydanticModel):
-    user_id: int
+    user_id: Optional[int] = None
 
 
 class BoardDefaultOrder(enum.IntEnum):
@@ -1035,101 +1056,101 @@ class BoardDefaultOrder(enum.IntEnum):
 
 
 class BoardTopic(PydanticModel):
-    comments: int
-    created: int
-    created_by: int
-    id: int
-    is_closed: "BaseBoolInt"
-    is_fixed: "BaseBoolInt"
-    title: str
-    updated: int
-    updated_by: int
+    comments: Optional[int] = None
+    created: Optional[int] = None
+    created_by: Optional[int] = None
+    id: Optional[int] = None
+    is_closed: Optional["BaseBoolInt"] = None
+    is_fixed: Optional["BaseBoolInt"] = None
+    title: Optional[str] = None
+    updated: Optional[int] = None
+    updated_by: Optional[int] = None
 
 
 class BoardTopicComment(PydanticModel):
-    attachments: List["WallCommentAttachment"]
-    date: int
-    from_id: int
-    id: int
-    real_offset: int
-    text: str
-    can_edit: "BaseBoolInt"
-    likes: "BaseLikesInfo"
+    attachments: Optional[List["WallCommentAttachment"]] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    id: Optional[int] = None
+    real_offset: Optional[int] = None
+    text: Optional[str] = None
+    can_edit: Optional["BaseBoolInt"] = None
+    likes: Optional["BaseLikesInfo"] = None
 
 
 class BoardTopicPoll(PydanticModel):
-    owner_id: int
-    poll_id: int
-    created: int
-    is_closed: "BaseBoolInt"
-    question: str
-    votes: int
-    answer_id: int
-    answers: List["PollsAnswer"]
+    owner_id: Optional[int] = None
+    poll_id: Optional[int] = None
+    created: Optional[int] = None
+    is_closed: Optional["BaseBoolInt"] = None
+    question: Optional[str] = None
+    votes: Optional[int] = None
+    answer_id: Optional[int] = None
+    answers: Optional[List["PollsAnswer"]] = None
 
 
 class CallbackBoardPostDelete(PydanticModel):
-    topic_owner_id: int
-    topic_id: int
-    id: int
+    topic_owner_id: Optional[int] = None
+    topic_id: Optional[int] = None
+    id: Optional[int] = None
 
 
 class CallbackConfirmationMessage(PydanticModel):
-    type: "CallbackMessageType"
-    group_id: int
-    secret: str
+    type: Optional["CallbackMessageType"] = None
+    group_id: Optional[int] = None
+    secret: Optional[str] = None
 
 
 class CallbackDonutMoneyWithdraw(PydanticModel):
-    amount: int
-    amount_without_fee: int
+    amount: Optional[int] = None
+    amount_without_fee: Optional[int] = None
 
 
 class CallbackDonutMoneyWithdrawError(PydanticModel):
-    reason: str
+    reason: Optional[str] = None
 
 
 class CallbackDonutSubscriptionCancelled(PydanticModel):
-    user_id: int
+    user_id: Optional[int] = None
 
 
 class CallbackDonutSubscriptionCreate(PydanticModel):
-    user_id: int
-    amount: int
-    amount_without_fee: int
+    user_id: Optional[int] = None
+    amount: Optional[int] = None
+    amount_without_fee: Optional[int] = None
 
 
 class CallbackDonutSubscriptionExpired(PydanticModel):
-    user_id: int
+    user_id: Optional[int] = None
 
 
 class CallbackDonutSubscriptionPriceChanged(PydanticModel):
-    user_id: int
-    amount_old: int
-    amount_new: int
-    amount_diff: int
-    amount_diff_without_fee: int
+    user_id: Optional[int] = None
+    amount_old: Optional[int] = None
+    amount_new: Optional[int] = None
+    amount_diff: Optional[int] = None
+    amount_diff_without_fee: Optional[int] = None
 
 
 class CallbackDonutSubscriptionProlonged(PydanticModel):
-    user_id: int
-    amount: int
-    amount_without_fee: int
+    user_id: Optional[int] = None
+    amount: Optional[int] = None
+    amount_without_fee: Optional[int] = None
 
 
 class CallbackGroupChangePhoto(PydanticModel):
-    user_id: int
-    photo: "PhotosPhoto"
+    user_id: Optional[int] = None
+    photo: Optional["PhotosPhoto"] = None
 
 
 class CallbackGroupChangeSettings(PydanticModel):
-    user_id: int
-    self: "BaseBoolInt"
+    user_id: Optional[int] = None
+    self: Optional["BaseBoolInt"] = None
 
 
 class CallbackGroupJoin(PydanticModel):
-    user_id: int
-    join_type: "CallbackGroupJoinType"
+    user_id: Optional[int] = None
+    join_type: Optional["CallbackGroupJoinType"] = None
 
 
 class CallbackGroupJoinType(enum.Enum):
@@ -1141,8 +1162,8 @@ class CallbackGroupJoinType(enum.Enum):
 
 
 class CallbackGroupLeave(PydanticModel):
-    user_id: int
-    self: "BaseBoolInt"
+    user_id: Optional[int] = None
+    self: Optional["BaseBoolInt"] = None
 
 
 class CallbackGroupMarket(enum.IntEnum):
@@ -1158,66 +1179,66 @@ class CallbackGroupOfficerRole(enum.IntEnum):
 
 
 class CallbackGroupOfficersEdit(PydanticModel):
-    admin_id: int
-    user_id: int
-    level_old: "CallbackGroupOfficerRole"
-    level_new: "CallbackGroupOfficerRole"
+    admin_id: Optional[int] = None
+    user_id: Optional[int] = None
+    level_old: Optional["CallbackGroupOfficerRole"] = None
+    level_new: Optional["CallbackGroupOfficerRole"] = None
 
 
 class CallbackGroupSettingsChanges(PydanticModel):
-    title: str
-    description: str
-    access: "GroupsGroupIsClosed"
-    screen_name: str
-    public_category: int
-    public_subcategory: int
-    age_limits: "GroupsGroupFullAgeLimits"
-    website: str
-    enable_status_default: "GroupsGroupWall"
-    enable_audio: "GroupsGroupAudio"
-    enable_video: "GroupsGroupVideo"
-    enable_photo: "GroupsGroupPhotos"
-    enable_market: "CallbackGroupMarket"
+    title: Optional[str] = None
+    description: Optional[str] = None
+    access: Optional["GroupsGroupIsClosed"] = None
+    screen_name: Optional[str] = None
+    public_category: Optional[int] = None
+    public_subcategory: Optional[int] = None
+    age_limits: Optional["GroupsGroupFullAgeLimits"] = None
+    website: Optional[str] = None
+    enable_status_default: Optional["GroupsGroupWall"] = None
+    enable_audio: Optional["GroupsGroupAudio"] = None
+    enable_video: Optional["GroupsGroupVideo"] = None
+    enable_photo: Optional["GroupsGroupPhotos"] = None
+    enable_market: Optional["CallbackGroupMarket"] = None
 
 
 class CallbackLikeAddRemove(PydanticModel):
-    liker_id: int
-    object_type: str
-    object_owner_id: int
-    object_id: int
-    post_id: int
-    thread_reply_id: int
+    liker_id: Optional[int] = None
+    object_type: Optional[str] = None
+    object_owner_id: Optional[int] = None
+    object_id: Optional[int] = None
+    post_id: Optional[int] = None
+    thread_reply_id: Optional[int] = None
 
 
 class CallbackMarketComment(PydanticModel):
-    id: int
-    from_id: int
-    date: int
-    text: str
-    market_owner_od: int
-    photo_id: int
+    id: Optional[int] = None
+    from_id: Optional[int] = None
+    date: Optional[int] = None
+    text: Optional[str] = None
+    market_owner_od: Optional[int] = None
+    photo_id: Optional[int] = None
 
 
 class CallbackMarketCommentDelete(PydanticModel):
-    owner_id: int
-    id: int
-    user_id: int
-    item_id: int
+    owner_id: Optional[int] = None
+    id: Optional[int] = None
+    user_id: Optional[int] = None
+    item_id: Optional[int] = None
 
 
 class CallbackMessageAllow(PydanticModel):
-    user_id: int
-    key: str
+    user_id: Optional[int] = None
+    key: Optional[str] = None
 
 
 class CallbackMessageBase(PydanticModel):
-    type: "CallbackMessageType"
-    object: object
-    group_id: int
+    type: Optional["CallbackMessageType"] = None
+    object: Optional[object] = None
+    group_id: Optional[int] = None
 
 
 class CallbackMessageDeny(PydanticModel):
-    user_id: int
+    user_id: Optional[int] = None
 
 
 class CallbackMessageType(enum.Enum):
@@ -1267,78 +1288,78 @@ class CallbackMessageType(enum.Enum):
 
 
 class CallbackPhotoComment(PydanticModel):
-    id: int
-    from_id: int
-    date: int
-    text: str
-    photo_owner_od: int
+    id: Optional[int] = None
+    from_id: Optional[int] = None
+    date: Optional[int] = None
+    text: Optional[str] = None
+    photo_owner_od: Optional[int] = None
 
 
 class CallbackPhotoCommentDelete(PydanticModel):
-    id: int
-    owner_id: int
-    user_id: int
-    photo_id: int
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    user_id: Optional[int] = None
+    photo_id: Optional[int] = None
 
 
 class CallbackPollVoteNew(PydanticModel):
-    owner_id: int
-    poll_id: int
-    option_id: int
-    user_id: int
+    owner_id: Optional[int] = None
+    poll_id: Optional[int] = None
+    option_id: Optional[int] = None
+    user_id: Optional[int] = None
 
 
 class CallbackQrScan(PydanticModel):
-    user_id: int
-    data: str
-    type: str
-    subtype: str
-    reread: bool
+    user_id: Optional[int] = None
+    data: Optional[str] = None
+    type: Optional[str] = None
+    subtype: Optional[str] = None
+    reread: Optional[bool] = None
 
 
 class CallbackUserBlock(PydanticModel):
-    admin_id: int
-    user_id: int
-    unblock_date: int
-    reason: int
-    comment: str
+    admin_id: Optional[int] = None
+    user_id: Optional[int] = None
+    unblock_date: Optional[int] = None
+    reason: Optional[int] = None
+    comment: Optional[str] = None
 
 
 class CallbackUserUnblock(PydanticModel):
-    admin_id: int
-    user_id: int
-    by_end_date: int
+    admin_id: Optional[int] = None
+    user_id: Optional[int] = None
+    by_end_date: Optional[int] = None
 
 
 class CallbackVideoComment(PydanticModel):
-    id: int
-    from_id: int
-    date: int
-    text: str
-    video_owner_od: int
+    id: Optional[int] = None
+    from_id: Optional[int] = None
+    date: Optional[int] = None
+    text: Optional[str] = None
+    video_owner_od: Optional[int] = None
 
 
 class CallbackVideoCommentDelete(PydanticModel):
-    id: int
-    owner_id: int
-    user_id: int
-    video_id: int
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    user_id: Optional[int] = None
+    video_id: Optional[int] = None
 
 
 class CallbackWallCommentDelete(PydanticModel):
-    owner_id: int
-    id: int
-    user_id: int
-    post_id: int
+    owner_id: Optional[int] = None
+    id: Optional[int] = None
+    user_id: Optional[int] = None
+    post_id: Optional[int] = None
 
 
 class CallsCall(PydanticModel):
-    duration: int
-    initiator_id: int
-    receiver_id: int
-    state: "CallsEndState"
-    time: int
-    video: bool
+    duration: Optional[int] = None
+    initiator_id: Optional[int] = None
+    receiver_id: Optional[int] = None
+    state: Optional["CallsEndState"] = None
+    time: Optional[int] = None
+    video: Optional[bool] = None
 
 
 class CallsEndState(enum.Enum):
@@ -1348,62 +1369,64 @@ class CallsEndState(enum.Enum):
 
 
 class CallsParticipants(PydanticModel):
-    list: List[int]
-    count: int
+    list: Optional[List[int]] = None
+    count: Optional[int] = None
 
 
 class CommentThread(PydanticModel):
-    can_post: bool
-    count: int
-    groups_can_post: bool
-    items: List["WallWallComment"]
-    show_reply_button: bool
+    can_post: Optional[bool] = None
+    count: Optional[int] = None
+    groups_can_post: Optional[bool] = None
+    items: Optional[List["WallWallComment"]] = None
+    show_reply_button: Optional[bool] = None
 
 
-class DatabaseCity(PydanticModel):
-    allOf: Unsupported
+class DatabaseCity(BaseObject):
+    area: Optional[str] = None
+    region: Optional[str] = None
+    important: Optional["BaseBoolInt"] = None
 
 
 class DatabaseFaculty(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class DatabaseRegion(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class DatabaseSchool(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class DatabaseStation(PydanticModel):
-    city_id: int
-    color: str
-    id: int
-    name: str
+    city_id: Optional[int] = None
+    color: Optional[str] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class DatabaseUniversity(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
 class DocsDoc(PydanticModel):
-    id: int
-    owner_id: int
-    title: str
-    size: int
-    ext: str
-    url: str
-    date: int
-    type: int
-    preview: "DocsDocPreview"
-    is_licensed: "BaseBoolInt"
-    access_key: str
-    tags: List[str]
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    title: Optional[str] = None
+    size: Optional[int] = None
+    ext: Optional[str] = None
+    url: Optional[str] = None
+    date: Optional[int] = None
+    type: Optional[int] = None
+    preview: Optional["DocsDocPreview"] = None
+    is_licensed: Optional["BaseBoolInt"] = None
+    access_key: Optional[str] = None
+    tags: Optional[List[str]] = None
 
 
 class DocsDocAttachmentType(enum.Enum):
@@ -1413,80 +1436,80 @@ class DocsDocAttachmentType(enum.Enum):
 
 
 class DocsDocPreview(PydanticModel):
-    audio_msg: "DocsDocPreviewAudioMsg"
-    graffiti: "DocsDocPreviewGraffiti"
-    photo: "DocsDocPreviewPhoto"
-    video: "DocsDocPreviewVideo"
+    audio_msg: Optional["DocsDocPreviewAudioMsg"] = None
+    graffiti: Optional["DocsDocPreviewGraffiti"] = None
+    photo: Optional["DocsDocPreviewPhoto"] = None
+    video: Optional["DocsDocPreviewVideo"] = None
 
 
 class DocsDocPreviewAudioMsg(PydanticModel):
-    duration: int
-    link_mp3: str
-    link_ogg: str
-    waveform: List[int]
+    duration: Optional[int] = None
+    link_mp3: Optional[str] = None
+    link_ogg: Optional[str] = None
+    waveform: Optional[List[int]] = None
 
 
 class DocsDocPreviewGraffiti(PydanticModel):
-    src: str
-    width: int
-    height: int
+    src: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
 
 
 class DocsDocPreviewPhoto(PydanticModel):
-    sizes: List["DocsDocPreviewPhotoSizes"]
+    sizes: Optional[List["DocsDocPreviewPhotoSizes"]] = None
 
 
 class DocsDocPreviewPhotoSizes(PydanticModel):
-    src: str
-    width: int
-    height: int
-    type: "PhotosPhotoSizesType"
+    src: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    type: Optional["PhotosPhotoSizesType"] = None
 
 
 class DocsDocPreviewVideo(PydanticModel):
-    src: str
-    width: int
-    height: int
-    file_size: int
+    src: Optional[str] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    file_size: Optional[int] = None
 
 
 class DocsDocTypes(PydanticModel):
-    id: int
-    name: str
-    count: int
+    id: Optional[int] = None
+    name: Optional[str] = None
+    count: Optional[int] = None
 
 
 class DocsDocUploadResponse(PydanticModel):
-    file: str
+    file: Optional[str] = None
 
 
 class DonutDonatorSubscriptionInfo(PydanticModel):
-    owner_id: int
-    next_payment_date: int
-    amount: int
-    status: str
+    owner_id: Optional[int] = None
+    next_payment_date: Optional[int] = None
+    amount: Optional[int] = None
+    status: Optional[str] = None
 
 
 class EventsEventAttach(PydanticModel):
-    address: str
-    button_text: str
-    friends: List[int]
-    id: int
-    is_favorite: bool
-    member_status: "GroupsGroupFullMemberStatus"
-    text: str
-    time: int
+    address: Optional[str] = None
+    button_text: Optional[str] = None
+    friends: Optional[List[int]] = None
+    id: Optional[int] = None
+    is_favorite: Optional[bool] = None
+    member_status: Optional["GroupsGroupFullMemberStatus"] = None
+    text: Optional[str] = None
+    time: Optional[int] = None
 
 
 class FaveBookmark(PydanticModel):
-    added_date: int
-    link: "BaseLink"
-    post: "WallWallpostFull"
-    product: "MarketMarketItem"
-    seen: bool
-    tags: List["FaveTag"]
-    type: "FaveBookmarkType"
-    video: "VideoVideo"
+    added_date: Optional[int] = None
+    link: Optional["BaseLink"] = None
+    post: Optional["WallWallpostFull"] = None
+    product: Optional["MarketMarketItem"] = None
+    seen: Optional[bool] = None
+    tags: Optional[List["FaveTag"]] = None
+    type: Optional["FaveBookmarkType"] = None
+    video: Optional["VideoVideo"] = None
 
 
 class FaveBookmarkType(enum.Enum):
@@ -1498,12 +1521,12 @@ class FaveBookmarkType(enum.Enum):
 
 
 class FavePage(PydanticModel):
-    description: str
-    group: "GroupsGroupFull"
-    tags: List["FaveTag"]
-    type: "FavePageType"
-    updated_date: int
-    user: "UsersUserFull"
+    description: Optional[str] = None
+    group: Optional["GroupsGroupFull"] = None
+    tags: Optional[List["FaveTag"]] = None
+    type: Optional["FavePageType"] = None
+    updated_date: Optional[int] = None
+    user: Optional["UsersUserFull"] = None
 
 
 class FavePageType(enum.Enum):
@@ -1513,18 +1536,18 @@ class FavePageType(enum.Enum):
 
 
 class FaveTag(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
-class FriendsFriendExtendedStatus(PydanticModel):
-    allOf: Unsupported
+class FriendsFriendExtendedStatus(FriendsFriendStatus):
+    is_request_unread: Optional[bool] = None
 
 
 class FriendsFriendStatus(PydanticModel):
-    friend_status: "FriendsFriendStatusStatus"
-    sign: str
-    user_id: int
+    friend_status: Optional["FriendsFriendStatusStatus"] = None
+    sign: Optional[str] = None
+    user_id: Optional[int] = None
 
 
 class FriendsFriendStatusStatus(enum.IntEnum):
@@ -1535,50 +1558,50 @@ class FriendsFriendStatusStatus(enum.IntEnum):
 
 
 class FriendsFriendsList(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class FriendsMutualFriend(PydanticModel):
-    common_count: int
-    common_friends: List[int]
-    id: int
+    common_count: Optional[int] = None
+    common_friends: Optional[List[int]] = None
+    id: Optional[int] = None
 
 
 class FriendsRequests(PydanticModel):
-    _from: str
-    mutual: "FriendsRequestsMutual"
-    user_id: int
+    _from: Optional[str] = None
+    mutual: Optional["FriendsRequestsMutual"] = None
+    user_id: Optional[int] = None
 
 
 class FriendsRequestsMutual(PydanticModel):
-    count: int
-    users: List[int]
+    count: Optional[int] = None
+    users: Optional[List[int]] = None
 
 
 class FriendsRequestsXtrMessage(PydanticModel):
-    _from: str
-    message: str
-    mutual: "FriendsRequestsMutual"
-    user_id: int
+    _from: Optional[str] = None
+    message: Optional[str] = None
+    mutual: Optional["FriendsRequestsMutual"] = None
+    user_id: Optional[int] = None
 
 
-class FriendsUserXtrLists(PydanticModel):
-    allOf: Unsupported
+class FriendsUserXtrLists(UsersUserFull):
+    lists: Optional[List[int]] = None
 
 
-class FriendsUserXtrPhone(PydanticModel):
-    allOf: Unsupported
+class FriendsUserXtrPhone(UsersUserFull):
+    phone: Optional[str] = None
 
 
 class GiftsGift(PydanticModel):
-    date: int
-    from_id: int
-    gift: "GiftsLayout"
-    gift_hash: str
-    id: int
-    message: str
-    privacy: "GiftsGiftPrivacy"
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    gift: Optional["GiftsLayout"] = None
+    gift_hash: Optional[str] = None
+    id: Optional[int] = None
+    message: Optional[str] = None
+    privacy: Optional["GiftsGiftPrivacy"] = None
 
 
 class GiftsGiftPrivacy(enum.IntEnum):
@@ -1588,49 +1611,49 @@ class GiftsGiftPrivacy(enum.IntEnum):
 
 
 class GiftsLayout(PydanticModel):
-    id: int
-    thumb_512: str
-    thumb_256: str
-    thumb_48: str
-    thumb_96: str
-    stickers_product_id: int
-    is_stickers_style: bool
-    build_id: str
-    keywords: str
+    id: Optional[int] = None
+    thumb_512: Optional[str] = None
+    thumb_256: Optional[str] = None
+    thumb_48: Optional[str] = None
+    thumb_96: Optional[str] = None
+    stickers_product_id: Optional[int] = None
+    is_stickers_style: Optional[bool] = None
+    build_id: Optional[str] = None
+    keywords: Optional[str] = None
 
 
 class GroupsAddress(PydanticModel):
-    additional_address: str
-    address: str
-    city_id: int
-    country_id: int
-    distance: int
-    id: int
-    latitude: int
-    longitude: int
-    metro_station_id: int
-    phone: str
-    time_offset: int
-    timetable: "GroupsAddressTimetable"
-    title: str
-    work_info_status: "GroupsAddressWorkInfoStatus"
+    additional_address: Optional[str] = None
+    address: Optional[str] = None
+    city_id: Optional[int] = None
+    country_id: Optional[int] = None
+    distance: Optional[int] = None
+    id: Optional[int] = None
+    latitude: Optional[int] = None
+    longitude: Optional[int] = None
+    metro_station_id: Optional[int] = None
+    phone: Optional[str] = None
+    time_offset: Optional[int] = None
+    timetable: Optional["GroupsAddressTimetable"] = None
+    title: Optional[str] = None
+    work_info_status: Optional["GroupsAddressWorkInfoStatus"] = None
 
 
 class GroupsAddressTimetable(PydanticModel):
-    fri: "GroupsAddressTimetableDay"
-    mon: "GroupsAddressTimetableDay"
-    sat: "GroupsAddressTimetableDay"
-    sun: "GroupsAddressTimetableDay"
-    thu: "GroupsAddressTimetableDay"
-    tue: "GroupsAddressTimetableDay"
-    wed: "GroupsAddressTimetableDay"
+    fri: Optional["GroupsAddressTimetableDay"] = None
+    mon: Optional["GroupsAddressTimetableDay"] = None
+    sat: Optional["GroupsAddressTimetableDay"] = None
+    sun: Optional["GroupsAddressTimetableDay"] = None
+    thu: Optional["GroupsAddressTimetableDay"] = None
+    tue: Optional["GroupsAddressTimetableDay"] = None
+    wed: Optional["GroupsAddressTimetableDay"] = None
 
 
 class GroupsAddressTimetableDay(PydanticModel):
-    break_close_time: int
-    break_open_time: int
-    close_time: int
-    open_time: int
+    break_close_time: Optional[int] = None
+    break_open_time: Optional[int] = None
+    close_time: Optional[int] = None
+    open_time: Optional[int] = None
 
 
 class GroupsAddressWorkInfoStatus(enum.Enum):
@@ -1642,18 +1665,18 @@ class GroupsAddressWorkInfoStatus(enum.Enum):
 
 
 class GroupsAddressesInfo(PydanticModel):
-    is_enabled: bool
-    main_address_id: int
+    is_enabled: Optional[bool] = None
+    main_address_id: Optional[int] = None
 
 
 class GroupsBanInfo(PydanticModel):
-    admin_id: int
-    comment: str
-    comment_visible: bool
-    is_closed: bool
-    date: int
-    end_date: int
-    reason: "GroupsBanInfoReason"
+    admin_id: Optional[int] = None
+    comment: Optional[str] = None
+    comment_visible: Optional[bool] = None
+    is_closed: Optional[bool] = None
+    date: Optional[int] = None
+    end_date: Optional[int] = None
+    reason: Optional["GroupsBanInfoReason"] = None
 
 
 class GroupsBanInfoReason(enum.IntEnum):
@@ -1668,41 +1691,41 @@ GroupsBannedItem = GroupsOwnerXtrBanInfo
 
 
 class GroupsCallbackServer(PydanticModel):
-    id: int
-    title: str
-    creator_id: int
-    url: str
-    secret_key: str
-    status: str
+    id: Optional[int] = None
+    title: Optional[str] = None
+    creator_id: Optional[int] = None
+    url: Optional[str] = None
+    secret_key: Optional[str] = None
+    status: Optional[str] = None
 
 
 class GroupsCallbackSettings(PydanticModel):
-    api_version: str
-    events: "GroupsLongPollEvents"
+    api_version: Optional[str] = None
+    events: Optional["GroupsLongPollEvents"] = None
 
 
 class GroupsContactsItem(PydanticModel):
-    user_id: int
-    desc: str
-    phone: str
-    email: str
+    user_id: Optional[int] = None
+    desc: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
 
 
 class GroupsCountersGroup(PydanticModel):
-    addresses: int
-    albums: int
-    audios: int
-    audio_playlists: int
-    docs: int
-    market: int
-    photos: int
-    topics: int
-    videos: int
+    addresses: Optional[int] = None
+    albums: Optional[int] = None
+    audios: Optional[int] = None
+    audio_playlists: Optional[int] = None
+    docs: Optional[int] = None
+    market: Optional[int] = None
+    photos: Optional[int] = None
+    topics: Optional[int] = None
+    videos: Optional[int] = None
 
 
 class GroupsCover(PydanticModel):
-    enabled: "BaseBoolInt"
-    images: List["BaseImage"]
+    enabled: Optional["BaseBoolInt"] = None
+    images: Optional[List["BaseImage"]] = None
 
 
 class GroupsFields(enum.Enum):
@@ -1780,21 +1803,21 @@ class GroupsFilter(enum.Enum):
 
 
 class GroupsGroup(PydanticModel):
-    id: int
-    name: str
-    screen_name: str
-    is_closed: "GroupsGroupIsClosed"
-    type: "GroupsGroupType"
-    is_admin: "BaseBoolInt"
-    admin_level: "GroupsGroupAdminLevel"
-    is_member: "BaseBoolInt"
-    is_advertiser: "BaseBoolInt"
-    start_date: int
-    finish_date: int
-    deactivated: str
-    photo_50: str
-    photo_100: str
-    photo_200: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    screen_name: Optional[str] = None
+    is_closed: Optional["GroupsGroupIsClosed"] = None
+    type: Optional["GroupsGroupType"] = None
+    is_admin: Optional["BaseBoolInt"] = None
+    admin_level: Optional["GroupsGroupAdminLevel"] = None
+    is_member: Optional["BaseBoolInt"] = None
+    is_advertiser: Optional["BaseBoolInt"] = None
+    start_date: Optional[int] = None
+    finish_date: Optional[int] = None
+    deactivated: Optional[str] = None
+    photo_50: Optional[str] = None
+    photo_100: Optional[str] = None
+    photo_200: Optional[str] = None
 
 
 class GroupsGroupAccess(enum.IntEnum):
@@ -1816,11 +1839,11 @@ class GroupsGroupAgeLimits(enum.IntEnum):
 
 
 class GroupsGroupAttach(PydanticModel):
-    id: int
-    text: str
-    status: str
-    size: int
-    is_favorite: bool
+    id: Optional[int] = None
+    text: Optional[str] = None
+    status: Optional[str] = None
+    size: Optional[int] = None
+    is_favorite: Optional[bool] = None
 
 
 class GroupsGroupAudio(enum.IntEnum):
@@ -1830,28 +1853,28 @@ class GroupsGroupAudio(enum.IntEnum):
 
 
 class GroupsGroupBanInfo(PydanticModel):
-    comment: str
-    end_date: int
-    reason: "GroupsBanInfoReason"
+    comment: Optional[str] = None
+    end_date: Optional[int] = None
+    reason: Optional["GroupsBanInfoReason"] = None
 
 
 class GroupsGroupCategory(PydanticModel):
-    id: int
-    name: str
-    subcategories: List["BaseObjectWithName"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+    subcategories: Optional[List["BaseObjectWithName"]] = None
 
 
 class GroupsGroupCategoryFull(PydanticModel):
-    id: int
-    name: str
-    page_count: int
-    page_previews: List["GroupsGroup"]
-    subcategories: List["GroupsGroupCategory"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+    page_count: Optional[int] = None
+    page_previews: Optional[List["GroupsGroup"]] = None
+    subcategories: Optional[List["GroupsGroupCategory"]] = None
 
 
 class GroupsGroupCategoryType(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class GroupsGroupDocs(enum.IntEnum):
@@ -1860,8 +1883,62 @@ class GroupsGroupDocs(enum.IntEnum):
     LIMITED = 2
 
 
-class GroupsGroupFull(PydanticModel):
-    allOf: Unsupported
+class GroupsGroupFull(GroupsGroup):
+    market: Optional["GroupsMarketInfo"] = None
+    member_status: Optional["GroupsGroupFullMemberStatus"] = None
+    is_adult: Optional["BaseBoolInt"] = None
+    is_hidden_from_feed: Optional["BaseBoolInt"] = None
+    is_favorite: Optional["BaseBoolInt"] = None
+    is_subscribed: Optional["BaseBoolInt"] = None
+    city: Optional["BaseObject"] = None
+    country: Optional["BaseCountry"] = None
+    verified: Optional["BaseBoolInt"] = None
+    description: Optional[str] = None
+    wiki_page: Optional[str] = None
+    members_count: Optional[int] = None
+    requests_count: Optional[int] = None
+    video_live_level: Optional[int] = None
+    video_live_count: Optional[int] = None
+    clips_count: Optional[int] = None
+    counters: Optional["GroupsCountersGroup"] = None
+    cover: Optional["GroupsCover"] = None
+    can_post: Optional["BaseBoolInt"] = None
+    can_suggest: Optional["BaseBoolInt"] = None
+    can_upload_story: Optional["BaseBoolInt"] = None
+    can_upload_doc: Optional["BaseBoolInt"] = None
+    can_upload_video: Optional["BaseBoolInt"] = None
+    can_see_all_posts: Optional["BaseBoolInt"] = None
+    can_create_topic: Optional["BaseBoolInt"] = None
+    activity: Optional[str] = None
+    fixed_post: Optional[int] = None
+    has_photo: Optional["BaseBoolInt"] = None
+    crop_photo: Optional["BaseCropPhoto"] = None
+    status: Optional[str] = None
+    status_audio: Optional["AudioAudio"] = None
+    main_album_id: Optional[int] = None
+    links: Optional[List["GroupsLinksItem"]] = None
+    contacts: Optional[List["GroupsContactsItem"]] = None
+    wall: Optional[int] = None
+    site: Optional[str] = None
+    main_section: Optional["GroupsGroupFullMainSection"] = None
+    secondary_section: Optional[int] = None
+    trending: Optional["BaseBoolInt"] = None
+    can_message: Optional["BaseBoolInt"] = None
+    is_messages_blocked: Optional["BaseBoolInt"] = None
+    can_send_notify: Optional["BaseBoolInt"] = None
+    online_status: Optional["GroupsOnlineStatus"] = None
+    invited_by: Optional[int] = None
+    age_limits: Optional["GroupsGroupFullAgeLimits"] = None
+    ban_info: Optional["GroupsGroupBanInfo"] = None
+    has_market_app: Optional[bool] = None
+    using_vkpay_market_app: Optional[bool] = None
+    has_group_channel: Optional[bool] = None
+    addresses: Optional["GroupsAddressesInfo"] = None
+    is_subscribed_podcasts: Optional[bool] = None
+    can_subscribe_podcasts: Optional[bool] = None
+    can_subscribe_posts: Optional[bool] = None
+    live_covers: Optional["GroupsLiveCovers"] = None
+    stories_archive_count: Optional[int] = None
 
 
 class GroupsGroupFullAgeLimits(enum.IntEnum):
@@ -1895,12 +1972,12 @@ class GroupsGroupIsClosed(enum.IntEnum):
 
 
 class GroupsGroupLink(PydanticModel):
-    name: str
-    desc: str
-    edit_title: "BaseBoolInt"
-    id: int
-    image_processing: "BaseBoolInt"
-    url: str
+    name: Optional[str] = None
+    desc: Optional[str] = None
+    edit_title: Optional["BaseBoolInt"] = None
+    id: Optional[int] = None
+    image_processing: Optional["BaseBoolInt"] = None
+    url: Optional[str] = None
 
 
 class GroupsGroupMarketCurrency(enum.IntEnum):
@@ -1918,9 +1995,9 @@ class GroupsGroupPhotos(enum.IntEnum):
 
 
 class GroupsGroupPublicCategoryList(PydanticModel):
-    id: int
-    name: str
-    subcategories: List["GroupsGroupCategoryType"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+    subcategories: Optional[List["GroupsGroupCategoryType"]] = None
 
 
 class GroupsGroupRole(enum.Enum):
@@ -1982,10 +2059,10 @@ class GroupsGroupSuggestedPrivacy(enum.IntEnum):
 
 
 class GroupsGroupTag(PydanticModel):
-    id: int
-    name: str
-    color: str
-    uses: int
+    id: Optional[int] = None
+    name: Optional[str] = None
+    color: Optional[str] = None
+    uses: Optional[int] = None
 
 
 class GroupsGroupTopics(enum.IntEnum):
@@ -2020,99 +2097,99 @@ class GroupsGroupWiki(enum.IntEnum):
 
 
 class GroupsGroupsArray(PydanticModel):
-    count: int
-    items: List[int]
+    count: Optional[int] = None
+    items: Optional[List[int]] = None
 
 
 class GroupsLinksItem(PydanticModel):
-    desc: str
-    edit_title: "BaseBoolInt"
-    id: int
-    name: str
-    photo_100: str
-    photo_50: str
-    url: str
+    desc: Optional[str] = None
+    edit_title: Optional["BaseBoolInt"] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    photo_100: Optional[str] = None
+    photo_50: Optional[str] = None
+    url: Optional[str] = None
 
 
 class GroupsLiveCovers(PydanticModel):
-    is_enabled: bool
-    is_scalable: bool
-    story_ids: List[str]
+    is_enabled: Optional[bool] = None
+    is_scalable: Optional[bool] = None
+    story_ids: Optional[List[str]] = None
 
 
 class GroupsLongPollEvents(PydanticModel):
-    audio_new: "BaseBoolInt"
-    board_post_delete: "BaseBoolInt"
-    board_post_edit: "BaseBoolInt"
-    board_post_new: "BaseBoolInt"
-    board_post_restore: "BaseBoolInt"
-    group_change_photo: "BaseBoolInt"
-    group_change_settings: "BaseBoolInt"
-    group_join: "BaseBoolInt"
-    group_leave: "BaseBoolInt"
-    group_officers_edit: "BaseBoolInt"
-    lead_forms_new: "BaseBoolInt"
-    market_comment_delete: "BaseBoolInt"
-    market_comment_edit: "BaseBoolInt"
-    market_comment_new: "BaseBoolInt"
-    market_comment_restore: "BaseBoolInt"
-    market_order_new: "BaseBoolInt"
-    market_order_edit: "BaseBoolInt"
-    message_allow: "BaseBoolInt"
-    message_deny: "BaseBoolInt"
-    message_new: "BaseBoolInt"
-    message_read: "BaseBoolInt"
-    message_reply: "BaseBoolInt"
-    message_typing_state: "BaseBoolInt"
-    message_edit: "BaseBoolInt"
-    photo_comment_delete: "BaseBoolInt"
-    photo_comment_edit: "BaseBoolInt"
-    photo_comment_new: "BaseBoolInt"
-    photo_comment_restore: "BaseBoolInt"
-    photo_new: "BaseBoolInt"
-    poll_vote_new: "BaseBoolInt"
-    user_block: "BaseBoolInt"
-    user_unblock: "BaseBoolInt"
-    video_comment_delete: "BaseBoolInt"
-    video_comment_edit: "BaseBoolInt"
-    video_comment_new: "BaseBoolInt"
-    video_comment_restore: "BaseBoolInt"
-    video_new: "BaseBoolInt"
-    wall_post_new: "BaseBoolInt"
-    wall_reply_delete: "BaseBoolInt"
-    wall_reply_edit: "BaseBoolInt"
-    wall_reply_new: "BaseBoolInt"
-    wall_reply_restore: "BaseBoolInt"
-    wall_repost: "BaseBoolInt"
-    donut_subscription_create: "BaseBoolInt"
-    donut_subscription_prolonged: "BaseBoolInt"
-    donut_subscription_cancelled: "BaseBoolInt"
-    donut_subscription_expired: "BaseBoolInt"
-    donut_subscription_price_changed: "BaseBoolInt"
-    donut_money_withdraw: "BaseBoolInt"
-    donut_money_withdraw_error: "BaseBoolInt"
+    audio_new: Optional["BaseBoolInt"] = None
+    board_post_delete: Optional["BaseBoolInt"] = None
+    board_post_edit: Optional["BaseBoolInt"] = None
+    board_post_new: Optional["BaseBoolInt"] = None
+    board_post_restore: Optional["BaseBoolInt"] = None
+    group_change_photo: Optional["BaseBoolInt"] = None
+    group_change_settings: Optional["BaseBoolInt"] = None
+    group_join: Optional["BaseBoolInt"] = None
+    group_leave: Optional["BaseBoolInt"] = None
+    group_officers_edit: Optional["BaseBoolInt"] = None
+    lead_forms_new: Optional["BaseBoolInt"] = None
+    market_comment_delete: Optional["BaseBoolInt"] = None
+    market_comment_edit: Optional["BaseBoolInt"] = None
+    market_comment_new: Optional["BaseBoolInt"] = None
+    market_comment_restore: Optional["BaseBoolInt"] = None
+    market_order_new: Optional["BaseBoolInt"] = None
+    market_order_edit: Optional["BaseBoolInt"] = None
+    message_allow: Optional["BaseBoolInt"] = None
+    message_deny: Optional["BaseBoolInt"] = None
+    message_new: Optional["BaseBoolInt"] = None
+    message_read: Optional["BaseBoolInt"] = None
+    message_reply: Optional["BaseBoolInt"] = None
+    message_typing_state: Optional["BaseBoolInt"] = None
+    message_edit: Optional["BaseBoolInt"] = None
+    photo_comment_delete: Optional["BaseBoolInt"] = None
+    photo_comment_edit: Optional["BaseBoolInt"] = None
+    photo_comment_new: Optional["BaseBoolInt"] = None
+    photo_comment_restore: Optional["BaseBoolInt"] = None
+    photo_new: Optional["BaseBoolInt"] = None
+    poll_vote_new: Optional["BaseBoolInt"] = None
+    user_block: Optional["BaseBoolInt"] = None
+    user_unblock: Optional["BaseBoolInt"] = None
+    video_comment_delete: Optional["BaseBoolInt"] = None
+    video_comment_edit: Optional["BaseBoolInt"] = None
+    video_comment_new: Optional["BaseBoolInt"] = None
+    video_comment_restore: Optional["BaseBoolInt"] = None
+    video_new: Optional["BaseBoolInt"] = None
+    wall_post_new: Optional["BaseBoolInt"] = None
+    wall_reply_delete: Optional["BaseBoolInt"] = None
+    wall_reply_edit: Optional["BaseBoolInt"] = None
+    wall_reply_new: Optional["BaseBoolInt"] = None
+    wall_reply_restore: Optional["BaseBoolInt"] = None
+    wall_repost: Optional["BaseBoolInt"] = None
+    donut_subscription_create: Optional["BaseBoolInt"] = None
+    donut_subscription_prolonged: Optional["BaseBoolInt"] = None
+    donut_subscription_cancelled: Optional["BaseBoolInt"] = None
+    donut_subscription_expired: Optional["BaseBoolInt"] = None
+    donut_subscription_price_changed: Optional["BaseBoolInt"] = None
+    donut_money_withdraw: Optional["BaseBoolInt"] = None
+    donut_money_withdraw_error: Optional["BaseBoolInt"] = None
 
 
 class GroupsLongPollServer(PydanticModel):
-    key: str
-    server: str
-    ts: str
+    key: Optional[str] = None
+    server: Optional[str] = None
+    ts: Optional[str] = None
 
 
 class GroupsLongPollSettings(PydanticModel):
-    api_version: str
-    events: "GroupsLongPollEvents"
-    is_enabled: bool
+    api_version: Optional[str] = None
+    events: Optional["GroupsLongPollEvents"] = None
+    is_enabled: Optional[bool] = None
 
 
 class GroupsMarketInfo(PydanticModel):
-    contact_id: int
-    currency: "MarketCurrency"
-    currency_text: str
-    enabled: "BaseBoolInt"
-    main_album_id: int
-    price_max: str
-    price_min: str
+    contact_id: Optional[int] = None
+    currency: Optional["MarketCurrency"] = None
+    currency_text: Optional[str] = None
+    enabled: Optional["BaseBoolInt"] = None
+    main_album_id: Optional[int] = None
+    price_max: Optional[str] = None
+    price_min: Optional[str] = None
 
 
 class GroupsMarketState(enum.Enum):
@@ -2122,9 +2199,9 @@ class GroupsMarketState(enum.Enum):
 
 
 class GroupsMemberRole(PydanticModel):
-    id: int
-    permissions: List["GroupsMemberRolePermission"]
-    role: "GroupsMemberRoleStatus"
+    id: Optional[int] = None
+    permissions: Optional[List["GroupsMemberRolePermission"]] = None
+    role: Optional["GroupsMemberRoleStatus"] = None
 
 
 class GroupsMemberRolePermission(enum.Enum):
@@ -2139,22 +2216,22 @@ class GroupsMemberRoleStatus(enum.Enum):
 
 
 class GroupsMemberStatus(PydanticModel):
-    member: "BaseBoolInt"
-    user_id: int
+    member: Optional["BaseBoolInt"] = None
+    user_id: Optional[int] = None
 
 
 class GroupsMemberStatusFull(PydanticModel):
-    can_invite: "BaseBoolInt"
-    can_recall: "BaseBoolInt"
-    invitation: "BaseBoolInt"
-    member: "BaseBoolInt"
-    request: "BaseBoolInt"
-    user_id: int
+    can_invite: Optional["BaseBoolInt"] = None
+    can_recall: Optional["BaseBoolInt"] = None
+    invitation: Optional["BaseBoolInt"] = None
+    member: Optional["BaseBoolInt"] = None
+    request: Optional["BaseBoolInt"] = None
+    user_id: Optional[int] = None
 
 
 class GroupsOnlineStatus(PydanticModel):
-    minutes: int
-    status: "GroupsOnlineStatusType"
+    minutes: Optional[int] = None
+    status: Optional["GroupsOnlineStatusType"] = None
 
 
 class GroupsOnlineStatusType(enum.Enum):
@@ -2164,10 +2241,10 @@ class GroupsOnlineStatusType(enum.Enum):
 
 
 class GroupsOwnerXtrBanInfo(PydanticModel):
-    ban_info: "GroupsBanInfo"
-    group: "GroupsGroup"
-    profile: "UsersUser"
-    type: "GroupsOwnerXtrBanInfoType"
+    ban_info: Optional["GroupsBanInfo"] = None
+    group: Optional["GroupsGroup"] = None
+    profile: Optional["UsersUser"] = None
+    type: Optional["GroupsOwnerXtrBanInfoType"] = None
 
 
 class GroupsOwnerXtrBanInfoType(enum.Enum):
@@ -2176,10 +2253,10 @@ class GroupsOwnerXtrBanInfoType(enum.Enum):
 
 
 class GroupsProfileItem(PydanticModel):
-    id: int
-    photo_50: str
-    photo_100: str
-    first_name: str
+    id: Optional[int] = None
+    photo_50: Optional[str] = None
+    photo_100: Optional[str] = None
+    first_name: Optional[str] = None
 
 
 class GroupsRoleOptions(enum.Enum):
@@ -2190,22 +2267,22 @@ class GroupsRoleOptions(enum.Enum):
 
 
 class GroupsSettingsTwitter(PydanticModel):
-    status: str
-    name: str
+    status: Optional[str] = None
+    name: Optional[str] = None
 
 
 class GroupsSubjectItem(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class GroupsTokenPermissionSetting(PydanticModel):
-    name: str
-    setting: int
+    name: Optional[str] = None
+    setting: Optional[int] = None
 
 
-class GroupsUserXtrRole(PydanticModel):
-    allOf: Unsupported
+class GroupsUserXtrRole(UsersUserFull):
+    role: Optional["GroupsRoleOptions"] = None
 
 
 class LikesType(enum.Enum):
@@ -2224,63 +2301,63 @@ class LikesType(enum.Enum):
 
 
 class LinkTargetObject(PydanticModel):
-    type: str
-    owner_id: int
-    item_id: int
+    type: Optional[str] = None
+    owner_id: Optional[int] = None
+    item_id: Optional[int] = None
 
 
 class MarketCurrency(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class MarketMarketAlbum(PydanticModel):
-    count: int
-    id: int
-    owner_id: int
-    photo: "PhotosPhoto"
-    title: str
-    updated_time: int
+    count: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo: Optional["PhotosPhoto"] = None
+    title: Optional[str] = None
+    updated_time: Optional[int] = None
 
 
 MarketMarketCategory = MarketMarketCategoryOld
 
 
 class MarketMarketCategoryNested(PydanticModel):
-    id: int
-    name: str
-    parent: "MarketMarketCategoryNested"
+    id: Optional[int] = None
+    name: Optional[str] = None
+    parent: Optional["MarketMarketCategoryNested"] = None
 
 
 class MarketMarketCategoryOld(PydanticModel):
-    id: int
-    name: str
-    section: "MarketSection"
+    id: Optional[int] = None
+    name: Optional[str] = None
+    section: Optional["MarketSection"] = None
 
 
 class MarketMarketCategoryTree(PydanticModel):
-    id: int
-    name: str
-    children: List["MarketMarketCategoryTree"]
+    id: Optional[int] = None
+    name: Optional[str] = None
+    children: Optional[List["MarketMarketCategoryTree"]] = None
 
 
 class MarketMarketItem(PydanticModel):
-    access_key: str
-    availability: "MarketMarketItemAvailability"
-    button_title: str
-    category: "MarketMarketCategory"
-    date: int
-    description: str
-    external_id: str
-    id: int
-    is_favorite: bool
-    owner_id: int
-    price: "MarketPrice"
-    thumb_photo: str
-    title: str
-    url: str
-    variants_grouping_id: int
-    is_main_variant: bool
+    access_key: Optional[str] = None
+    availability: Optional["MarketMarketItemAvailability"] = None
+    button_title: Optional[str] = None
+    category: Optional["MarketMarketCategory"] = None
+    date: Optional[int] = None
+    description: Optional[str] = None
+    external_id: Optional[str] = None
+    id: Optional[int] = None
+    is_favorite: Optional[bool] = None
+    owner_id: Optional[int] = None
+    price: Optional["MarketPrice"] = None
+    thumb_photo: Optional[str] = None
+    title: Optional[str] = None
+    url: Optional[str] = None
+    variants_grouping_id: Optional[int] = None
+    is_main_variant: Optional[bool] = None
 
 
 class MarketMarketItemAvailability(enum.IntEnum):
@@ -2289,177 +2366,186 @@ class MarketMarketItemAvailability(enum.IntEnum):
     UNAVAILABLE = 2
 
 
-class MarketMarketItemFull(PydanticModel):
-    allOf: Unsupported
+class MarketMarketItemFull(MarketMarketItem):
+    albums_ids: Optional[List[int]] = None
+    photos: Optional[List["PhotosPhoto"]] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    can_repost: Optional["BaseBoolInt"] = None
+    likes: Optional["BaseLikes"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    views_count: Optional[int] = None
+    wishlist_item_id: Optional[int] = None
+    cancel_info: Optional["BaseLink"] = None
+    user_agreement_info: Optional[str] = None
 
 
 class MarketOrder(PydanticModel):
-    id: int
-    group_id: int
-    user_id: int
-    display_order_id: str
-    date: int
-    status: int
-    items_count: int
-    track_number: str
-    track_link: str
-    comment: str
-    address: str
-    merchant_comment: str
-    weight: int
-    total_price: "MarketPrice"
-    preview_order_items: List["MarketOrderItem"]
-    cancel_info: "BaseLink"
+    id: Optional[int] = None
+    group_id: Optional[int] = None
+    user_id: Optional[int] = None
+    display_order_id: Optional[str] = None
+    date: Optional[int] = None
+    status: Optional[int] = None
+    items_count: Optional[int] = None
+    track_number: Optional[str] = None
+    track_link: Optional[str] = None
+    comment: Optional[str] = None
+    address: Optional[str] = None
+    merchant_comment: Optional[str] = None
+    weight: Optional[int] = None
+    total_price: Optional["MarketPrice"] = None
+    preview_order_items: Optional[List["MarketOrderItem"]] = None
+    cancel_info: Optional["BaseLink"] = None
 
 
 class MarketOrderItem(PydanticModel):
-    owner_id: int
-    item_id: int
-    price: "MarketPrice"
-    quantity: int
-    item: "MarketMarketItem"
-    title: str
-    photo: "PhotosPhoto"
-    variants: List[str]
+    owner_id: Optional[int] = None
+    item_id: Optional[int] = None
+    price: Optional["MarketPrice"] = None
+    quantity: Optional[int] = None
+    item: Optional["MarketMarketItem"] = None
+    title: Optional[str] = None
+    photo: Optional["PhotosPhoto"] = None
+    variants: Optional[List[str]] = None
 
 
 class MarketPrice(PydanticModel):
-    amount: str
-    currency: "MarketCurrency"
-    discount_rate: int
-    old_amount: str
-    text: str
-    old_amount_text: str
+    amount: Optional[str] = None
+    currency: Optional["MarketCurrency"] = None
+    discount_rate: Optional[int] = None
+    old_amount: Optional[str] = None
+    text: Optional[str] = None
+    old_amount_text: Optional[str] = None
 
 
 class MarketSection(PydanticModel):
-    id: int
-    name: str
+    id: Optional[int] = None
+    name: Optional[str] = None
 
 
 class MediaRestriction(PydanticModel):
-    text: str
-    title: str
-    button: "VideoRestrictionButton"
-    always_shown: "BaseBoolInt"
-    blur: "BaseBoolInt"
-    can_play: "BaseBoolInt"
-    can_preview: "BaseBoolInt"
-    card_icon: List["BaseImage"]
-    list_icon: List["BaseImage"]
+    text: Optional[str] = None
+    title: Optional[str] = None
+    button: Optional["VideoRestrictionButton"] = None
+    always_shown: Optional["BaseBoolInt"] = None
+    blur: Optional["BaseBoolInt"] = None
+    can_play: Optional["BaseBoolInt"] = None
+    can_preview: Optional["BaseBoolInt"] = None
+    card_icon: Optional[List["BaseImage"]] = None
+    list_icon: Optional[List["BaseImage"]] = None
 
 
 class MessagesAudioMessage(PydanticModel):
-    access_key: str
-    transcript_error: int
-    duration: int
-    id: int
-    link_mp3: str
-    link_ogg: str
-    owner_id: int
-    waveform: List[int]
+    access_key: Optional[str] = None
+    transcript_error: Optional[int] = None
+    duration: Optional[int] = None
+    id: Optional[int] = None
+    link_mp3: Optional[str] = None
+    link_ogg: Optional[str] = None
+    owner_id: Optional[int] = None
+    waveform: Optional[List[int]] = None
 
 
 class MessagesChat(PydanticModel):
-    admin_id: int
-    id: int
-    kicked: "BaseBoolInt"
-    left: "BaseBoolInt"
-    photo_100: str
-    photo_200: str
-    photo_50: str
-    push_settings: "MessagesChatPushSettings"
-    title: str
-    type: str
-    users: List[int]
-    is_default_photo: bool
+    admin_id: Optional[int] = None
+    id: Optional[int] = None
+    kicked: Optional["BaseBoolInt"] = None
+    left: Optional["BaseBoolInt"] = None
+    photo_100: Optional[str] = None
+    photo_200: Optional[str] = None
+    photo_50: Optional[str] = None
+    push_settings: Optional["MessagesChatPushSettings"] = None
+    title: Optional[str] = None
+    type: Optional[str] = None
+    users: Optional[List[int]] = None
+    is_default_photo: Optional[bool] = None
 
 
 class MessagesChatFull(PydanticModel):
-    admin_id: int
-    id: int
-    kicked: "BaseBoolInt"
-    left: "BaseBoolInt"
-    photo_100: str
-    photo_200: str
-    photo_50: str
-    push_settings: "MessagesChatPushSettings"
-    title: str
-    type: str
-    users: List["MessagesUserXtrInvitedBy"]
+    admin_id: Optional[int] = None
+    id: Optional[int] = None
+    kicked: Optional["BaseBoolInt"] = None
+    left: Optional["BaseBoolInt"] = None
+    photo_100: Optional[str] = None
+    photo_200: Optional[str] = None
+    photo_50: Optional[str] = None
+    push_settings: Optional["MessagesChatPushSettings"] = None
+    title: Optional[str] = None
+    type: Optional[str] = None
+    users: Optional[List["MessagesUserXtrInvitedBy"]] = None
 
 
 class MessagesChatPreview(PydanticModel):
-    admin_id: int
-    joined: bool
-    local_id: int
-    members: List[int]
-    members_count: int
-    title: str
-    is_member: bool
+    admin_id: Optional[int] = None
+    joined: Optional[bool] = None
+    local_id: Optional[int] = None
+    members: Optional[List[int]] = None
+    members_count: Optional[int] = None
+    title: Optional[str] = None
+    is_member: Optional[bool] = None
 
 
 class MessagesChatPushSettings(PydanticModel):
-    disabled_until: int
-    sound: "BaseBoolInt"
+    disabled_until: Optional[int] = None
+    sound: Optional["BaseBoolInt"] = None
 
 
 class MessagesChatRestrictions(PydanticModel):
-    admins_promote_users: bool
-    only_admins_edit_info: bool
-    only_admins_edit_pin: bool
-    only_admins_invite: bool
-    only_admins_kick: bool
+    admins_promote_users: Optional[bool] = None
+    only_admins_edit_info: Optional[bool] = None
+    only_admins_edit_pin: Optional[bool] = None
+    only_admins_invite: Optional[bool] = None
+    only_admins_kick: Optional[bool] = None
 
 
 class MessagesChatSettings(PydanticModel):
-    members_count: int
-    friends_count: int
-    owner_id: int
-    title: str
-    pinned_message: "MessagesPinnedMessage"
-    state: "MessagesChatSettingsState"
-    photo: "MessagesChatSettingsPhoto"
-    admin_ids: List[int]
-    active_ids: List[int]
-    is_group_channel: bool
-    acl: "MessagesChatSettingsAcl"
-    permissions: "MessagesChatSettingsPermissions"
-    is_disappearing: bool
-    theme: str
-    disappearing_chat_link: str
-    is_service: bool
+    members_count: Optional[int] = None
+    friends_count: Optional[int] = None
+    owner_id: Optional[int] = None
+    title: Optional[str] = None
+    pinned_message: Optional["MessagesPinnedMessage"] = None
+    state: Optional["MessagesChatSettingsState"] = None
+    photo: Optional["MessagesChatSettingsPhoto"] = None
+    admin_ids: Optional[List[int]] = None
+    active_ids: Optional[List[int]] = None
+    is_group_channel: Optional[bool] = None
+    acl: Optional["MessagesChatSettingsAcl"] = None
+    permissions: Optional["MessagesChatSettingsPermissions"] = None
+    is_disappearing: Optional[bool] = None
+    theme: Optional[str] = None
+    disappearing_chat_link: Optional[str] = None
+    is_service: Optional[bool] = None
 
 
 class MessagesChatSettingsAcl(PydanticModel):
-    can_change_info: bool
-    can_change_invite_link: bool
-    can_change_pin: bool
-    can_invite: bool
-    can_promote_users: bool
-    can_see_invite_link: bool
-    can_moderate: bool
-    can_copy_chat: bool
-    can_call: bool
-    can_use_mass_mentions: bool
-    can_change_service_type: bool
+    can_change_info: Optional[bool] = None
+    can_change_invite_link: Optional[bool] = None
+    can_change_pin: Optional[bool] = None
+    can_invite: Optional[bool] = None
+    can_promote_users: Optional[bool] = None
+    can_see_invite_link: Optional[bool] = None
+    can_moderate: Optional[bool] = None
+    can_copy_chat: Optional[bool] = None
+    can_call: Optional[bool] = None
+    can_use_mass_mentions: Optional[bool] = None
+    can_change_service_type: Optional[bool] = None
 
 
 class MessagesChatSettingsPermissions(PydanticModel):
-    invite: str
-    change_info: str
-    change_pin: str
-    use_mass_mentions: str
-    see_invite_link: str
-    call: str
-    change_admins: str
+    invite: Optional[str] = None
+    change_info: Optional[str] = None
+    change_pin: Optional[str] = None
+    use_mass_mentions: Optional[str] = None
+    see_invite_link: Optional[str] = None
+    call: Optional[str] = None
+    change_admins: Optional[str] = None
 
 
 class MessagesChatSettingsPhoto(PydanticModel):
-    photo_50: str
-    photo_100: str
-    photo_200: str
-    is_default_photo: bool
+    photo_50: Optional[str] = None
+    photo_100: Optional[str] = None
+    photo_200: Optional[str] = None
+    is_default_photo: Optional[bool] = None
 
 
 class MessagesChatSettingsState(enum.Enum):
@@ -2469,45 +2555,45 @@ class MessagesChatSettingsState(enum.Enum):
 
 
 class MessagesConversation(PydanticModel):
-    peer: "MessagesConversationPeer"
-    sort_id: "MessagesConversationSortId"
-    last_message_id: int
-    in_read: int
-    out_read: int
-    unread_count: int
-    is_marked_unread: bool
-    out_read_by: "MessagesOutReadBy"
-    important: bool
-    unanswered: bool
-    special_service_type: str
-    message_request_data: "MessagesMessageRequestData"
-    mentions: List[int]
-    current_keyboard: "MessagesKeyboard"
-    push_settings: "MessagesPushSettings"
-    can_write: "MessagesConversationCanWrite"
-    chat_settings: "MessagesChatSettings"
+    peer: Optional["MessagesConversationPeer"] = None
+    sort_id: Optional["MessagesConversationSortId"] = None
+    last_message_id: Optional[int] = None
+    in_read: Optional[int] = None
+    out_read: Optional[int] = None
+    unread_count: Optional[int] = None
+    is_marked_unread: Optional[bool] = None
+    out_read_by: Optional["MessagesOutReadBy"] = None
+    important: Optional[bool] = None
+    unanswered: Optional[bool] = None
+    special_service_type: Optional[str] = None
+    message_request_data: Optional["MessagesMessageRequestData"] = None
+    mentions: Optional[List[int]] = None
+    current_keyboard: Optional["MessagesKeyboard"] = None
+    push_settings: Optional["MessagesPushSettings"] = None
+    can_write: Optional["MessagesConversationCanWrite"] = None
+    chat_settings: Optional["MessagesChatSettings"] = None
 
 
 class MessagesConversationCanWrite(PydanticModel):
-    allowed: bool
-    reason: int
+    allowed: Optional[bool] = None
+    reason: Optional[int] = None
 
 
 class MessagesConversationMember(PydanticModel):
-    can_kick: bool
-    invited_by: int
-    is_admin: bool
-    is_owner: bool
-    is_message_request: bool
-    join_date: int
-    request_date: int
-    member_id: int
+    can_kick: Optional[bool] = None
+    invited_by: Optional[int] = None
+    is_admin: Optional[bool] = None
+    is_owner: Optional[bool] = None
+    is_message_request: Optional[bool] = None
+    join_date: Optional[int] = None
+    request_date: Optional[int] = None
+    member_id: Optional[int] = None
 
 
 class MessagesConversationPeer(PydanticModel):
-    id: int
-    local_id: int
-    type: "MessagesConversationPeerType"
+    id: Optional[int] = None
+    local_id: Optional[int] = None
+    type: Optional["MessagesConversationPeerType"] = None
 
 
 class MessagesConversationPeerType(enum.Enum):
@@ -2518,67 +2604,67 @@ class MessagesConversationPeerType(enum.Enum):
 
 
 class MessagesConversationSortId(PydanticModel):
-    major_id: int
-    minor_id: int
+    major_id: Optional[int] = None
+    minor_id: Optional[int] = None
 
 
 class MessagesConversationWithMessage(PydanticModel):
-    conversation: "MessagesConversation"
-    last_message: "MessagesMessage"
+    conversation: Optional["MessagesConversation"] = None
+    last_message: Optional["MessagesMessage"] = None
 
 
 class MessagesForeignMessage(PydanticModel):
-    attachments: List["MessagesMessageAttachment"]
-    conversation_message_id: int
-    date: int
-    from_id: int
-    fwd_messages: List["MessagesForeignMessage"]
-    geo: "BaseGeo"
-    id: int
-    peer_id: int
-    reply_message: "MessagesForeignMessage"
-    text: str
-    update_time: int
-    was_listened: bool
-    payload: str
+    attachments: Optional[List["MessagesMessageAttachment"]] = None
+    conversation_message_id: Optional[int] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    fwd_messages: Optional[List["MessagesForeignMessage"]] = None
+    geo: Optional["BaseGeo"] = None
+    id: Optional[int] = None
+    peer_id: Optional[int] = None
+    reply_message: Optional["MessagesForeignMessage"] = None
+    text: Optional[str] = None
+    update_time: Optional[int] = None
+    was_listened: Optional[bool] = None
+    payload: Optional[str] = None
 
 
 class MessagesForward(PydanticModel):
-    owner_id: int
-    peer_id: int
-    conversation_message_ids: List[int]
-    message_ids: List[int]
-    is_reply: bool
+    owner_id: Optional[int] = None
+    peer_id: Optional[int] = None
+    conversation_message_ids: Optional[List[int]] = None
+    message_ids: Optional[List[int]] = None
+    is_reply: Optional[bool] = None
 
 
 class MessagesGraffiti(PydanticModel):
-    access_key: str
-    height: int
-    id: int
-    owner_id: int
-    url: str
-    width: int
+    access_key: Optional[str] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    url: Optional[str] = None
+    width: Optional[int] = None
 
 
 class MessagesHistoryAttachment(PydanticModel):
-    attachment: "MessagesHistoryMessageAttachment"
-    message_id: int
-    from_id: int
-    forward_level: int
+    attachment: Optional["MessagesHistoryMessageAttachment"] = None
+    message_id: Optional[int] = None
+    from_id: Optional[int] = None
+    forward_level: Optional[int] = None
 
 
 class MessagesHistoryMessageAttachment(PydanticModel):
-    audio: "AudioAudio"
-    audio_message: "MessagesAudioMessage"
-    doc: "DocsDoc"
-    graffiti: "MessagesGraffiti"
-    link: "BaseLink"
-    market: "BaseLink"
-    photo: "PhotosPhoto"
-    share: "BaseLink"
-    type: "MessagesHistoryMessageAttachmentType"
-    video: "VideoVideo"
-    wall: "BaseLink"
+    audio: Optional["AudioAudio"] = None
+    audio_message: Optional["MessagesAudioMessage"] = None
+    doc: Optional["DocsDoc"] = None
+    graffiti: Optional["MessagesGraffiti"] = None
+    link: Optional["BaseLink"] = None
+    market: Optional["BaseLink"] = None
+    photo: Optional["PhotosPhoto"] = None
+    share: Optional["BaseLink"] = None
+    type: Optional["MessagesHistoryMessageAttachmentType"] = None
+    video: Optional["VideoVideo"] = None
+    wall: Optional["BaseLink"] = None
 
 
 class MessagesHistoryMessageAttachmentType(enum.Enum):
@@ -2595,87 +2681,87 @@ class MessagesHistoryMessageAttachmentType(enum.Enum):
 
 
 class MessagesKeyboard(PydanticModel):
-    author_id: int
-    buttons: List[List["MessagesKeyboardButton"]]
-    one_time: bool
-    inline: bool
+    author_id: Optional[int] = None
+    buttons: Optional[List[List["MessagesKeyboardButton"]]] = None
+    one_time: Optional[bool] = None
+    inline: Optional[bool] = None
 
 
 class MessagesKeyboardButton(PydanticModel):
-    action: "MessagesKeyboardButtonAction"
-    color: str
+    action: Optional["MessagesKeyboardButtonAction"] = None
+    color: Optional[str] = None
 
 
 class MessagesKeyboardButtonAction(PydanticModel):
-    app_id: int
-    hash: str
-    label: str
-    link: str
-    owner_id: int
-    payload: str
-    type: "MessagesTemplateActionTypeNames"
+    app_id: Optional[int] = None
+    hash: Optional[str] = None
+    label: Optional[str] = None
+    link: Optional[str] = None
+    owner_id: Optional[int] = None
+    payload: Optional[str] = None
+    type: Optional["MessagesTemplateActionTypeNames"] = None
 
 
 class MessagesLastActivity(PydanticModel):
-    online: "BaseBoolInt"
-    time: int
+    online: Optional["BaseBoolInt"] = None
+    time: Optional[int] = None
 
 
 class MessagesLongpollMessages(PydanticModel):
-    count: int
-    items: List["MessagesMessage"]
+    count: Optional[int] = None
+    items: Optional[List["MessagesMessage"]] = None
 
 
 class MessagesLongpollParams(PydanticModel):
-    server: str
-    key: str
-    ts: int
-    pts: int
+    server: Optional[str] = None
+    key: Optional[str] = None
+    ts: Optional[int] = None
+    pts: Optional[int] = None
 
 
 class MessagesMessage(PydanticModel):
-    action: "MessagesMessageAction"
-    admin_author_id: int
-    attachments: List["MessagesMessageAttachment"]
-    conversation_message_id: int
-    date: int
-    deleted: "BaseBoolInt"
-    from_id: int
-    fwd_messages: List["MessagesForeignMessage"]
-    geo: "BaseGeo"
-    id: int
-    important: bool
-    is_hidden: bool
-    is_cropped: bool
-    keyboard: "MessagesKeyboard"
-    members_count: int
-    out: "BaseBoolInt"
-    payload: str
-    peer_id: int
-    random_id: int
-    ref: str
-    ref_source: str
-    reply_message: "MessagesForeignMessage"
-    text: str
-    update_time: int
-    was_listened: bool
-    pinned_at: int
+    action: Optional["MessagesMessageAction"] = None
+    admin_author_id: Optional[int] = None
+    attachments: Optional[List["MessagesMessageAttachment"]] = None
+    conversation_message_id: Optional[int] = None
+    date: Optional[int] = None
+    deleted: Optional["BaseBoolInt"] = None
+    from_id: Optional[int] = None
+    fwd_messages: Optional[List["MessagesForeignMessage"]] = None
+    geo: Optional["BaseGeo"] = None
+    id: Optional[int] = None
+    important: Optional[bool] = None
+    is_hidden: Optional[bool] = None
+    is_cropped: Optional[bool] = None
+    keyboard: Optional["MessagesKeyboard"] = None
+    members_count: Optional[int] = None
+    out: Optional["BaseBoolInt"] = None
+    payload: Optional[str] = None
+    peer_id: Optional[int] = None
+    random_id: Optional[int] = None
+    ref: Optional[str] = None
+    ref_source: Optional[str] = None
+    reply_message: Optional["MessagesForeignMessage"] = None
+    text: Optional[str] = None
+    update_time: Optional[int] = None
+    was_listened: Optional[bool] = None
+    pinned_at: Optional[int] = None
 
 
 class MessagesMessageAction(PydanticModel):
-    conversation_message_id: int
-    email: str
-    member_id: int
-    message: str
-    photo: "MessagesMessageActionPhoto"
-    text: str
-    type: "MessagesMessageActionStatus"
+    conversation_message_id: Optional[int] = None
+    email: Optional[str] = None
+    member_id: Optional[int] = None
+    message: Optional[str] = None
+    photo: Optional["MessagesMessageActionPhoto"] = None
+    text: Optional[str] = None
+    type: Optional["MessagesMessageActionStatus"] = None
 
 
 class MessagesMessageActionPhoto(PydanticModel):
-    photo_100: str
-    photo_200: str
-    photo_50: str
+    photo_100: Optional[str] = None
+    photo_200: Optional[str] = None
+    photo_50: Optional[str] = None
 
 
 class MessagesMessageActionStatus(enum.Enum):
@@ -2691,23 +2777,23 @@ class MessagesMessageActionStatus(enum.Enum):
 
 
 class MessagesMessageAttachment(PydanticModel):
-    audio: "AudioAudio"
-    audio_message: "MessagesAudioMessage"
-    call: "CallsCall"
-    doc: "DocsDoc"
-    gift: "GiftsLayout"
-    graffiti: "MessagesGraffiti"
-    link: "BaseLink"
-    market: "MarketMarketItem"
-    market_market_album: "MarketMarketAlbum"
-    photo: "PhotosPhoto"
-    sticker: "BaseSticker"
-    story: "StoriesStory"
-    type: "MessagesMessageAttachmentType"
-    video: "VideoVideo"
-    wall: "WallWallpostFull"
-    wall_reply: "WallWallComment"
-    poll: "PollsPoll"
+    audio: Optional["AudioAudio"] = None
+    audio_message: Optional["MessagesAudioMessage"] = None
+    call: Optional["CallsCall"] = None
+    doc: Optional["DocsDoc"] = None
+    gift: Optional["GiftsLayout"] = None
+    graffiti: Optional["MessagesGraffiti"] = None
+    link: Optional["BaseLink"] = None
+    market: Optional["MarketMarketItem"] = None
+    market_market_album: Optional["MarketMarketAlbum"] = None
+    photo: Optional["PhotosPhoto"] = None
+    sticker: Optional["BaseSticker"] = None
+    story: Optional["StoriesStory"] = None
+    type: Optional["MessagesMessageAttachmentType"] = None
+    video: Optional["VideoVideo"] = None
+    wall: Optional["WallWallpostFull"] = None
+    wall_reply: Optional["WallWallComment"] = None
+    poll: Optional["PollsPoll"] = None
 
 
 class MessagesMessageAttachmentType(enum.Enum):
@@ -2730,39 +2816,39 @@ class MessagesMessageAttachmentType(enum.Enum):
 
 
 class MessagesMessageRequestData(PydanticModel):
-    status: str
-    inviter_id: int
-    request_date: int
+    status: Optional[str] = None
+    inviter_id: Optional[int] = None
+    request_date: Optional[int] = None
 
 
 class MessagesMessagesArray(PydanticModel):
-    count: int
-    items: List["MessagesMessage"]
+    count: Optional[int] = None
+    items: Optional[List["MessagesMessage"]] = None
 
 
 class MessagesOutReadBy(PydanticModel):
-    count: int
-    member_ids: List[int]
+    count: Optional[int] = None
+    member_ids: Optional[List[int]] = None
 
 
 class MessagesPinnedMessage(PydanticModel):
-    attachments: List["MessagesMessageAttachment"]
-    conversation_message_id: int
-    date: int
-    from_id: int
-    fwd_messages: List["MessagesForeignMessage"]
-    geo: "BaseGeo"
-    id: int
-    peer_id: int
-    reply_message: "MessagesForeignMessage"
-    text: str
-    keyboard: "MessagesKeyboard"
+    attachments: Optional[List["MessagesMessageAttachment"]] = None
+    conversation_message_id: Optional[int] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    fwd_messages: Optional[List["MessagesForeignMessage"]] = None
+    geo: Optional["BaseGeo"] = None
+    id: Optional[int] = None
+    peer_id: Optional[int] = None
+    reply_message: Optional["MessagesForeignMessage"] = None
+    text: Optional[str] = None
+    keyboard: Optional["MessagesKeyboard"] = None
 
 
 class MessagesPushSettings(PydanticModel):
-    disabled_forever: bool
-    disabled_until: int
-    no_sound: bool
+    disabled_forever: Optional[bool] = None
+    disabled_until: Optional[int] = None
+    no_sound: Optional[bool] = None
 
 
 class MessagesTemplateActionTypeNames(enum.Enum):
@@ -2776,8 +2862,8 @@ class MessagesTemplateActionTypeNames(enum.Enum):
     CALLBACK = "callback"
 
 
-class MessagesUserXtrInvitedBy(PydanticModel):
-    allOf: Unsupported
+class MessagesUserXtrInvitedBy(UsersUserXtrType):
+    invited_by: Optional[int] = None
 
 
 class NewsfeedCommentsFilters(enum.Enum):
@@ -2789,12 +2875,12 @@ class NewsfeedCommentsFilters(enum.Enum):
 
 
 class NewsfeedEventActivity(PydanticModel):
-    address: str
-    button_text: str
-    friends: List[int]
-    member_status: "GroupsGroupFullMemberStatus"
-    text: str
-    time: int
+    address: Optional[str] = None
+    button_text: Optional[str] = None
+    friends: Optional[List[int]] = None
+    member_status: Optional["GroupsGroupFullMemberStatus"] = None
+    text: Optional[str] = None
+    time: Optional[int] = None
 
 
 class NewsfeedFilters(enum.Enum):
@@ -2822,133 +2908,165 @@ class NewsfeedIgnoreItemType(enum.Enum):
     AUDIO = "audio"
 
 
-class NewsfeedItemAudio(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemAudio(NewsfeedItemBase):
+    audio: Optional["NewsfeedItemAudioAudio"] = None
+    post_id: Optional[int] = None
 
 
 class NewsfeedItemAudioAudio(PydanticModel):
-    count: int
-    items: List["AudioAudio"]
+    count: Optional[int] = None
+    items: Optional[List["AudioAudio"]] = None
 
 
 class NewsfeedItemBase(PydanticModel):
-    type: "NewsfeedNewsfeedItemType"
-    source_id: int
-    date: int
+    type: Optional["NewsfeedNewsfeedItemType"] = None
+    source_id: Optional[int] = None
+    date: Optional[int] = None
 
 
-class NewsfeedItemDigest(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemDigest(NewsfeedItemBase):
+    feed_id: Optional[str] = None
+    items: Optional[List["NewsfeedItemDigestItem"]] = None
+    main_post_ids: Optional[List[str]] = None
+    template: Optional[str] = None
+    header: Optional["NewsfeedItemDigestHeader"] = None
+    footer: Optional["NewsfeedItemDigestFooter"] = None
+    track_code: Optional[str] = None
 
 
 class NewsfeedItemDigestButton(PydanticModel):
-    title: str
-    style: str
+    title: Optional[str] = None
+    style: Optional[str] = None
 
 
 class NewsfeedItemDigestFooter(PydanticModel):
-    style: str
-    text: str
-    button: "NewsfeedItemDigestButton"
+    style: Optional[str] = None
+    text: Optional[str] = None
+    button: Optional["NewsfeedItemDigestButton"] = None
 
 
 class NewsfeedItemDigestFullItem(PydanticModel):
-    text: str
-    source_name: str
-    attachment_index: int
-    attachment: "WallWallpostAttachment"
-    style: str
-    post: "WallWallpost"
+    text: Optional[str] = None
+    source_name: Optional[str] = None
+    attachment_index: Optional[int] = None
+    attachment: Optional["WallWallpostAttachment"] = None
+    style: Optional[str] = None
+    post: Optional["WallWallpost"] = None
 
 
 class NewsfeedItemDigestHeader(PydanticModel):
-    title: str
-    subtitle: str
-    style: str
-    button: "NewsfeedItemDigestButton"
+    title: Optional[str] = None
+    subtitle: Optional[str] = None
+    style: Optional[str] = None
+    button: Optional["NewsfeedItemDigestButton"] = None
 
 
 NewsfeedItemDigestItem = WallWallpost
 
 
-class NewsfeedItemFriend(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemFriend(NewsfeedItemBase):
+    friends: Optional["NewsfeedItemFriendFriends"] = None
 
 
 class NewsfeedItemFriendFriends(PydanticModel):
-    count: int
-    items: List["BaseUserId"]
+    count: Optional[int] = None
+    items: Optional[List["BaseUserId"]] = None
 
 
 class NewsfeedItemHolidayRecommendationsBlockHeader(PydanticModel):
-    title: str
-    subtitle: str
-    image: List["BaseImage"]
-    action: "BaseLinkButtonAction"
+    title: Optional[str] = None
+    subtitle: Optional[str] = None
+    image: Optional[List["BaseImage"]] = None
+    action: Optional["BaseLinkButtonAction"] = None
 
 
-class NewsfeedItemPhoto(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemPhoto(WallCarouselBase, NewsfeedItemBase):
+    photos: Optional["NewsfeedItemPhotoPhotos"] = None
+    post_id: Optional[int] = None
 
 
 class NewsfeedItemPhotoPhotos(PydanticModel):
-    count: int
-    items: List["NewsfeedNewsfeedPhoto"]
+    count: Optional[int] = None
+    items: Optional[List["NewsfeedNewsfeedPhoto"]] = None
 
 
-class NewsfeedItemPhotoTag(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemPhotoTag(WallCarouselBase, NewsfeedItemBase):
+    photo_tags: Optional["NewsfeedItemPhotoTagPhotoTags"] = None
+    post_id: Optional[int] = None
 
 
 class NewsfeedItemPhotoTagPhotoTags(PydanticModel):
-    count: int
-    items: List["NewsfeedNewsfeedPhoto"]
+    count: Optional[int] = None
+    items: Optional[List["NewsfeedNewsfeedPhoto"]] = None
 
 
-class NewsfeedItemPromoButton(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemPromoButton(NewsfeedItemBase):
+    text: Optional[str] = None
+    title: Optional[str] = None
+    action: Optional["NewsfeedItemPromoButtonAction"] = None
+    images: Optional[List["NewsfeedItemPromoButtonImage"]] = None
+    track_code: Optional[str] = None
 
 
 class NewsfeedItemPromoButtonAction(PydanticModel):
-    url: str
-    type: str
-    target: str
+    url: Optional[str] = None
+    type: Optional[str] = None
+    target: Optional[str] = None
 
 
 class NewsfeedItemPromoButtonImage(PydanticModel):
-    width: int
-    height: int
-    url: str
+    width: Optional[int] = None
+    height: Optional[int] = None
+    url: Optional[str] = None
 
 
-class NewsfeedItemTopic(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemTopic(NewsfeedItemBase):
+    comments: Optional["BaseCommentsInfo"] = None
+    likes: Optional["BaseLikesInfo"] = None
+    post_id: Optional[int] = None
+    text: Optional[str] = None
 
 
-class NewsfeedItemVideo(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemVideo(WallCarouselBase, NewsfeedItemBase):
+    video: Optional["NewsfeedItemVideoVideo"] = None
 
 
 class NewsfeedItemVideoVideo(PydanticModel):
-    count: int
-    items: List["VideoVideo"]
+    count: Optional[int] = None
+    items: Optional[List["VideoVideo"]] = None
 
 
-class NewsfeedItemWallpost(PydanticModel):
-    allOf: Unsupported
+class NewsfeedItemWallpost(WallCarouselBase, NewsfeedItemBase):
+    activity: Optional["NewsfeedEventActivity"] = None
+    attachments: Optional[List["WallWallpostAttachment"]] = None
+    comments: Optional["BaseCommentsInfo"] = None
+    copy_history: Optional[List["WallWallpost"]] = None
+    feedback: Optional["NewsfeedItemWallpostFeedback"] = None
+    geo: Optional["BaseGeo"] = None
+    is_favorite: Optional[bool] = None
+    likes: Optional["BaseLikesInfo"] = None
+    marked_as_ads: Optional["BaseBoolInt"] = None
+    post_id: Optional[int] = None
+    post_source: Optional["WallPostSource"] = None
+    post_type: Optional["NewsfeedItemWallpostType"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    signer_id: Optional[int] = None
+    text: Optional[str] = None
+    views: Optional["WallViews"] = None
+    short_text_rate: Optional[int] = None
 
 
 class NewsfeedItemWallpostFeedback(PydanticModel):
-    type: "NewsfeedItemWallpostFeedbackType"
-    question: str
-    answers: List["NewsfeedItemWallpostFeedbackAnswer"]
-    stars_count: int
-    gratitude: str
+    type: Optional["NewsfeedItemWallpostFeedbackType"] = None
+    question: Optional[str] = None
+    answers: Optional[List["NewsfeedItemWallpostFeedbackAnswer"]] = None
+    stars_count: Optional[int] = None
+    gratitude: Optional[str] = None
 
 
 class NewsfeedItemWallpostFeedbackAnswer(PydanticModel):
-    title: str
-    id: str
+    title: Optional[str] = None
+    id: Optional[str] = None
 
 
 class NewsfeedItemWallpostFeedbackType(enum.Enum):
@@ -2963,16 +3081,17 @@ class NewsfeedItemWallpostType(enum.Enum):
 
 
 class NewsfeedList(PydanticModel):
-    id: int
-    title: str
+    id: Optional[int] = None
+    title: Optional[str] = None
 
 
-class NewsfeedListFull(PydanticModel):
-    allOf: Unsupported
+class NewsfeedListFull(NewsfeedList):
+    no_reposts: Optional["BaseBoolInt"] = None
+    source_ids: Optional[List[int]] = None
 
 
 class NewsfeedNewsfeedItem(PydanticModel):
-    allOf: Unsupported
+    pass
 
 
 class NewsfeedNewsfeedItemType(enum.Enum):
@@ -2988,136 +3107,138 @@ class NewsfeedNewsfeedItemType(enum.Enum):
     STORIES = "stories"
 
 
-class NewsfeedNewsfeedPhoto(PydanticModel):
-    allOf: Unsupported
+class NewsfeedNewsfeedPhoto(PhotosPhoto):
+    likes: Optional["BaseLikes"] = None
+    comments: Optional["BaseObjectCount"] = None
+    can_repost: Optional["BaseBoolInt"] = None
 
 
 class NotesNote(PydanticModel):
-    read_comments: int
-    can_comment: "BaseBoolInt"
-    comments: int
-    date: int
-    id: int
-    owner_id: int
-    text: str
-    text_wiki: str
-    title: str
-    view_url: str
+    read_comments: Optional[int] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    comments: Optional[int] = None
+    date: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    text: Optional[str] = None
+    text_wiki: Optional[str] = None
+    title: Optional[str] = None
+    view_url: Optional[str] = None
 
 
 class NotesNoteComment(PydanticModel):
-    date: int
-    id: int
-    message: str
-    nid: int
-    oid: int
-    reply_to: int
-    uid: int
+    date: Optional[int] = None
+    id: Optional[int] = None
+    message: Optional[str] = None
+    nid: Optional[int] = None
+    oid: Optional[int] = None
+    reply_to: Optional[int] = None
+    uid: Optional[int] = None
 
 
 class NotificationsFeedback(PydanticModel):
-    attachments: List["WallWallpostAttachment"]
-    from_id: int
-    geo: "BaseGeo"
-    id: int
-    likes: "BaseLikesInfo"
-    text: str
-    to_id: int
+    attachments: Optional[List["WallWallpostAttachment"]] = None
+    from_id: Optional[int] = None
+    geo: Optional["BaseGeo"] = None
+    id: Optional[int] = None
+    likes: Optional["BaseLikesInfo"] = None
+    text: Optional[str] = None
+    to_id: Optional[int] = None
 
 
 class NotificationsNotification(PydanticModel):
-    date: int
-    feedback: "NotificationsFeedback"
-    parent: "NotificationsNotificationParent"
-    reply: "NotificationsReply"
-    type: str
+    date: Optional[int] = None
+    feedback: Optional["NotificationsFeedback"] = None
+    parent: Optional["NotificationsNotificationParent"] = None
+    reply: Optional["NotificationsReply"] = None
+    type: Optional[str] = None
 
 
 class NotificationsNotificationItem(PydanticModel):
-    allOf: Unsupported
+    pass
 
 
-class NotificationsNotificationParent(PydanticModel):
-    allOf: Unsupported
+class NotificationsNotificationParent(WallWallpostToId, PhotosPhoto, BoardTopic, VideoVideo, NotificationsNotificationsComment):
+    pass
 
 
 class NotificationsNotificationsComment(PydanticModel):
-    date: int
-    id: int
-    owner_id: int
-    photo: "PhotosPhoto"
-    post: "WallWallpost"
-    text: str
-    topic: "BoardTopic"
-    video: "VideoVideo"
+    date: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo: Optional["PhotosPhoto"] = None
+    post: Optional["WallWallpost"] = None
+    text: Optional[str] = None
+    topic: Optional["BoardTopic"] = None
+    video: Optional["VideoVideo"] = None
 
 
 class NotificationsReply(PydanticModel):
-    date: int
-    id: int
-    text: int
+    date: Optional[int] = None
+    id: Optional[int] = None
+    text: Optional[int] = None
 
 
 class NotificationsSendMessageError(PydanticModel):
-    code: int
-    description: str
+    code: Optional[int] = None
+    description: Optional[str] = None
 
 
 class NotificationsSendMessageItem(PydanticModel):
-    user_id: int
-    status: bool
-    error: "NotificationsSendMessageError"
+    user_id: Optional[int] = None
+    status: Optional[bool] = None
+    error: Optional["NotificationsSendMessageError"] = None
 
 
 class OauthError(PydanticModel):
-    error: str
-    error_description: str
-    redirect_uri: str
+    error: Optional[str] = None
+    error_description: Optional[str] = None
+    redirect_uri: Optional[str] = None
 
 
 class OrdersAmount(PydanticModel):
-    amounts: List["OrdersAmountItem"]
-    currency: str
+    amounts: Optional[List["OrdersAmountItem"]] = None
+    currency: Optional[str] = None
 
 
 class OrdersAmountItem(PydanticModel):
-    amount: int
-    description: str
-    votes: str
+    amount: Optional[int] = None
+    description: Optional[str] = None
+    votes: Optional[str] = None
 
 
 class OrdersOrder(PydanticModel):
-    amount: int
-    app_order_id: int
-    cancel_transaction_id: int
-    date: int
-    id: int
-    item: str
-    receiver_id: int
-    status: str
-    transaction_id: int
-    user_id: int
+    amount: Optional[int] = None
+    app_order_id: Optional[int] = None
+    cancel_transaction_id: Optional[int] = None
+    date: Optional[int] = None
+    id: Optional[int] = None
+    item: Optional[str] = None
+    receiver_id: Optional[int] = None
+    status: Optional[str] = None
+    transaction_id: Optional[int] = None
+    user_id: Optional[int] = None
 
 
 class OrdersSubscription(PydanticModel):
-    cancel_reason: str
-    create_time: int
-    id: int
-    item_id: str
-    next_bill_time: int
-    pending_cancel: bool
-    period: int
-    period_start_time: int
-    price: int
-    status: str
-    test_mode: bool
-    trial_expire_time: int
-    update_time: int
+    cancel_reason: Optional[str] = None
+    create_time: Optional[int] = None
+    id: Optional[int] = None
+    item_id: Optional[str] = None
+    next_bill_time: Optional[int] = None
+    pending_cancel: Optional[bool] = None
+    period: Optional[int] = None
+    period_start_time: Optional[int] = None
+    price: Optional[int] = None
+    status: Optional[str] = None
+    test_mode: Optional[bool] = None
+    trial_expire_time: Optional[int] = None
+    update_time: Optional[int] = None
 
 
 class OwnerState(PydanticModel):
-    state: int
-    description: str
+    state: Optional[int] = None
+    description: Optional[str] = None
 
 
 class PagesPrivacySettings(enum.IntEnum):
@@ -3127,63 +3248,63 @@ class PagesPrivacySettings(enum.IntEnum):
 
 
 class PagesWikipage(PydanticModel):
-    creator_id: int
-    creator_name: int
-    editor_id: int
-    editor_name: str
-    group_id: int
-    id: int
-    title: str
-    views: int
-    who_can_edit: "PagesPrivacySettings"
-    who_can_view: "PagesPrivacySettings"
+    creator_id: Optional[int] = None
+    creator_name: Optional[int] = None
+    editor_id: Optional[int] = None
+    editor_name: Optional[str] = None
+    group_id: Optional[int] = None
+    id: Optional[int] = None
+    title: Optional[str] = None
+    views: Optional[int] = None
+    who_can_edit: Optional["PagesPrivacySettings"] = None
+    who_can_view: Optional["PagesPrivacySettings"] = None
 
 
 class PagesWikipageFull(PydanticModel):
-    created: int
-    creator_id: int
-    current_user_can_edit: "BaseBoolInt"
-    current_user_can_edit_access: "BaseBoolInt"
-    edited: int
-    editor_id: int
-    group_id: int
-    html: str
-    id: int
-    source: str
-    title: str
-    view_url: str
-    views: int
-    who_can_edit: "PagesPrivacySettings"
-    who_can_view: "PagesPrivacySettings"
+    created: Optional[int] = None
+    creator_id: Optional[int] = None
+    current_user_can_edit: Optional["BaseBoolInt"] = None
+    current_user_can_edit_access: Optional["BaseBoolInt"] = None
+    edited: Optional[int] = None
+    editor_id: Optional[int] = None
+    group_id: Optional[int] = None
+    html: Optional[str] = None
+    id: Optional[int] = None
+    source: Optional[str] = None
+    title: Optional[str] = None
+    view_url: Optional[str] = None
+    views: Optional[int] = None
+    who_can_edit: Optional["PagesPrivacySettings"] = None
+    who_can_view: Optional["PagesPrivacySettings"] = None
 
 
 class PagesWikipageHistory(PydanticModel):
-    id: int
-    length: int
-    date: int
-    editor_id: int
-    editor_name: str
+    id: Optional[int] = None
+    length: Optional[int] = None
+    date: Optional[int] = None
+    editor_id: Optional[int] = None
+    editor_name: Optional[str] = None
 
 
 class PhotosCommentXtrPid(PydanticModel):
-    attachments: List["WallCommentAttachment"]
-    date: int
-    from_id: int
-    id: int
-    likes: "BaseLikesInfo"
-    pid: int
-    reply_to_comment: int
-    reply_to_user: int
-    text: str
-    parents_stack: List[int]
-    thread: "CommentThread"
+    attachments: Optional[List["WallCommentAttachment"]] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    id: Optional[int] = None
+    likes: Optional["BaseLikesInfo"] = None
+    pid: Optional[int] = None
+    reply_to_comment: Optional[int] = None
+    reply_to_user: Optional[int] = None
+    text: Optional[str] = None
+    parents_stack: Optional[List[int]] = None
+    thread: Optional["CommentThread"] = None
 
 
 class PhotosImage(PydanticModel):
-    height: int
-    type: "PhotosImageType"
-    url: str
-    width: int
+    height: Optional[int] = None
+    type: Optional["PhotosImageType"] = None
+    url: Optional[str] = None
+    width: Optional[int] = None
 
 
 class PhotosImageType(enum.Enum):
@@ -3201,143 +3322,143 @@ class PhotosImageType(enum.Enum):
 
 
 class PhotosMarketAlbumUploadResponse(PydanticModel):
-    gid: int
-    hash: str
-    photo: str
-    server: int
+    gid: Optional[int] = None
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PhotosMarketUploadResponse(PydanticModel):
-    crop_data: str
-    crop_hash: str
-    group_id: int
-    hash: str
-    photo: str
-    server: int
+    crop_data: Optional[str] = None
+    crop_hash: Optional[str] = None
+    group_id: Optional[int] = None
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PhotosMessageUploadResponse(PydanticModel):
-    hash: str
-    photo: str
-    server: int
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PhotosOwnerUploadResponse(PydanticModel):
-    hash: str
-    photo: str
-    server: int
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PhotosPhoto(PydanticModel):
-    access_key: str
-    album_id: int
-    date: int
-    height: int
-    id: int
-    images: List["PhotosImage"]
-    lat: int
-    long: int
-    owner_id: int
-    photo_256: str
-    can_comment: "BaseBoolInt"
-    place: str
-    post_id: int
-    sizes: List["PhotosPhotoSizes"]
-    text: str
-    user_id: int
-    width: int
-    has_tags: bool
-    restrictions: "MediaRestriction"
+    access_key: Optional[str] = None
+    album_id: Optional[int] = None
+    date: Optional[int] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    images: Optional[List["PhotosImage"]] = None
+    lat: Optional[int] = None
+    long: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_256: Optional[str] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    place: Optional[str] = None
+    post_id: Optional[int] = None
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+    text: Optional[str] = None
+    user_id: Optional[int] = None
+    width: Optional[int] = None
+    has_tags: Optional[bool] = None
+    restrictions: Optional["MediaRestriction"] = None
 
 
 class PhotosPhotoAlbum(PydanticModel):
-    created: int
-    description: str
-    id: int
-    owner_id: int
-    size: int
-    thumb: "PhotosPhoto"
-    title: str
-    updated: int
+    created: Optional[int] = None
+    description: Optional[str] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    size: Optional[int] = None
+    thumb: Optional["PhotosPhoto"] = None
+    title: Optional[str] = None
+    updated: Optional[int] = None
 
 
 class PhotosPhotoAlbumFull(PydanticModel):
-    can_upload: "BaseBoolInt"
-    comments_disabled: "BaseBoolInt"
-    created: int
-    description: str
-    id: int
-    owner_id: int
-    size: int
-    sizes: List["PhotosPhotoSizes"]
-    thumb_id: int
-    thumb_is_last: "BaseBoolInt"
-    thumb_src: str
-    title: str
-    updated: int
-    upload_by_admins_only: "BaseBoolInt"
+    can_upload: Optional["BaseBoolInt"] = None
+    comments_disabled: Optional["BaseBoolInt"] = None
+    created: Optional[int] = None
+    description: Optional[str] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    size: Optional[int] = None
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+    thumb_id: Optional[int] = None
+    thumb_is_last: Optional["BaseBoolInt"] = None
+    thumb_src: Optional[str] = None
+    title: Optional[str] = None
+    updated: Optional[int] = None
+    upload_by_admins_only: Optional["BaseBoolInt"] = None
 
 
 class PhotosPhotoFalseable(PydanticModel):
-    allOf: Unsupported
+    pass
 
 
 class PhotosPhotoFull(PydanticModel):
-    access_key: str
-    album_id: int
-    can_comment: "BaseBoolInt"
-    date: int
-    height: int
-    id: int
-    images: List["PhotosImage"]
-    lat: int
-    likes: "BaseLikes"
-    reposts: "BaseRepostsInfo"
-    comments: "BaseObjectCount"
-    long: int
-    owner_id: int
-    post_id: int
-    tags: "BaseObjectCount"
-    text: str
-    user_id: int
-    width: int
+    access_key: Optional[str] = None
+    album_id: Optional[int] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    date: Optional[int] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    images: Optional[List["PhotosImage"]] = None
+    lat: Optional[int] = None
+    likes: Optional["BaseLikes"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    comments: Optional["BaseObjectCount"] = None
+    long: Optional[int] = None
+    owner_id: Optional[int] = None
+    post_id: Optional[int] = None
+    tags: Optional["BaseObjectCount"] = None
+    text: Optional[str] = None
+    user_id: Optional[int] = None
+    width: Optional[int] = None
 
 
 class PhotosPhotoFullXtrRealOffset(PydanticModel):
-    access_key: str
-    album_id: int
-    can_comment: "BaseBoolInt"
-    comments: "BaseObjectCount"
-    date: int
-    height: int
-    hidden: "BasePropertyExists"
-    id: int
-    lat: int
-    likes: "BaseLikes"
-    long: int
-    owner_id: int
-    photo_1280: str
-    photo_130: str
-    photo_2560: str
-    photo_604: str
-    photo_75: str
-    photo_807: str
-    post_id: int
-    real_offset: int
-    reposts: "BaseObjectCount"
-    sizes: List["PhotosPhotoSizes"]
-    tags: "BaseObjectCount"
-    text: str
-    user_id: int
-    width: int
+    access_key: Optional[str] = None
+    album_id: Optional[int] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    comments: Optional["BaseObjectCount"] = None
+    date: Optional[int] = None
+    height: Optional[int] = None
+    hidden: Optional["BasePropertyExists"] = None
+    id: Optional[int] = None
+    lat: Optional[int] = None
+    likes: Optional["BaseLikes"] = None
+    long: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_1280: Optional[str] = None
+    photo_130: Optional[str] = None
+    photo_2560: Optional[str] = None
+    photo_604: Optional[str] = None
+    photo_75: Optional[str] = None
+    photo_807: Optional[str] = None
+    post_id: Optional[int] = None
+    real_offset: Optional[int] = None
+    reposts: Optional["BaseObjectCount"] = None
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+    tags: Optional["BaseObjectCount"] = None
+    text: Optional[str] = None
+    user_id: Optional[int] = None
+    width: Optional[int] = None
 
 
 class PhotosPhotoSizes(PydanticModel):
-    height: int
-    url: str
-    src: str
-    type: "PhotosPhotoSizesType"
-    width: int
+    height: Optional[int] = None
+    url: Optional[str] = None
+    src: Optional[str] = None
+    type: Optional["PhotosPhotoSizesType"] = None
+    width: Optional[int] = None
 
 
 class PhotosPhotoSizesType(enum.Enum):
@@ -3369,187 +3490,187 @@ class PhotosPhotoSizesType(enum.Enum):
 
 
 class PhotosPhotoTag(PydanticModel):
-    date: int
-    id: int
-    placer_id: int
-    tagged_name: str
-    description: str
-    user_id: int
-    viewed: "BaseBoolInt"
-    x: int
-    x2: int
-    y: int
-    y2: int
+    date: Optional[int] = None
+    id: Optional[int] = None
+    placer_id: Optional[int] = None
+    tagged_name: Optional[str] = None
+    description: Optional[str] = None
+    user_id: Optional[int] = None
+    viewed: Optional["BaseBoolInt"] = None
+    x: Optional[int] = None
+    x2: Optional[int] = None
+    y: Optional[int] = None
+    y2: Optional[int] = None
 
 
 class PhotosPhotoUpload(PydanticModel):
-    album_id: int
-    upload_url: str
-    fallback_upload_url: str
-    user_id: int
-    group_id: int
+    album_id: Optional[int] = None
+    upload_url: Optional[str] = None
+    fallback_upload_url: Optional[str] = None
+    user_id: Optional[int] = None
+    group_id: Optional[int] = None
 
 
 class PhotosPhotoUploadResponse(PydanticModel):
-    aid: int
-    hash: str
-    photo: str
-    photos_list: str
-    server: int
+    aid: Optional[int] = None
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    photos_list: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PhotosPhotoXtrRealOffset(PydanticModel):
-    access_key: str
-    album_id: int
-    date: int
-    height: int
-    hidden: "BasePropertyExists"
-    id: int
-    lat: int
-    long: int
-    owner_id: int
-    photo_1280: str
-    photo_130: str
-    photo_2560: str
-    photo_604: str
-    photo_75: str
-    photo_807: str
-    post_id: int
-    real_offset: int
-    sizes: List["PhotosPhotoSizes"]
-    text: str
-    user_id: int
-    width: int
+    access_key: Optional[str] = None
+    album_id: Optional[int] = None
+    date: Optional[int] = None
+    height: Optional[int] = None
+    hidden: Optional["BasePropertyExists"] = None
+    id: Optional[int] = None
+    lat: Optional[int] = None
+    long: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_1280: Optional[str] = None
+    photo_130: Optional[str] = None
+    photo_2560: Optional[str] = None
+    photo_604: Optional[str] = None
+    photo_75: Optional[str] = None
+    photo_807: Optional[str] = None
+    post_id: Optional[int] = None
+    real_offset: Optional[int] = None
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+    text: Optional[str] = None
+    user_id: Optional[int] = None
+    width: Optional[int] = None
 
 
 class PhotosPhotoXtrTagInfo(PydanticModel):
-    access_key: str
-    album_id: int
-    date: int
-    height: int
-    id: int
-    lat: int
-    long: int
-    owner_id: int
-    photo_1280: str
-    photo_130: str
-    photo_2560: str
-    photo_604: str
-    photo_75: str
-    photo_807: str
-    placer_id: int
-    post_id: int
-    sizes: List["PhotosPhotoSizes"]
-    tag_created: int
-    tag_id: int
-    text: str
-    user_id: int
-    width: int
+    access_key: Optional[str] = None
+    album_id: Optional[int] = None
+    date: Optional[int] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    lat: Optional[int] = None
+    long: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_1280: Optional[str] = None
+    photo_130: Optional[str] = None
+    photo_2560: Optional[str] = None
+    photo_604: Optional[str] = None
+    photo_75: Optional[str] = None
+    photo_807: Optional[str] = None
+    placer_id: Optional[int] = None
+    post_id: Optional[int] = None
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+    tag_created: Optional[int] = None
+    tag_id: Optional[int] = None
+    text: Optional[str] = None
+    user_id: Optional[int] = None
+    width: Optional[int] = None
 
 
 class PhotosTagsSuggestionItem(PydanticModel):
-    title: str
-    caption: str
-    type: str
-    buttons: List["PhotosTagsSuggestionItemButton"]
-    photo: "PhotosPhoto"
-    tags: List["PhotosPhotoTag"]
-    track_code: str
+    title: Optional[str] = None
+    caption: Optional[str] = None
+    type: Optional[str] = None
+    buttons: Optional[List["PhotosTagsSuggestionItemButton"]] = None
+    photo: Optional["PhotosPhoto"] = None
+    tags: Optional[List["PhotosPhotoTag"]] = None
+    track_code: Optional[str] = None
 
 
 class PhotosTagsSuggestionItemButton(PydanticModel):
-    title: str
-    action: str
-    style: str
+    title: Optional[str] = None
+    action: Optional[str] = None
+    style: Optional[str] = None
 
 
 class PhotosWallUploadResponse(PydanticModel):
-    hash: str
-    photo: str
-    server: int
+    hash: Optional[str] = None
+    photo: Optional[str] = None
+    server: Optional[int] = None
 
 
 class PollsAnswer(PydanticModel):
-    id: int
-    rate: int
-    text: str
-    votes: int
+    id: Optional[int] = None
+    rate: Optional[int] = None
+    text: Optional[str] = None
+    votes: Optional[int] = None
 
 
 class PollsBackground(PydanticModel):
-    angle: int
-    color: str
-    height: int
-    id: int
-    name: str
-    images: List["BaseImage"]
-    points: List["BaseGradientPoint"]
-    type: str
-    width: int
+    angle: Optional[int] = None
+    color: Optional[str] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    images: Optional[List["BaseImage"]] = None
+    points: Optional[List["BaseGradientPoint"]] = None
+    type: Optional[str] = None
+    width: Optional[int] = None
 
 
 class PollsFriend(PydanticModel):
-    id: int
+    id: Optional[int] = None
 
 
 class PollsPoll(PydanticModel):
-    anonymous: "PollsPollAnonymous"
-    friends: List["PollsFriend"]
-    multiple: bool
-    answer_id: int
-    end_date: int
-    answer_ids: List[int]
-    closed: bool
-    is_board: bool
-    can_edit: bool
-    can_vote: bool
-    can_report: bool
-    can_share: bool
-    photo: "PollsBackground"
-    answers: List["PollsAnswer"]
-    created: int
-    id: int
-    owner_id: int
-    author_id: int
-    question: str
-    background: "PollsBackground"
-    votes: int
-    disable_unvote: bool
+    anonymous: Optional["PollsPollAnonymous"] = None
+    friends: Optional[List["PollsFriend"]] = None
+    multiple: Optional[bool] = None
+    answer_id: Optional[int] = None
+    end_date: Optional[int] = None
+    answer_ids: Optional[List[int]] = None
+    closed: Optional[bool] = None
+    is_board: Optional[bool] = None
+    can_edit: Optional[bool] = None
+    can_vote: Optional[bool] = None
+    can_report: Optional[bool] = None
+    can_share: Optional[bool] = None
+    photo: Optional["PollsBackground"] = None
+    answers: Optional[List["PollsAnswer"]] = None
+    created: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    author_id: Optional[int] = None
+    question: Optional[str] = None
+    background: Optional["PollsBackground"] = None
+    votes: Optional[int] = None
+    disable_unvote: Optional[bool] = None
 
 
 PollsPollAnonymous = bool
 
 
 class PollsVoters(PydanticModel):
-    answer_id: int
-    users: "PollsVotersUsers"
+    answer_id: Optional[int] = None
+    users: Optional["PollsVotersUsers"] = None
 
 
 class PollsVotersUsers(PydanticModel):
-    count: int
-    items: List[int]
+    count: Optional[int] = None
+    items: Optional[List[int]] = None
 
 
 class PrettycardsPrettycard(PydanticModel):
-    button: str
-    button_text: str
-    card_id: str
-    images: List["BaseImage"]
-    link_url: str
-    photo: str
-    price: str
-    price_old: str
-    title: str
+    button: Optional[str] = None
+    button_text: Optional[str] = None
+    card_id: Optional[str] = None
+    images: Optional[List["BaseImage"]] = None
+    link_url: Optional[str] = None
+    photo: Optional[str] = None
+    price: Optional[str] = None
+    price_old: Optional[str] = None
+    title: Optional[str] = None
 
 
 class SearchHint(PydanticModel):
-    app: "AppsApp"
-    description: str
-    _global: "BaseBoolInt"
-    group: "GroupsGroup"
-    profile: "UsersUserMin"
-    section: "SearchHintSection"
-    type: "SearchHintType"
+    app: Optional["AppsApp"] = None
+    description: Optional[str] = None
+    _global: Optional["BaseBoolInt"] = None
+    group: Optional["GroupsGroup"] = None
+    profile: Optional["UsersUserMin"] = None
+    section: Optional["SearchHintSection"] = None
+    type: Optional["SearchHintType"] = None
 
 
 class SearchHintSection(enum.Enum):
@@ -3571,277 +3692,277 @@ class SearchHintType(enum.Enum):
 
 
 class SecureLevel(PydanticModel):
-    level: int
-    uid: int
+    level: Optional[int] = None
+    uid: Optional[int] = None
 
 
 class SecureSmsNotification(PydanticModel):
-    app_id: str
-    date: str
-    id: str
-    message: str
-    user_id: str
+    app_id: Optional[str] = None
+    date: Optional[str] = None
+    id: Optional[str] = None
+    message: Optional[str] = None
+    user_id: Optional[str] = None
 
 
 class SecureTokenChecked(PydanticModel):
-    date: int
-    expire: int
-    success: int
-    user_id: int
+    date: Optional[int] = None
+    expire: Optional[int] = None
+    success: Optional[int] = None
+    user_id: Optional[int] = None
 
 
 class SecureTransaction(PydanticModel):
-    date: int
-    id: int
-    uid_from: int
-    uid_to: int
-    votes: int
+    date: Optional[int] = None
+    id: Optional[int] = None
+    uid_from: Optional[int] = None
+    uid_to: Optional[int] = None
+    votes: Optional[int] = None
 
 
 class StatsActivity(PydanticModel):
-    comments: int
-    copies: int
-    hidden: int
-    likes: int
-    subscribed: int
-    unsubscribed: int
+    comments: Optional[int] = None
+    copies: Optional[int] = None
+    hidden: Optional[int] = None
+    likes: Optional[int] = None
+    subscribed: Optional[int] = None
+    unsubscribed: Optional[int] = None
 
 
 class StatsCity(PydanticModel):
-    count: int
-    name: str
-    value: int
+    count: Optional[int] = None
+    name: Optional[str] = None
+    value: Optional[int] = None
 
 
 class StatsCountry(PydanticModel):
-    code: str
-    count: int
-    name: str
-    value: int
+    code: Optional[str] = None
+    count: Optional[int] = None
+    name: Optional[str] = None
+    value: Optional[int] = None
 
 
 class StatsPeriod(PydanticModel):
-    activity: "StatsActivity"
-    period_from: int
-    period_to: int
-    reach: "StatsReach"
-    visitors: "StatsViews"
+    activity: Optional["StatsActivity"] = None
+    period_from: Optional[int] = None
+    period_to: Optional[int] = None
+    reach: Optional["StatsReach"] = None
+    visitors: Optional["StatsViews"] = None
 
 
 class StatsReach(PydanticModel):
-    age: List["StatsSexAge"]
-    cities: List["StatsCity"]
-    countries: List["StatsCountry"]
-    mobile_reach: int
-    reach: int
-    reach_subscribers: int
-    sex: List["StatsSexAge"]
-    sex_age: List["StatsSexAge"]
+    age: Optional[List["StatsSexAge"]] = None
+    cities: Optional[List["StatsCity"]] = None
+    countries: Optional[List["StatsCountry"]] = None
+    mobile_reach: Optional[int] = None
+    reach: Optional[int] = None
+    reach_subscribers: Optional[int] = None
+    sex: Optional[List["StatsSexAge"]] = None
+    sex_age: Optional[List["StatsSexAge"]] = None
 
 
 class StatsSexAge(PydanticModel):
-    count: int
-    value: str
-    reach: int
-    reach_subscribers: int
-    count_subscribers: int
+    count: Optional[int] = None
+    value: Optional[str] = None
+    reach: Optional[int] = None
+    reach_subscribers: Optional[int] = None
+    count_subscribers: Optional[int] = None
 
 
 class StatsViews(PydanticModel):
-    age: List["StatsSexAge"]
-    cities: List["StatsCity"]
-    countries: List["StatsCountry"]
-    mobile_views: int
-    sex: List["StatsSexAge"]
-    sex_age: List["StatsSexAge"]
-    views: int
-    visitors: int
+    age: Optional[List["StatsSexAge"]] = None
+    cities: Optional[List["StatsCity"]] = None
+    countries: Optional[List["StatsCountry"]] = None
+    mobile_views: Optional[int] = None
+    sex: Optional[List["StatsSexAge"]] = None
+    sex_age: Optional[List["StatsSexAge"]] = None
+    views: Optional[int] = None
+    visitors: Optional[int] = None
 
 
 class StatsWallpostStat(PydanticModel):
-    post_id: int
-    hide: int
-    join_group: int
-    links: int
-    reach_subscribers: int
-    reach_subscribers_count: int
-    reach_total: int
-    reach_total_count: int
-    reach_viral: int
-    reach_ads: int
-    report: int
-    to_group: int
-    unsubscribe: int
-    sex_age: List["StatsSexAge"]
+    post_id: Optional[int] = None
+    hide: Optional[int] = None
+    join_group: Optional[int] = None
+    links: Optional[int] = None
+    reach_subscribers: Optional[int] = None
+    reach_subscribers_count: Optional[int] = None
+    reach_total: Optional[int] = None
+    reach_total_count: Optional[int] = None
+    reach_viral: Optional[int] = None
+    reach_ads: Optional[int] = None
+    report: Optional[int] = None
+    to_group: Optional[int] = None
+    unsubscribe: Optional[int] = None
+    sex_age: Optional[List["StatsSexAge"]] = None
 
 
 class StatusStatus(PydanticModel):
-    text: str
-    audio: "AudioAudio"
+    text: Optional[str] = None
+    audio: Optional["AudioAudio"] = None
 
 
 class StorageValue(PydanticModel):
-    key: str
-    value: str
+    key: Optional[str] = None
+    value: Optional[str] = None
 
 
 class StoreProduct(PydanticModel):
-    id: int
-    type: str
-    purchased: "BaseBoolInt"
-    active: "BaseBoolInt"
-    promoted: "BaseBoolInt"
-    purchase_date: int
-    title: str
-    stickers: "BaseStickersList"
-    icon: "StoreProductIcon"
-    previews: List["BaseImage"]
-    has_animation: bool
-    subtitle: str
+    id: Optional[int] = None
+    type: Optional[str] = None
+    purchased: Optional["BaseBoolInt"] = None
+    active: Optional["BaseBoolInt"] = None
+    promoted: Optional["BaseBoolInt"] = None
+    purchase_date: Optional[int] = None
+    title: Optional[str] = None
+    stickers: Optional["BaseStickersList"] = None
+    icon: Optional["StoreProductIcon"] = None
+    previews: Optional[List["BaseImage"]] = None
+    has_animation: Optional[bool] = None
+    subtitle: Optional[str] = None
 
 
 StoreProductIcon = List["BaseImage"]
 
 
 class StoreStickersKeyword(PydanticModel):
-    words: List[str]
-    user_stickers: "StoreStickersKeywordStickers"
-    promoted_stickers: "StoreStickersKeywordStickers"
-    stickers: List["StoreStickersKeywordSticker"]
+    words: Optional[List[str]] = None
+    user_stickers: Optional["StoreStickersKeywordStickers"] = None
+    promoted_stickers: Optional["StoreStickersKeywordStickers"] = None
+    stickers: Optional[List["StoreStickersKeywordSticker"]] = None
 
 
 class StoreStickersKeywordSticker(PydanticModel):
-    pack_id: int
-    sticker_id: int
+    pack_id: Optional[int] = None
+    sticker_id: Optional[int] = None
 
 
 StoreStickersKeywordStickers = BaseStickersList
 
 
 class StoriesClickableArea(PydanticModel):
-    x: int
-    y: int
+    x: Optional[int] = None
+    y: Optional[int] = None
 
 
 class StoriesClickableSticker(PydanticModel):
-    clickable_area: List["StoriesClickableArea"]
-    id: int
-    hashtag: str
-    link_object: "BaseLink"
-    mention: str
-    tooltip_text: str
-    owner_id: int
-    story_id: int
-    question: str
-    question_button: str
-    place_id: int
-    market_item: "MarketMarketItem"
-    audio: "AudioAudio"
-    audio_start_time: int
-    style: str
-    type: str
-    subtype: str
-    post_owner_id: int
-    post_id: int
-    poll: "PollsPoll"
-    color: str
-    sticker_id: int
-    sticker_pack_id: int
-    app: "AppsAppMin"
-    app_context: str
-    has_new_interactions: bool
-    is_broadcast_notify_allowed: bool
-    situational_theme_id: int
-    situational_app_url: str
+    clickable_area: Optional[List["StoriesClickableArea"]] = None
+    id: Optional[int] = None
+    hashtag: Optional[str] = None
+    link_object: Optional["BaseLink"] = None
+    mention: Optional[str] = None
+    tooltip_text: Optional[str] = None
+    owner_id: Optional[int] = None
+    story_id: Optional[int] = None
+    question: Optional[str] = None
+    question_button: Optional[str] = None
+    place_id: Optional[int] = None
+    market_item: Optional["MarketMarketItem"] = None
+    audio: Optional["AudioAudio"] = None
+    audio_start_time: Optional[int] = None
+    style: Optional[str] = None
+    type: Optional[str] = None
+    subtype: Optional[str] = None
+    post_owner_id: Optional[int] = None
+    post_id: Optional[int] = None
+    poll: Optional["PollsPoll"] = None
+    color: Optional[str] = None
+    sticker_id: Optional[int] = None
+    sticker_pack_id: Optional[int] = None
+    app: Optional["AppsAppMin"] = None
+    app_context: Optional[str] = None
+    has_new_interactions: Optional[bool] = None
+    is_broadcast_notify_allowed: Optional[bool] = None
+    situational_theme_id: Optional[int] = None
+    situational_app_url: Optional[str] = None
 
 
 class StoriesClickableStickers(PydanticModel):
-    clickable_stickers: List["StoriesClickableSticker"]
-    original_height: int
-    original_width: int
+    clickable_stickers: Optional[List["StoriesClickableSticker"]] = None
+    original_height: Optional[int] = None
+    original_width: Optional[int] = None
 
 
 class StoriesFeedItem(PydanticModel):
-    type: str
-    id: str
-    stories: List["StoriesStory"]
-    grouped: List["StoriesFeedItem"]
-    app: "AppsAppMin"
-    promo_data: "StoriesPromoBlock"
-    birthday_user_id: int
+    type: Optional[str] = None
+    id: Optional[str] = None
+    stories: Optional[List["StoriesStory"]] = None
+    grouped: Optional[List["StoriesFeedItem"]] = None
+    app: Optional["AppsAppMin"] = None
+    promo_data: Optional["StoriesPromoBlock"] = None
+    birthday_user_id: Optional[int] = None
 
 
 class StoriesPromoBlock(PydanticModel):
-    name: str
-    photo_50: str
-    photo_100: str
-    not_animated: bool
+    name: Optional[str] = None
+    photo_50: Optional[str] = None
+    photo_100: Optional[str] = None
+    not_animated: Optional[bool] = None
 
 
 class StoriesReplies(PydanticModel):
-    count: int
-    new: int
+    count: Optional[int] = None
+    new: Optional[int] = None
 
 
 class StoriesStatLine(PydanticModel):
-    name: str
-    counter: int
-    is_unavailable: bool
+    name: Optional[str] = None
+    counter: Optional[int] = None
+    is_unavailable: Optional[bool] = None
 
 
 class StoriesStory(PydanticModel):
-    access_key: str
-    can_comment: "BaseBoolInt"
-    can_reply: "BaseBoolInt"
-    can_see: "BaseBoolInt"
-    can_like: bool
-    can_share: "BaseBoolInt"
-    can_hide: "BaseBoolInt"
-    date: int
-    expires_at: int
-    id: int
-    is_deleted: bool
-    is_expired: bool
-    link: "StoriesStoryLink"
-    owner_id: int
-    parent_story: "StoriesStory"
-    parent_story_access_key: str
-    parent_story_id: int
-    parent_story_owner_id: int
-    photo: "PhotosPhoto"
-    replies: "StoriesReplies"
-    seen: "BaseBoolInt"
-    type: "StoriesStoryType"
-    clickable_stickers: "StoriesClickableStickers"
-    video: "VideoVideo"
-    views: int
-    can_ask: "BaseBoolInt"
-    can_ask_anonymous: "BaseBoolInt"
-    narratives_count: int
-    first_narrative_title: str
-    birthday_wish_user_id: int
-    can_use_in_narrative: bool
+    access_key: Optional[str] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    can_reply: Optional["BaseBoolInt"] = None
+    can_see: Optional["BaseBoolInt"] = None
+    can_like: Optional[bool] = None
+    can_share: Optional["BaseBoolInt"] = None
+    can_hide: Optional["BaseBoolInt"] = None
+    date: Optional[int] = None
+    expires_at: Optional[int] = None
+    id: Optional[int] = None
+    is_deleted: Optional[bool] = None
+    is_expired: Optional[bool] = None
+    link: Optional["StoriesStoryLink"] = None
+    owner_id: Optional[int] = None
+    parent_story: Optional["StoriesStory"] = None
+    parent_story_access_key: Optional[str] = None
+    parent_story_id: Optional[int] = None
+    parent_story_owner_id: Optional[int] = None
+    photo: Optional["PhotosPhoto"] = None
+    replies: Optional["StoriesReplies"] = None
+    seen: Optional["BaseBoolInt"] = None
+    type: Optional["StoriesStoryType"] = None
+    clickable_stickers: Optional["StoriesClickableStickers"] = None
+    video: Optional["VideoVideo"] = None
+    views: Optional[int] = None
+    can_ask: Optional["BaseBoolInt"] = None
+    can_ask_anonymous: Optional["BaseBoolInt"] = None
+    narratives_count: Optional[int] = None
+    first_narrative_title: Optional[str] = None
+    birthday_wish_user_id: Optional[int] = None
+    can_use_in_narrative: Optional[bool] = None
 
 
 class StoriesStoryLink(PydanticModel):
-    text: str
-    url: str
+    text: Optional[str] = None
+    url: Optional[str] = None
 
 
 class StoriesStoryStats(PydanticModel):
-    answer: "StoriesStoryStatsStat"
-    bans: "StoriesStoryStatsStat"
-    open_link: "StoriesStoryStatsStat"
-    replies: "StoriesStoryStatsStat"
-    shares: "StoriesStoryStatsStat"
-    subscribers: "StoriesStoryStatsStat"
-    views: "StoriesStoryStatsStat"
-    likes: "StoriesStoryStatsStat"
+    answer: Optional["StoriesStoryStatsStat"] = None
+    bans: Optional["StoriesStoryStatsStat"] = None
+    open_link: Optional["StoriesStoryStatsStat"] = None
+    replies: Optional["StoriesStoryStatsStat"] = None
+    shares: Optional["StoriesStoryStatsStat"] = None
+    subscribers: Optional["StoriesStoryStatsStat"] = None
+    views: Optional["StoriesStoryStatsStat"] = None
+    likes: Optional["StoriesStoryStatsStat"] = None
 
 
 class StoriesStoryStatsStat(PydanticModel):
-    count: int
-    state: "StoriesStoryStatsState"
+    count: Optional[int] = None
+    state: Optional["StoriesStoryStatsState"] = None
 
 
 class StoriesStoryStatsState(enum.Enum):
@@ -3883,27 +4004,27 @@ class StoriesUploadLinkText(enum.Enum):
 
 
 class StoriesViewersItem(PydanticModel):
-    is_liked: bool
-    user_id: int
-    user: "UsersUserFull"
+    is_liked: Optional[bool] = None
+    user_id: Optional[int] = None
+    user: Optional["UsersUserFull"] = None
 
 
 class UsersCareer(PydanticModel):
-    city_id: int
-    city_name: str
-    company: str
-    country_id: int
-    _from: int
-    group_id: int
-    id: int
-    position: str
-    until: int
+    city_id: Optional[int] = None
+    city_name: Optional[str] = None
+    company: Optional[str] = None
+    country_id: Optional[int] = None
+    _from: Optional[int] = None
+    group_id: Optional[int] = None
+    id: Optional[int] = None
+    position: Optional[str] = None
+    until: Optional[int] = None
 
 
 class UsersExports(PydanticModel):
-    facebook: int
-    livejournal: int
-    twitter: int
+    facebook: Optional[int] = None
+    livejournal: Optional[int] = None
+    twitter: Optional[int] = None
 
 
 class UsersFields(enum.Enum):
@@ -3999,137 +4120,263 @@ class UsersFields(enum.Enum):
 
 
 class UsersLastSeen(PydanticModel):
-    platform: int
-    time: int
+    platform: Optional[int] = None
+    time: Optional[int] = None
 
 
 class UsersMilitary(PydanticModel):
-    country_id: int
-    _from: int
-    id: int
-    unit: str
-    unit_id: int
-    until: int
+    country_id: Optional[int] = None
+    _from: Optional[int] = None
+    id: Optional[int] = None
+    unit: Optional[str] = None
+    unit_id: Optional[int] = None
+    until: Optional[int] = None
 
 
 class UsersOccupation(PydanticModel):
-    id: int
-    name: str
-    type: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    type: Optional[str] = None
 
 
 class UsersOnlineInfo(PydanticModel):
-    visible: bool
-    last_seen: int
-    is_online: bool
-    app_id: int
-    is_mobile: bool
-    status: str
+    visible: Optional[bool] = None
+    last_seen: Optional[int] = None
+    is_online: Optional[bool] = None
+    app_id: Optional[int] = None
+    is_mobile: Optional[bool] = None
+    status: Optional[str] = None
 
 
 class UsersPersonal(PydanticModel):
-    alcohol: int
-    inspired_by: str
-    langs: List[str]
-    life_main: int
-    people_main: int
-    political: int
-    religion: str
-    religion_id: int
-    smoking: int
+    alcohol: Optional[int] = None
+    inspired_by: Optional[str] = None
+    langs: Optional[List[str]] = None
+    life_main: Optional[int] = None
+    people_main: Optional[int] = None
+    political: Optional[int] = None
+    religion: Optional[str] = None
+    religion_id: Optional[int] = None
+    smoking: Optional[int] = None
 
 
 class UsersRelative(PydanticModel):
-    birth_date: str
-    id: int
-    name: str
-    type: str
+    birth_date: Optional[str] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    type: Optional[str] = None
 
 
 class UsersSchool(PydanticModel):
-    city: int
-    _class: str
-    country: int
-    id: str
-    name: str
-    type: int
-    type_str: str
-    year_from: int
-    year_graduated: int
-    year_to: int
-    speciality: str
+    city: Optional[int] = None
+    _class: Optional[str] = None
+    country: Optional[int] = None
+    id: Optional[str] = None
+    name: Optional[str] = None
+    type: Optional[int] = None
+    type_str: Optional[str] = None
+    year_from: Optional[int] = None
+    year_graduated: Optional[int] = None
+    year_to: Optional[int] = None
+    speciality: Optional[str] = None
 
 
 class UsersSubscriptionsItem(PydanticModel):
-    allOf: Unsupported
+    pass
 
 
 class UsersUniversity(PydanticModel):
-    chair: int
-    chair_name: str
-    city: int
-    country: int
-    education_form: str
-    education_status: str
-    faculty: int
-    faculty_name: str
-    graduation: int
-    id: int
-    name: str
-    university_group_id: int
+    chair: Optional[int] = None
+    chair_name: Optional[str] = None
+    city: Optional[int] = None
+    country: Optional[int] = None
+    education_form: Optional[str] = None
+    education_status: Optional[str] = None
+    faculty: Optional[int] = None
+    faculty_name: Optional[str] = None
+    graduation: Optional[int] = None
+    id: Optional[int] = None
+    name: Optional[str] = None
+    university_group_id: Optional[int] = None
 
 
-class UsersUser(PydanticModel):
-    allOf: Unsupported
+class UsersUser(UsersUserMin):
+    sex: Optional["BaseSex"] = None
+    screen_name: Optional[str] = None
+    photo_50: Optional[str] = None
+    photo_100: Optional[str] = None
+    online_info: Optional["UsersOnlineInfo"] = None
+    online: Optional["BaseBoolInt"] = None
+    online_mobile: Optional["BaseBoolInt"] = None
+    online_app: Optional[int] = None
+    verified: Optional["BaseBoolInt"] = None
+    trending: Optional["BaseBoolInt"] = None
+    friend_status: Optional["FriendsFriendStatusStatus"] = None
+    mutual: Optional["FriendsRequestsMutual"] = None
 
 
 class UsersUserConnections(PydanticModel):
-    skype: str
-    facebook: str
-    facebook_name: str
-    twitter: str
-    livejournal: str
-    instagram: str
+    skype: Optional[str] = None
+    facebook: Optional[str] = None
+    facebook_name: Optional[str] = None
+    twitter: Optional[str] = None
+    livejournal: Optional[str] = None
+    instagram: Optional[str] = None
 
 
 class UsersUserCounters(PydanticModel):
-    albums: int
-    audios: int
-    followers: int
-    friends: int
-    gifts: int
-    groups: int
-    notes: int
-    online_friends: int
-    pages: int
-    photos: int
-    subscriptions: int
-    user_photos: int
-    user_videos: int
-    videos: int
-    new_photo_tags: int
-    new_recognition_tags: int
-    mutual_friends: int
-    posts: int
-    articles: int
-    wishes: int
-    podcasts: int
-    clips: int
-    clips_followers: int
+    albums: Optional[int] = None
+    audios: Optional[int] = None
+    followers: Optional[int] = None
+    friends: Optional[int] = None
+    gifts: Optional[int] = None
+    groups: Optional[int] = None
+    notes: Optional[int] = None
+    online_friends: Optional[int] = None
+    pages: Optional[int] = None
+    photos: Optional[int] = None
+    subscriptions: Optional[int] = None
+    user_photos: Optional[int] = None
+    user_videos: Optional[int] = None
+    videos: Optional[int] = None
+    new_photo_tags: Optional[int] = None
+    new_recognition_tags: Optional[int] = None
+    mutual_friends: Optional[int] = None
+    posts: Optional[int] = None
+    articles: Optional[int] = None
+    wishes: Optional[int] = None
+    podcasts: Optional[int] = None
+    clips: Optional[int] = None
+    clips_followers: Optional[int] = None
 
 
-class UsersUserFull(PydanticModel):
-    allOf: Unsupported
+class UsersUserFull(UsersUser):
+    first_name_nom: Optional[str] = None
+    first_name_gen: Optional[str] = None
+    first_name_dat: Optional[str] = None
+    first_name_acc: Optional[str] = None
+    first_name_ins: Optional[str] = None
+    first_name_abl: Optional[str] = None
+    last_name_nom: Optional[str] = None
+    last_name_gen: Optional[str] = None
+    last_name_dat: Optional[str] = None
+    last_name_acc: Optional[str] = None
+    last_name_ins: Optional[str] = None
+    last_name_abl: Optional[str] = None
+    nickname: Optional[str] = None
+    maiden_name: Optional[str] = None
+    contact_name: Optional[str] = None
+    domain: Optional[str] = None
+    bdate: Optional[str] = None
+    city: Optional["BaseCity"] = None
+    country: Optional["BaseCountry"] = None
+    timezone: Optional[int] = None
+    owner_state: Optional["OwnerState"] = None
+    photo_200: Optional[str] = None
+    photo_max: Optional[str] = None
+    photo_200_orig: Optional[str] = None
+    photo_400_orig: Optional[str] = None
+    photo_max_orig: Optional[str] = None
+    photo_id: Optional[str] = None
+    has_photo: Optional["BaseBoolInt"] = None
+    has_mobile: Optional["BaseBoolInt"] = None
+    is_friend: Optional["BaseBoolInt"] = None
+    wall_comments: Optional["BaseBoolInt"] = None
+    can_post: Optional["BaseBoolInt"] = None
+    can_see_all_posts: Optional["BaseBoolInt"] = None
+    can_see_audio: Optional["BaseBoolInt"] = None
+    type: Optional["UsersUserType"] = None
+    email: Optional[str] = None
+    skype: Optional[str] = None
+    facebook: Optional[str] = None
+    facebook_name: Optional[str] = None
+    twitter: Optional[str] = None
+    livejournal: Optional[str] = None
+    instagram: Optional[str] = None
+    test: Optional["BaseBoolInt"] = None
+    video_live: Optional["VideoLiveInfo"] = None
+    is_video_live_notifications_blocked: Optional["BaseBoolInt"] = None
+    is_service: Optional[bool] = None
+    service_description: Optional[str] = None
+    photo_rec: Optional["PhotosPhotoFalseable"] = None
+    photo_medium: Optional["PhotosPhotoFalseable"] = None
+    photo_medium_rec: Optional["PhotosPhotoFalseable"] = None
+    photo: Optional[str] = None
+    photo_big: Optional[str] = None
+    photo_400: Optional[str] = None
+    photo_max_size: Optional["PhotosPhoto"] = None
+    language: Optional[str] = None
+    stories_archive_count: Optional[int] = None
+    wall_default: Optional[str] = None
+    can_call: Optional[bool] = None
+    can_see_wishes: Optional[bool] = None
+    can_see_gifts: Optional["BaseBoolInt"] = None
+    interests: Optional[str] = None
+    books: Optional[str] = None
+    tv: Optional[str] = None
+    quotes: Optional[str] = None
+    about: Optional[str] = None
+    games: Optional[str] = None
+    movies: Optional[str] = None
+    activities: Optional[str] = None
+    music: Optional[str] = None
+    can_write_private_message: Optional["BaseBoolInt"] = None
+    can_send_friend_request: Optional["BaseBoolInt"] = None
+    can_be_invited_group: Optional[bool] = None
+    mobile_phone: Optional[str] = None
+    home_phone: Optional[str] = None
+    site: Optional[str] = None
+    status_audio: Optional["AudioAudio"] = None
+    status: Optional[str] = None
+    activity: Optional[str] = None
+    last_seen: Optional["UsersLastSeen"] = None
+    exports: Optional["UsersExports"] = None
+    crop_photo: Optional["BaseCropPhoto"] = None
+    followers_count: Optional[int] = None
+    video_live_level: Optional[int] = None
+    video_live_count: Optional[int] = None
+    clips_count: Optional[int] = None
+    blacklisted: Optional["BaseBoolInt"] = None
+    blacklisted_by_me: Optional["BaseBoolInt"] = None
+    is_favorite: Optional["BaseBoolInt"] = None
+    is_hidden_from_feed: Optional["BaseBoolInt"] = None
+    common_count: Optional[int] = None
+    occupation: Optional["UsersOccupation"] = None
+    career: Optional[List["UsersCareer"]] = None
+    military: Optional[List["UsersMilitary"]] = None
+    university: Optional[int] = None
+    university_name: Optional[str] = None
+    university_group_id: Optional[int] = None
+    faculty: Optional[int] = None
+    faculty_name: Optional[str] = None
+    graduation: Optional[int] = None
+    education_form: Optional[str] = None
+    education_status: Optional[str] = None
+    home_town: Optional[str] = None
+    relation: Optional["UsersUserRelation"] = None
+    relation_partner: Optional["UsersUserMin"] = None
+    personal: Optional["UsersPersonal"] = None
+    universities: Optional[List["UsersUniversity"]] = None
+    schools: Optional[List["UsersSchool"]] = None
+    relatives: Optional[List["UsersRelative"]] = None
+    is_subscribed_podcasts: Optional[bool] = None
+    can_subscribe_podcasts: Optional[bool] = None
+    can_subscribe_posts: Optional[bool] = None
+    counters: Optional["UsersUserCounters"] = None
+    access_key: Optional[str] = None
+    can_upload_doc: Optional["BaseBoolInt"] = None
+    hash: Optional[str] = None
+    has_email: Optional[bool] = None
 
 
 class UsersUserMin(PydanticModel):
-    deactivated: str
-    first_name: str
-    hidden: int
-    id: int
-    last_name: str
-    can_access_closed: bool
-    is_closed: bool
+    deactivated: Optional[str] = None
+    first_name: Optional[str] = None
+    hidden: Optional[int] = None
+    id: Optional[int] = None
+    last_name: Optional[str] = None
+    can_access_closed: Optional[bool] = None
+    is_closed: Optional[bool] = None
 
 
 class UsersUserRelation(enum.IntEnum):
@@ -4145,51 +4392,51 @@ class UsersUserRelation(enum.IntEnum):
 
 
 class UsersUserSettingsXtr(PydanticModel):
-    connections: "UsersUserConnections"
-    bdate: str
-    bdate_visibility: int
-    city: "BaseCity"
-    country: "BaseCountry"
-    first_name: str
-    home_town: str
-    last_name: str
-    maiden_name: str
-    name_request: "AccountNameRequest"
-    personal: "UsersPersonal"
-    phone: str
-    relation: "UsersUserRelation"
-    relation_partner: "UsersUserMin"
-    relation_pending: "BaseBoolInt"
-    relation_requests: List["UsersUserMin"]
-    screen_name: str
-    sex: "BaseSex"
-    status: str
-    status_audio: "AudioAudio"
-    interests: "AccountUserSettingsInterests"
-    languages: List[str]
+    connections: Optional["UsersUserConnections"] = None
+    bdate: Optional[str] = None
+    bdate_visibility: Optional[int] = None
+    city: Optional["BaseCity"] = None
+    country: Optional["BaseCountry"] = None
+    first_name: Optional[str] = None
+    home_town: Optional[str] = None
+    last_name: Optional[str] = None
+    maiden_name: Optional[str] = None
+    name_request: Optional["AccountNameRequest"] = None
+    personal: Optional["UsersPersonal"] = None
+    phone: Optional[str] = None
+    relation: Optional["UsersUserRelation"] = None
+    relation_partner: Optional["UsersUserMin"] = None
+    relation_pending: Optional["BaseBoolInt"] = None
+    relation_requests: Optional[List["UsersUserMin"]] = None
+    screen_name: Optional[str] = None
+    sex: Optional["BaseSex"] = None
+    status: Optional[str] = None
+    status_audio: Optional["AudioAudio"] = None
+    interests: Optional["AccountUserSettingsInterests"] = None
+    languages: Optional[List[str]] = None
 
 
 class UsersUserType(enum.Enum):
     PROFILE = "profile"
 
 
-class UsersUserXtrCounters(PydanticModel):
-    allOf: Unsupported
+class UsersUserXtrCounters(UsersUserFull):
+    pass
 
 
-class UsersUserXtrType(PydanticModel):
-    allOf: Unsupported
+class UsersUserXtrType(UsersUser):
+    type: Optional["UsersUserType"] = None
 
 
 class UsersUsersArray(PydanticModel):
-    count: int
-    items: List[int]
+    count: Optional[int] = None
+    items: Optional[List[int]] = None
 
 
 class UtilsDomainResolved(PydanticModel):
-    object_id: int
-    group_id: int
-    type: "UtilsDomainResolvedType"
+    object_id: Optional[int] = None
+    group_id: Optional[int] = None
+    type: Optional["UtilsDomainResolvedType"] = None
 
 
 class UtilsDomainResolvedType(enum.Enum):
@@ -4202,17 +4449,17 @@ class UtilsDomainResolvedType(enum.Enum):
 
 
 class UtilsLastShortenedLink(PydanticModel):
-    access_key: str
-    key: str
-    short_url: str
-    timestamp: int
-    url: str
-    views: int
+    access_key: Optional[str] = None
+    key: Optional[str] = None
+    short_url: Optional[str] = None
+    timestamp: Optional[int] = None
+    url: Optional[str] = None
+    views: Optional[int] = None
 
 
 class UtilsLinkChecked(PydanticModel):
-    link: str
-    status: "UtilsLinkCheckedStatus"
+    link: Optional[str] = None
+    status: Optional["UtilsLinkCheckedStatus"] = None
 
 
 class UtilsLinkCheckedStatus(enum.Enum):
@@ -4222,142 +4469,189 @@ class UtilsLinkCheckedStatus(enum.Enum):
 
 
 class UtilsLinkStats(PydanticModel):
-    key: str
-    stats: List["UtilsStats"]
+    key: Optional[str] = None
+    stats: Optional[List["UtilsStats"]] = None
 
 
 class UtilsLinkStatsExtended(PydanticModel):
-    key: str
-    stats: List["UtilsStatsExtended"]
+    key: Optional[str] = None
+    stats: Optional[List["UtilsStatsExtended"]] = None
 
 
 class UtilsShortLink(PydanticModel):
-    access_key: str
-    key: str
-    short_url: str
-    url: str
+    access_key: Optional[str] = None
+    key: Optional[str] = None
+    short_url: Optional[str] = None
+    url: Optional[str] = None
 
 
 class UtilsStats(PydanticModel):
-    timestamp: int
-    views: int
+    timestamp: Optional[int] = None
+    views: Optional[int] = None
 
 
 class UtilsStatsCity(PydanticModel):
-    city_id: int
-    views: int
+    city_id: Optional[int] = None
+    views: Optional[int] = None
 
 
 class UtilsStatsCountry(PydanticModel):
-    country_id: int
-    views: int
+    country_id: Optional[int] = None
+    views: Optional[int] = None
 
 
 class UtilsStatsExtended(PydanticModel):
-    cities: List["UtilsStatsCity"]
-    countries: List["UtilsStatsCountry"]
-    sex_age: List["UtilsStatsSexAge"]
-    timestamp: int
-    views: int
+    cities: Optional[List["UtilsStatsCity"]] = None
+    countries: Optional[List["UtilsStatsCountry"]] = None
+    sex_age: Optional[List["UtilsStatsSexAge"]] = None
+    timestamp: Optional[int] = None
+    views: Optional[int] = None
 
 
 class UtilsStatsSexAge(PydanticModel):
-    age_range: str
-    female: int
-    male: int
+    age_range: Optional[str] = None
+    female: Optional[int] = None
+    male: Optional[int] = None
 
 
 class VideoLiveInfo(PydanticModel):
-    enabled: "BaseBoolInt"
-    is_notifications_blocked: "BaseBoolInt"
+    enabled: Optional["BaseBoolInt"] = None
+    is_notifications_blocked: Optional["BaseBoolInt"] = None
 
 
 class VideoLiveSettings(PydanticModel):
-    can_rewind: "BaseBoolInt"
-    is_endless: "BaseBoolInt"
-    max_duration: int
+    can_rewind: Optional["BaseBoolInt"] = None
+    is_endless: Optional["BaseBoolInt"] = None
+    max_duration: Optional[int] = None
 
 
 class VideoRestrictionButton(PydanticModel):
-    action: str
-    title: str
+    action: Optional[str] = None
+    title: Optional[str] = None
 
 
 class VideoSaveResult(PydanticModel):
-    access_key: str
-    description: str
-    owner_id: int
-    title: str
-    upload_url: str
-    video_id: int
+    access_key: Optional[str] = None
+    description: Optional[str] = None
+    owner_id: Optional[int] = None
+    title: Optional[str] = None
+    upload_url: Optional[str] = None
+    video_id: Optional[int] = None
 
 
 class VideoVideo(PydanticModel):
-    allOf: Unsupported
+    access_key: Optional[str] = None
+    adding_date: Optional[int] = None
+    can_comment: Optional["BaseBoolInt"] = None
+    can_edit: Optional["BaseBoolInt"] = None
+    can_like: Optional["BaseBoolInt"] = None
+    can_repost: Optional["BaseBoolInt"] = None
+    can_subscribe: Optional["BaseBoolInt"] = None
+    can_add_to_faves: Optional["BaseBoolInt"] = None
+    can_add: Optional["BaseBoolInt"] = None
+    can_attach_link: Optional["BaseBoolInt"] = None
+    is_private: Optional["BaseBoolInt"] = None
+    comments: Optional[int] = None
+    date: Optional[int] = None
+    description: Optional[str] = None
+    duration: Optional[int] = None
+    image: Optional[List["VideoVideoImage"]] = None
+    first_frame: Optional[List["VideoVideoImage"]] = None
+    width: Optional[int] = None
+    height: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    user_id: Optional[int] = None
+    title: Optional[str] = None
+    is_favorite: Optional[bool] = None
+    player: Optional[str] = None
+    processing: Optional["BasePropertyExists"] = None
+    converting: Optional["BaseBoolInt"] = None
+    restriction: Optional["MediaRestriction"] = None
+    added: Optional["BaseBoolInt"] = None
+    is_subscribed: Optional["BaseBoolInt"] = None
+    track_code: Optional[str] = None
+    repeat: Optional["BasePropertyExists"] = None
+    type: Optional[str] = None
+    views: Optional[int] = None
+    local_views: Optional[int] = None
+    content_restricted: Optional[int] = None
+    content_restricted_message: Optional[str] = None
+    balance: Optional[int] = None
+    live_status: Optional[str] = None
+    live: Optional["BasePropertyExists"] = None
+    upcoming: Optional["BasePropertyExists"] = None
+    live_start_time: Optional[int] = None
+    live_notify: Optional["BaseBoolInt"] = None
+    spectators: Optional[int] = None
+    platform: Optional[str] = None
+    likes: Optional["BaseLikes"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
 
 
 class VideoVideoAlbumFull(PydanticModel):
-    count: int
-    id: int
-    image: List["VideoVideoImage"]
-    image_blur: "BasePropertyExists"
-    is_system: "BasePropertyExists"
-    owner_id: int
-    title: str
-    updated_time: int
+    count: Optional[int] = None
+    id: Optional[int] = None
+    image: Optional[List["VideoVideoImage"]] = None
+    image_blur: Optional["BasePropertyExists"] = None
+    is_system: Optional["BasePropertyExists"] = None
+    owner_id: Optional[int] = None
+    title: Optional[str] = None
+    updated_time: Optional[int] = None
 
 
 class VideoVideoFiles(PydanticModel):
-    external: str
-    mp4_240: str
-    mp4_360: str
-    mp4_480: str
-    mp4_720: str
-    mp4_1080: str
-    flv_320: str
+    external: Optional[str] = None
+    mp4_240: Optional[str] = None
+    mp4_360: Optional[str] = None
+    mp4_480: Optional[str] = None
+    mp4_720: Optional[str] = None
+    mp4_1080: Optional[str] = None
+    flv_320: Optional[str] = None
 
 
-class VideoVideoFull(PydanticModel):
-    allOf: Unsupported
+class VideoVideoFull(VideoVideo):
+    files: Optional["VideoVideoFiles"] = None
+    live_settings: Optional["VideoLiveSettings"] = None
 
 
-class VideoVideoImage(PydanticModel):
-    allOf: Unsupported
+class VideoVideoImage(BaseImage):
+    with_padding: Optional["BasePropertyExists"] = None
 
 
 class WallAppPost(PydanticModel):
-    id: int
-    name: str
-    photo_130: str
-    photo_604: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    photo_130: Optional[str] = None
+    photo_604: Optional[str] = None
 
 
 class WallAttachedNote(PydanticModel):
-    comments: int
-    date: int
-    id: int
-    owner_id: int
-    read_comments: int
-    title: str
-    view_url: str
+    comments: Optional[int] = None
+    date: Optional[int] = None
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    read_comments: Optional[int] = None
+    title: Optional[str] = None
+    view_url: Optional[str] = None
 
 
 class WallCarouselBase(PydanticModel):
-    carousel_offset: int
+    carousel_offset: Optional[int] = None
 
 
 class WallCommentAttachment(PydanticModel):
-    audio: "AudioAudio"
-    doc: "DocsDoc"
-    link: "BaseLink"
-    market: "MarketMarketItem"
-    market_market_album: "MarketMarketAlbum"
-    note: "WallAttachedNote"
-    page: "PagesWikipageFull"
-    photo: "PhotosPhoto"
-    sticker: "BaseSticker"
-    type: "WallCommentAttachmentType"
-    video: "VideoVideo"
+    audio: Optional["AudioAudio"] = None
+    doc: Optional["DocsDoc"] = None
+    link: Optional["BaseLink"] = None
+    market: Optional["MarketMarketItem"] = None
+    market_market_album: Optional["MarketMarketAlbum"] = None
+    note: Optional["WallAttachedNote"] = None
+    page: Optional["PagesWikipageFull"] = None
+    photo: Optional["PhotosPhoto"] = None
+    sticker: Optional["BaseSticker"] = None
+    type: Optional["WallCommentAttachmentType"] = None
+    video: Optional["VideoVideo"] = None
 
 
 class WallCommentAttachmentType(enum.Enum):
@@ -4374,31 +4668,31 @@ class WallCommentAttachmentType(enum.Enum):
 
 
 class WallGeo(PydanticModel):
-    coordinates: str
-    place: "BasePlace"
-    showmap: int
-    type: str
+    coordinates: Optional[str] = None
+    place: Optional["BasePlace"] = None
+    showmap: Optional[int] = None
+    type: Optional[str] = None
 
 
 class WallGraffiti(PydanticModel):
-    id: int
-    owner_id: int
-    photo_200: str
-    photo_586: str
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_200: Optional[str] = None
+    photo_586: Optional[str] = None
 
 
 class WallPostCopyright(PydanticModel):
-    id: int
-    link: str
-    name: str
-    type: str
+    id: Optional[int] = None
+    link: Optional[str] = None
+    name: Optional[str] = None
+    type: Optional[str] = None
 
 
 class WallPostSource(PydanticModel):
-    data: str
-    platform: str
-    type: "WallPostSourceType"
-    url: str
+    data: Optional[str] = None
+    platform: Optional[str] = None
+    type: Optional["WallPostSourceType"] = None
+    url: Optional[str] = None
 
 
 class WallPostSourceType(enum.Enum):
@@ -4419,87 +4713,87 @@ class WallPostType(enum.Enum):
 
 
 class WallPostedPhoto(PydanticModel):
-    id: int
-    owner_id: int
-    photo_130: str
-    photo_604: str
+    id: Optional[int] = None
+    owner_id: Optional[int] = None
+    photo_130: Optional[str] = None
+    photo_604: Optional[str] = None
 
 
 class WallViews(PydanticModel):
-    count: int
+    count: Optional[int] = None
 
 
 class WallWallComment(PydanticModel):
-    attachments: List["WallCommentAttachment"]
-    date: int
-    donut: "WallWallCommentDonut"
-    from_id: int
-    id: int
-    likes: "BaseLikesInfo"
-    real_offset: int
-    reply_to_comment: int
-    reply_to_user: int
-    text: str
-    thread: "CommentThread"
-    post_id: int
-    owner_id: int
-    parents_stack: List[int]
-    deleted: bool
+    attachments: Optional[List["WallCommentAttachment"]] = None
+    date: Optional[int] = None
+    donut: Optional["WallWallCommentDonut"] = None
+    from_id: Optional[int] = None
+    id: Optional[int] = None
+    likes: Optional["BaseLikesInfo"] = None
+    real_offset: Optional[int] = None
+    reply_to_comment: Optional[int] = None
+    reply_to_user: Optional[int] = None
+    text: Optional[str] = None
+    thread: Optional["CommentThread"] = None
+    post_id: Optional[int] = None
+    owner_id: Optional[int] = None
+    parents_stack: Optional[List[int]] = None
+    deleted: Optional[bool] = None
 
 
 class WallWallCommentDonut(PydanticModel):
-    is_don: bool
-    placeholder: "WallWallCommentDonutPlaceholder"
+    is_don: Optional[bool] = None
+    placeholder: Optional["WallWallCommentDonutPlaceholder"] = None
 
 
 class WallWallCommentDonutPlaceholder(PydanticModel):
-    text: str
+    text: Optional[str] = None
 
 
 class WallWallpost(PydanticModel):
-    access_key: str
-    attachments: List["WallWallpostAttachment"]
-    copyright: "WallPostCopyright"
-    date: int
-    edited: int
-    from_id: int
-    geo: "WallGeo"
-    id: int
-    is_archived: bool
-    is_favorite: bool
-    likes: "BaseLikesInfo"
-    owner_id: int
-    poster: object
-    post_id: int
-    parents_stack: List[int]
-    post_source: "WallPostSource"
-    post_type: "WallPostType"
-    reposts: "BaseRepostsInfo"
-    signer_id: int
-    text: str
-    views: "WallViews"
+    access_key: Optional[str] = None
+    attachments: Optional[List["WallWallpostAttachment"]] = None
+    copyright: Optional["WallPostCopyright"] = None
+    date: Optional[int] = None
+    edited: Optional[int] = None
+    from_id: Optional[int] = None
+    geo: Optional["WallGeo"] = None
+    id: Optional[int] = None
+    is_archived: Optional[bool] = None
+    is_favorite: Optional[bool] = None
+    likes: Optional["BaseLikesInfo"] = None
+    owner_id: Optional[int] = None
+    poster: Optional[object] = None
+    post_id: Optional[int] = None
+    parents_stack: Optional[List[int]] = None
+    post_source: Optional["WallPostSource"] = None
+    post_type: Optional["WallPostType"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    signer_id: Optional[int] = None
+    text: Optional[str] = None
+    views: Optional["WallViews"] = None
 
 
 class WallWallpostAttachment(PydanticModel):
-    access_key: str
-    album: "PhotosPhotoAlbum"
-    app: "WallAppPost"
-    audio: "AudioAudio"
-    doc: "DocsDoc"
-    event: "EventsEventAttach"
-    group: "GroupsGroupAttach"
-    graffiti: "WallGraffiti"
-    link: "BaseLink"
-    market: "MarketMarketItem"
-    market_album: "MarketMarketAlbum"
-    note: "WallAttachedNote"
-    page: "PagesWikipageFull"
-    photo: "PhotosPhoto"
-    photos_list: List[str]
-    poll: "PollsPoll"
-    posted_photo: "WallPostedPhoto"
-    type: "WallWallpostAttachmentType"
-    video: "VideoVideo"
+    access_key: Optional[str] = None
+    album: Optional["PhotosPhotoAlbum"] = None
+    app: Optional["WallAppPost"] = None
+    audio: Optional["AudioAudio"] = None
+    doc: Optional["DocsDoc"] = None
+    event: Optional["EventsEventAttach"] = None
+    group: Optional["GroupsGroupAttach"] = None
+    graffiti: Optional["WallGraffiti"] = None
+    link: Optional["BaseLink"] = None
+    market: Optional["MarketMarketItem"] = None
+    market_album: Optional["MarketMarketAlbum"] = None
+    note: Optional["WallAttachedNote"] = None
+    page: Optional["PagesWikipageFull"] = None
+    photo: Optional["PhotosPhoto"] = None
+    photos_list: Optional[List[str]] = None
+    poll: Optional["PollsPoll"] = None
+    posted_photo: Optional["WallPostedPhoto"] = None
+    type: Optional["WallWallpostAttachmentType"] = None
+    video: Optional["VideoVideo"] = None
 
 
 class WallWallpostAttachmentType(enum.Enum):
@@ -4522,54 +4816,63 @@ class WallWallpostAttachmentType(enum.Enum):
 
 
 class WallWallpostCommentsDonut(PydanticModel):
-    placeholder: "WallWallpostCommentsDonutPlaceholder"
+    placeholder: Optional["WallWallpostCommentsDonutPlaceholder"] = None
 
 
 class WallWallpostCommentsDonutPlaceholder(PydanticModel):
-    text: str
+    text: Optional[str] = None
 
 
 class WallWallpostDonut(PydanticModel):
-    is_donut: bool
-    paid_duration: int
-    placeholder: "WallWallpostDonutPlaceholder"
-    can_publish_free_copy: bool
-    edit_mode: str
+    is_donut: Optional[bool] = None
+    paid_duration: Optional[int] = None
+    placeholder: Optional["WallWallpostDonutPlaceholder"] = None
+    can_publish_free_copy: Optional[bool] = None
+    edit_mode: Optional[str] = None
 
 
 class WallWallpostDonutPlaceholder(PydanticModel):
-    text: str
+    text: Optional[str] = None
 
 
-class WallWallpostFull(PydanticModel):
-    allOf: Unsupported
+class WallWallpostFull(WallCarouselBase, WallWallpost):
+    copy_history: Optional[List["WallWallpost"]] = None
+    can_edit: Optional["BaseBoolInt"] = None
+    created_by: Optional[int] = None
+    can_delete: Optional["BaseBoolInt"] = None
+    can_pin: Optional["BaseBoolInt"] = None
+    donut: Optional["WallWallpostDonut"] = None
+    is_pinned: Optional[int] = None
+    comments: Optional["BaseCommentsInfo"] = None
+    marked_as_ads: Optional["BaseBoolInt"] = None
+    short_text_rate: Optional[int] = None
 
 
 class WallWallpostToId(PydanticModel):
-    attachments: List["WallWallpostAttachment"]
-    comments: "BaseCommentsInfo"
-    copy_owner_id: int
-    copy_post_id: int
-    date: int
-    from_id: int
-    geo: "WallGeo"
-    id: int
-    is_favorite: bool
-    likes: "BaseLikesInfo"
-    post_id: int
-    post_source: "WallPostSource"
-    post_type: "WallPostType"
-    reposts: "BaseRepostsInfo"
-    signer_id: int
-    text: str
-    to_id: int
+    attachments: Optional[List["WallWallpostAttachment"]] = None
+    comments: Optional["BaseCommentsInfo"] = None
+    copy_owner_id: Optional[int] = None
+    copy_post_id: Optional[int] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    geo: Optional["WallGeo"] = None
+    id: Optional[int] = None
+    is_favorite: Optional[bool] = None
+    likes: Optional["BaseLikesInfo"] = None
+    post_id: Optional[int] = None
+    post_source: Optional["WallPostSource"] = None
+    post_type: Optional["WallPostType"] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    signer_id: Optional[int] = None
+    text: Optional[str] = None
+    to_id: Optional[int] = None
 
 
 class WidgetsCommentMedia(PydanticModel):
-    item_id: int
-    owner_id: int
-    thumb_src: str
-    type: "WidgetsCommentMediaType"
+    item_id: Optional[int] = None
+    owner_id: Optional[int] = None
+    thumb_src: Optional[str] = None
+    type: Optional["WidgetsCommentMediaType"] = None
 
 
 class WidgetsCommentMediaType(enum.Enum):
@@ -4579,51 +4882,51 @@ class WidgetsCommentMediaType(enum.Enum):
 
 
 class WidgetsCommentReplies(PydanticModel):
-    can_post: "BaseBoolInt"
-    count: int
-    replies: List["WidgetsCommentRepliesItem"]
+    can_post: Optional["BaseBoolInt"] = None
+    count: Optional[int] = None
+    replies: Optional[List["WidgetsCommentRepliesItem"]] = None
 
 
 class WidgetsCommentRepliesItem(PydanticModel):
-    cid: int
-    date: int
-    likes: "WidgetsWidgetLikes"
-    text: str
-    uid: int
-    user: "UsersUserFull"
+    cid: Optional[int] = None
+    date: Optional[int] = None
+    likes: Optional["WidgetsWidgetLikes"] = None
+    text: Optional[str] = None
+    uid: Optional[int] = None
+    user: Optional["UsersUserFull"] = None
 
 
 class WidgetsWidgetComment(PydanticModel):
-    attachments: List["WallCommentAttachment"]
-    can_delete: "BaseBoolInt"
-    comments: "WidgetsCommentReplies"
-    date: int
-    from_id: int
-    id: int
-    likes: "BaseLikesInfo"
-    media: "WidgetsCommentMedia"
-    post_source: "WallPostSource"
-    post_type: int
-    reposts: "BaseRepostsInfo"
-    text: str
-    to_id: int
-    user: "UsersUserFull"
+    attachments: Optional[List["WallCommentAttachment"]] = None
+    can_delete: Optional["BaseBoolInt"] = None
+    comments: Optional["WidgetsCommentReplies"] = None
+    date: Optional[int] = None
+    from_id: Optional[int] = None
+    id: Optional[int] = None
+    likes: Optional["BaseLikesInfo"] = None
+    media: Optional["WidgetsCommentMedia"] = None
+    post_source: Optional["WallPostSource"] = None
+    post_type: Optional[int] = None
+    reposts: Optional["BaseRepostsInfo"] = None
+    text: Optional[str] = None
+    to_id: Optional[int] = None
+    user: Optional["UsersUserFull"] = None
 
 
 class WidgetsWidgetLikes(PydanticModel):
-    count: int
+    count: Optional[int] = None
 
 
 class WidgetsWidgetPage(PydanticModel):
-    comments: "BaseObjectCount"
-    date: int
-    description: str
-    id: int
-    likes: "BaseObjectCount"
-    page_id: str
-    photo: str
-    title: str
-    url: str
+    comments: Optional["BaseObjectCount"] = None
+    date: Optional[int] = None
+    description: Optional[str] = None
+    id: Optional[int] = None
+    likes: Optional["BaseObjectCount"] = None
+    page_id: Optional[str] = None
+    photo: Optional[str] = None
+    title: Optional[str] = None
+    url: Optional[str] = None
 
 
 AccountAccountCounters.update_forward_refs()

@@ -3,7 +3,7 @@ from codegen import Generator
 
 files = (
     "objects",
-    #"responses",
+    "responses",
 )
 
 for i in files:
