@@ -1,4 +1,4 @@
-from typing import Tuple, List, Dict
+from typing import Tuple, List, Set
 from pathlib import Path
 import json
 
@@ -45,7 +45,7 @@ class Generator:
 class Parser:
     """ Весь парсинг """
 
-    requirements: List[str]
+    requirements: Set[str]
     objects_names: List[str]
     file_name: str
     properties_types: "PropertiesTypes"
@@ -56,7 +56,7 @@ class Parser:
     )
 
     def __init__(self, file_name: str) -> None:
-        self.requirements = list()
+        self.requirements = set()
         self.objects_names = list()
         self.properties_types = PropertiesTypes(self)
         self.file_name = file_name
@@ -89,7 +89,7 @@ class Parser:
         req = data[0].replace(".json#", "")
 
         if req != self.file_name:
-            self.requirements.append(req)
+            self.requirements.add(req)
             output = f"{req}.{cls_name}"
         else:
             output = cls_name

@@ -3,135 +3,15 @@ import enum
 
 from pydantic import BaseModel as PydanticModel
 
+from . import objects
 
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
-from . import objects
+
 class AccountChangepasswordResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AccountGetactiveoffersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AccountGetapppermissionsResponse(PydanticModel):
@@ -139,7 +19,7 @@ class AccountGetapppermissionsResponse(PydanticModel):
 
 
 class AccountGetbannedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AccountGetcountersResponse(PydanticModel):
@@ -159,7 +39,7 @@ class AccountGetpushsettingsResponse(PydanticModel):
 
 
 class AccountSaveprofileinfoResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdsAddofficeusersResponse(PydanticModel):
@@ -183,7 +63,7 @@ class AdsCreateclientsResponse(PydanticModel):
 
 
 class AdsCreatetargetgroupResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdsDeleteadsResponse(PydanticModel):
@@ -223,7 +103,7 @@ class AdsGetcampaignsResponse(PydanticModel):
 
 
 class AdsGetcategoriesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdsGetclientsResponse(PydanticModel):
@@ -239,11 +119,11 @@ class AdsGetfloodstatsResponse(PydanticModel):
 
 
 class AdsGetlookalikerequestsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdsGetmusiciansResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdsGetofficeusersResponse(PydanticModel):
@@ -319,31 +199,31 @@ class AdsUpdateofficeusersResponse(PydanticModel):
 
 
 class AdswebGetadcategoriesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdswebGetadunitcodeResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdswebGetadunitsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdswebGetfraudhistoryResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdswebGetsitesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AdswebGetstatisticsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppwidgetsGetappimageuploadserverResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppwidgetsGetappimagesResponse(PydanticModel):
@@ -351,7 +231,7 @@ class AppwidgetsGetappimagesResponse(PydanticModel):
 
 
 class AppwidgetsGetgroupimageuploadserverResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppwidgetsGetgroupimagesResponse(PydanticModel):
@@ -371,23 +251,23 @@ class AppwidgetsSavegroupimageResponse(PydanticModel):
 
 
 class AppsGetcatalogResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsGetfriendslistResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsGetleaderboardExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsGetleaderboardResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsGetscopesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsGetscoreResponse(PydanticModel):
@@ -395,7 +275,7 @@ class AppsGetscoreResponse(PydanticModel):
 
 
 class AppsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class AppsSendrequestResponse(PydanticModel):
@@ -403,7 +283,7 @@ class AppsSendrequestResponse(PydanticModel):
 
 
 class AuthRestoreResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class BaseBoolResponse(PydanticModel):
@@ -427,23 +307,23 @@ class BoardCreatecommentResponse(PydanticModel):
 
 
 class BoardGetcommentsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class BoardGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class BoardGettopicsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class BoardGettopicsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetchairsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetcitiesbyidResponse(PydanticModel):
@@ -451,7 +331,7 @@ class DatabaseGetcitiesbyidResponse(PydanticModel):
 
 
 class DatabaseGetcitiesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetcountriesbyidResponse(PydanticModel):
@@ -459,11 +339,11 @@ class DatabaseGetcountriesbyidResponse(PydanticModel):
 
 
 class DatabaseGetcountriesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetfacultiesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetmetrostationsbyidResponse(PydanticModel):
@@ -471,11 +351,11 @@ class DatabaseGetmetrostationsbyidResponse(PydanticModel):
 
 
 class DatabaseGetmetrostationsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetregionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetschoolclassesResponse(PydanticModel):
@@ -483,11 +363,11 @@ class DatabaseGetschoolclassesResponse(PydanticModel):
 
 
 class DatabaseGetschoolsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DatabaseGetuniversitiesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DocsAddResponse(PydanticModel):
@@ -499,7 +379,7 @@ class DocsGetbyidResponse(PydanticModel):
 
 
 class DocsGettypesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DocsGetuploadserver(PydanticModel):
@@ -507,15 +387,15 @@ class DocsGetuploadserver(PydanticModel):
 
 
 class DocsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DocsSaveResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DocsSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DonutGetsubscriptionResponse(PydanticModel):
@@ -523,11 +403,11 @@ class DonutGetsubscriptionResponse(PydanticModel):
 
 
 class DonutGetsubscriptionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class DownloadedgamesPaidStatusResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FaveAddtagResponse(PydanticModel):
@@ -535,23 +415,23 @@ class FaveAddtagResponse(PydanticModel):
 
 
 class FaveGetpagesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FaveGettagsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FaveGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FaveGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsAddlistResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsAddResponse(PydanticModel):
@@ -567,7 +447,7 @@ class FriendsArefriendsResponse(PydanticModel):
 
 
 class FriendsDeleteResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetappusersResponse(PydanticModel):
@@ -579,7 +459,7 @@ class FriendsGetbyphonesResponse(PydanticModel):
 
 
 class FriendsGetlistsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetmutualResponse(PydanticModel):
@@ -591,7 +471,7 @@ class FriendsGetmutualTargetUidsResponse(PydanticModel):
 
 
 class FriendsGetonlineOnlineMobileResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetonlineResponse(PydanticModel):
@@ -603,35 +483,35 @@ class FriendsGetrecentResponse(PydanticModel):
 
 
 class FriendsGetrequestsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetrequestsNeedMutualResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetrequestsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetsuggestionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetFieldsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class FriendsSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GiftsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsAddaddressResponse(PydanticModel):
@@ -639,7 +519,7 @@ class GroupsAddaddressResponse(PydanticModel):
 
 
 class GroupsAddcallbackserverResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsAddlinkResponse(PydanticModel):
@@ -655,11 +535,11 @@ class GroupsEditaddressResponse(PydanticModel):
 
 
 class GroupsGetaddressesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetbannedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetbyidLegacyResponse(PydanticModel):
@@ -667,15 +547,15 @@ class GroupsGetbyidLegacyResponse(PydanticModel):
 
 
 class GroupsGetbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetcallbackconfirmationcodeResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetcallbackserversResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetcallbacksettingsResponse(PydanticModel):
@@ -683,27 +563,27 @@ class GroupsGetcallbacksettingsResponse(PydanticModel):
 
 
 class GroupsGetcataloginfoExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetcataloginfoResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetcatalogResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetinvitedusersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetinvitesExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetinvitesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetlongpollserverResponse(PydanticModel):
@@ -715,27 +595,27 @@ class GroupsGetlongpollsettingsResponse(PydanticModel):
 
 
 class GroupsGetmembersFieldsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetmembersFilterResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetmembersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetrequestsFieldsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetrequestsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetsettingsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGettaglistResponse(PydanticModel):
@@ -743,19 +623,19 @@ class GroupsGettaglistResponse(PydanticModel):
 
 
 class GroupsGettokenpermissionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsIsmemberExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class GroupsIsmemberResponse(PydanticModel):
@@ -771,35 +651,35 @@ class GroupsIsmemberUserIdsResponse(PydanticModel):
 
 
 class GroupsSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class LikesAddResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class LikesDeleteResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class LikesGetlistExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class LikesGetlistResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class LikesIslikedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketAddalbumResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketAddResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketCreatecommentResponse(PydanticModel):
@@ -811,59 +691,59 @@ class MarketDeletecommentResponse(PydanticModel):
 
 
 class MarketGetalbumbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetalbumsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetbyidExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetcategoriesNewResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetcategoriesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetgroupordersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetorderbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetorderitemsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetordersExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetordersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketRestorecommentResponse(PydanticModel):
@@ -871,11 +751,11 @@ class MarketRestorecommentResponse(PydanticModel):
 
 
 class MarketSearchExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MarketSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesCreatechatResponse(PydanticModel):
@@ -883,15 +763,15 @@ class MessagesCreatechatResponse(PydanticModel):
 
 
 class MessagesDeletechatphotoResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesDeleteconversationResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesDeleteResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesEditResponse(PydanticModel):
@@ -899,19 +779,19 @@ class MessagesEditResponse(PydanticModel):
 
 
 class MessagesGetbyconversationmessageidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetbyidExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetchatpreviewResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetchatChatIdsFieldsResponse(PydanticModel):
@@ -931,47 +811,47 @@ class MessagesGetchatResponse(PydanticModel):
 
 
 class MessagesGetconversationmembersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetconversationsbyidExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetconversationsbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetconversationsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGethistoryattachmentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGethistoryExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGethistoryResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetimportantmessagesExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetimportantmessagesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetintentusersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetinvitelinkResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetlastactivityResponse(PydanticModel):
@@ -979,7 +859,7 @@ class MessagesGetlastactivityResponse(PydanticModel):
 
 
 class MessagesGetlongpollhistoryResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesGetlongpollserverResponse(PydanticModel):
@@ -987,11 +867,11 @@ class MessagesGetlongpollserverResponse(PydanticModel):
 
 
 class MessagesIsmessagesfromgroupallowedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesJoinchatbyinvitelinkResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesMarkasimportantResponse(PydanticModel):
@@ -1003,15 +883,15 @@ class MessagesPinResponse(PydanticModel):
 
 
 class MessagesSearchconversationsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesSearchExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class MessagesSendResponse(PydanticModel):
@@ -1019,47 +899,47 @@ class MessagesSendResponse(PydanticModel):
 
 
 class MessagesSendUserIdsResponse(PydanticModel):
-    response: Optional[List[object]] = None
+    response: Optional[List[dict]] = None
 
 
 class MessagesSetchatphotoResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetbannedExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetbannedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetlistsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetlistsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetmentionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetrecommendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetsuggestedsourcesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedSavelistResponse(PydanticModel):
@@ -1067,11 +947,11 @@ class NewsfeedSavelistResponse(PydanticModel):
 
 
 class NewsfeedSearchExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NewsfeedSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NotesAddResponse(PydanticModel):
@@ -1087,15 +967,15 @@ class NotesGetbyidResponse(PydanticModel):
 
 
 class NotesGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NotesGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NotificationsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class NotificationsMarkasviewedResponse(PydanticModel):
@@ -1127,7 +1007,7 @@ class OrdersGetusersubscriptionbyidResponse(PydanticModel):
 
 
 class OrdersGetusersubscriptionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class OrdersGetResponse(PydanticModel):
@@ -1187,19 +1067,19 @@ class PhotosGetalbumscountResponse(PydanticModel):
 
 
 class PhotosGetalbumsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetallcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetallExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetallResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetbyidExtendedResponse(PydanticModel):
@@ -1211,11 +1091,11 @@ class PhotosGetbyidResponse(PydanticModel):
 
 
 class PhotosGetcommentsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetmarketuploadserverResponse(PydanticModel):
@@ -1227,7 +1107,7 @@ class PhotosGetmessagesuploadserverResponse(PydanticModel):
 
 
 class PhotosGetnewtagsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGettagsResponse(PydanticModel):
@@ -1239,11 +1119,11 @@ class PhotosGetuploadserverResponse(PydanticModel):
 
 
 class PhotosGetuserphotosExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetuserphotosResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetwalluploadserverResponse(PydanticModel):
@@ -1251,11 +1131,11 @@ class PhotosGetwalluploadserverResponse(PydanticModel):
 
 
 class PhotosGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosPuttagResponse(PydanticModel):
@@ -1283,7 +1163,7 @@ class PhotosSaveownercoverphotoResponse(PydanticModel):
 
 
 class PhotosSaveownerphotoResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PhotosSavewallphotoResponse(PydanticModel):
@@ -1295,7 +1175,7 @@ class PhotosSaveResponse(PydanticModel):
 
 
 class PhotosSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PollsAddvoteResponse(PydanticModel):
@@ -1327,15 +1207,15 @@ class PollsSavephotoResponse(PydanticModel):
 
 
 class PrettycardsCreateResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PrettycardsDeleteResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PrettycardsEditResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class PrettycardsGetbyidResponse(PydanticModel):
@@ -1347,11 +1227,11 @@ class PrettycardsGetuploadurlResponse(PydanticModel):
 
 
 class PrettycardsGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class SearchGethintsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class SecureChecktokenResponse(PydanticModel):
@@ -1375,7 +1255,7 @@ class SecureGetuserlevelResponse(PydanticModel):
 
 
 class SecureGiveeventstickerResponse(PydanticModel):
-    response: Optional[List[object]] = None
+    response: Optional[List[dict]] = None
 
 
 class SecureSendnotificationResponse(PydanticModel):
@@ -1411,27 +1291,27 @@ class StoreGetproductsResponse(PydanticModel):
 
 
 class StoreGetstickerskeywordsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetbannedExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetbannedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetbyidExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetphotouploadserverResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetstatsResponse(PydanticModel):
@@ -1439,51 +1319,51 @@ class StoriesGetstatsResponse(PydanticModel):
 
 
 class StoriesGetvideouploadserverResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetviewersExtendedV5115Response(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetviewersExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetV5113Response(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesSaveResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StoriesUploadResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class StreamingGetserverurlResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UsersGetfollowersFieldsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UsersGetfollowersResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UsersGetsubscriptionsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UsersGetsubscriptionsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UsersGetResponse(PydanticModel):
@@ -1491,7 +1371,7 @@ class UsersGetResponse(PydanticModel):
 
 
 class UsersSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UtilsChecklinkResponse(PydanticModel):
@@ -1499,7 +1379,7 @@ class UtilsChecklinkResponse(PydanticModel):
 
 
 class UtilsGetlastshortenedlinksResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class UtilsGetlinkstatsExtendedResponse(PydanticModel):
@@ -1523,7 +1403,7 @@ class UtilsResolvescreennameResponse(PydanticModel):
 
 
 class VideoAddalbumResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoCreatecommentResponse(PydanticModel):
@@ -1535,7 +1415,7 @@ class VideoGetalbumbyidResponse(PydanticModel):
 
 
 class VideoGetalbumsbyvideoExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetalbumsbyvideoResponse(PydanticModel):
@@ -1543,27 +1423,27 @@ class VideoGetalbumsbyvideoResponse(PydanticModel):
 
 
 class VideoGetalbumsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetalbumsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetcommentsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoRestorecommentResponse(PydanticModel):
@@ -1575,23 +1455,23 @@ class VideoSaveResponse(PydanticModel):
 
 
 class VideoSearchExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class VideoSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallCreatecommentResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallEditResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetbyidExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetbyidLegacyResponse(PydanticModel):
@@ -1599,63 +1479,63 @@ class WallGetbyidLegacyResponse(PydanticModel):
 
 
 class WallGetbyidResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetcommentExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetcommentResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetcommentsExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetrepostsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallGetResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallPostadsstealthResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallPostResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallRepostResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallSearchExtendedResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WallSearchResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WidgetsGetcommentsResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 class WidgetsGetpagesResponse(PydanticModel):
-    response: Optional[object] = None
+    response: Optional[dict] = None
 
 
 AccountChangepasswordResponse.update_forward_refs()

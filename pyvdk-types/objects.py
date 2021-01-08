@@ -32,7 +32,7 @@ class AccountInfo(PydanticModel):
     show_vk_apps_intro: Optional[bool] = None
     mini_apps_ads_slot_id: Optional[int] = None
     qr_promotion: Optional[int] = None
-    link_redirects: Optional[object] = None
+    link_redirects: Optional[dict] = None
     lang: Optional[int] = None
     no_wall_replies: Optional["BaseBoolInt"] = None
     own_posts_default: Optional["BaseBoolInt"] = None
@@ -1233,7 +1233,7 @@ class CallbackMessageAllow(PydanticModel):
 
 class CallbackMessageBase(PydanticModel):
     type: Optional["CallbackMessageType"] = None
-    object: Optional[object] = None
+    object: Optional[dict] = None
     group_id: Optional[int] = None
 
 
@@ -4763,7 +4763,7 @@ class WallWallpost(PydanticModel):
     is_favorite: Optional[bool] = None
     likes: Optional["BaseLikesInfo"] = None
     owner_id: Optional[int] = None
-    poster: Optional[object] = None
+    poster: Optional[dict] = None
     post_id: Optional[int] = None
     parents_stack: Optional[List[int]] = None
     post_source: Optional["WallPostSource"] = None

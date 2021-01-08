@@ -8,8 +8,9 @@
 - [x] Optional[] = None
 - [x] allOf support
 - [x] detect error before allOf
+- [x] object properties
 - [ ] if enums void
 - [ ] auto docstrings
 - [ ] split classes templates
 - [ ] detect array error in responses
-- [ ] object properties
+- [ ] sort classes by requirements

@@ -2,12 +2,10 @@ from typing import Optional, Union, Any, List, Tuple
 import enum
 
 from pydantic import BaseModel as PydanticModel
-
 {% for req in requirements %}
 from . import {{ req }}
-{%- endfor %}
-
-{%- for cls in classes %}
+{% endfor %}
+{% for cls in classes %}
 {{ cls }}
 
 {% endfor %}
