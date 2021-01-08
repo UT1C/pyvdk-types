@@ -265,4 +265,4 @@ class PropertiesTypes:
         return f"List[{ref}]"
 
     def object(self, prop: dict) -> str:
-        return "object"  # FIXME: please.
+        return "dict"  # FIXME: please.
