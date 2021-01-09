@@ -1,6 +1,8 @@
-from typing import Tuple, List, Set
+from typing import Tuple, List, Set, Dict
 from pathlib import Path
 import json
+
+import networkx as nx
 
 from . import utils
 
@@ -27,14 +29,20 @@ class Generator:
 
         file_name, data = self.read_data()
         parser = Parser(file_name)
-        classes = [
+        classes = dict([
             parser.parse_definition(k, v)
             for k, v in data.items()
-        ]
+        ])
+
+        definition_sorter = DefinitionSorter(
+            classes,
+            parser.def_reqs
+        )
+        definitions = definition_sorter.process()
 
         text = utils.form_render(
             "main.j2",
-            classes=classes,
+            classes=definitions,
             requirements=parser.requirements,
             names=parser.objects_names
         )
@@ -48,6 +56,7 @@ class Parser:
     requirements: Set[str]
     objects_names: List[str]
     file_name: str
+    def_reqs: Dict[str, List[str]]
     properties_types: "PropertiesTypes"
     names_blacklist: Tuple[str] = (
         "from",
@@ -58,23 +67,31 @@ class Parser:
     def __init__(self, file_name: str) -> None:
         self.requirements = set()
         self.objects_names = list()
+        self.def_reqs = dict()
         self.properties_types = PropertiesTypes(self)
         self.file_name = file_name
 
-    def parse_definition(self, def_name: str, definition: dict) -> str:
-        """  """
+    def parse_definition(self, def_name: str, definition: dict) -> Tuple[str, str]:
+        """
+
+        Returns: Tuple[definition_name: str, definition: str]
+        """
 
         def_name = utils.snake_to_camel(def_name)
         def_type = definition.get("type")
+        self.def_reqs.update({def_name: list()})
 
         if def_type is None:
             ref = self.parse_ref(definition["$ref"], brackets=False)
-            return utils.form_render("ref_clone.j2", name=def_name, ref=ref)
+            self.add_def_reqs(def_name, ref)
+            text = utils.form_render("ref_clone.j2", name=def_name, ref=ref)
 
         else:
             if def_type == "object":
                 self.objects_names.append(def_name)
-            return getattr(Types(self, def_name, definition), def_type)()
+            text = getattr(Types(self, def_name, definition), def_type)()
+
+        return def_name, text
 
     def parse_ref(
         self,
@@ -152,6 +169,13 @@ class Parser:
             name = "_" + name
         return name
 
+    def add_def_reqs(self, def_name: str, *refs: str):
+        """  """
+
+        for ref in refs:
+            if "." not in ref:
+                self.def_reqs[def_name].append(ref)
+
 
 class Types:
     """  """
@@ -182,6 +206,7 @@ class Types:
                 )
             else:
                 parents, props = self.parser.parse_all_of(all_of)
+                self.parser.add_def_reqs(self.name, *parents)
                 return utils.form_render(
                     "all_of_object_class.j2",
                     name=self.name,
@@ -266,3 +291,32 @@ class PropertiesTypes:
 
     def object(self, prop: dict) -> str:
         return "dict"  # FIXME: please.
+
+
+class DefinitionSorter:
+    """  """
+
+    graph: nx.DiGraph
+    definitions: Dict[str, str]
+
+    def __init__(
+        self,
+        definitions: Dict[str, str],
+        def_reqs: Dict[str, List[str]]
+    ) -> None:
+
+        self.graph = nx.DiGraph()
+        self.definitions = definitions
+
+        self.graph.add_nodes_from(definitions.keys())
+        for k, v in def_reqs.items():
+            for i in v:
+                self.graph.add_edge(k, i)
+
+    def process(self) -> List[str]:
+        names = list(nx.topological_sort(self.graph))[::-1]
+        return [
+            self.definitions[i]
+            for i in names
+            if i != "PydanticModel"
+        ]

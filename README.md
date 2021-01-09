@@ -9,8 +9,8 @@
 - [x] allOf support
 - [x] detect error before allOf
 - [x] object properties
-- [ ] if enums void
+- [x] sort classes by requirements
+- [x] if enums void
+- [x] detect array error in responses
 - [ ] auto docstrings
 - [ ] split classes templates
-- [ ] detect array error in responses
-- [ ] sort classes by requirements
