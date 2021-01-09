@@ -1,4 +1,4 @@
-class {{ cls.name }}(enum.Enum):
-{%- for i in cls.definition["enum"] %}
-    {{ i|upper }} = "{{ i }}"
+class {{ name }}(enum.Enum):
+{%- for k, v in enum.items() %}
+    {{ k }} = "{{ v }}"
 {%- endfor %}

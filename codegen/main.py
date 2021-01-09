@@ -242,7 +242,20 @@ class Types:
         )
 
     def string(self) -> str:
-        return utils.form_render("string_class.j2", cls=self)
+        enum_names = self.definition.get("enumNames")
+        if enum_names is None:
+            enum_names = self.definition["enum"]
+        data = {
+            utils.to_upper_snakecase(
+                enum_names[i]
+            ): self.definition["enum"][i]
+            for i in range(len(enum_names))
+        }
+        return utils.form_render(
+            "string_class.j2",
+            name=self.name,
+            enum=data
+        )
 
     def boolean(self) -> str:
         return utils.form_render("boolean_class.j2", cls=self)

@@ -8,4 +8,4 @@ files = (
 
 for i in files:
     gen = Generator(fr"codegen\vk-api-schema\{i}.json")
-    gen.write_file(fr"pyvdk-types\{i}.py")
+    gen.write_file(fr"pyvdk_types\{i}.py")

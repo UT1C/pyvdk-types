@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pyvdk-types"
+name = "pyvdk_types"
 version = "0.0.0.1"
 description = "Types for pyvdk"
 authors = ["lightmanLP <liteman1000@gmail.com>", "mikk357 <mikk357@yandex.ru>"]
