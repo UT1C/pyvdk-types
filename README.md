@@ -14,3 +14,6 @@
 - [x] detect array error in responses
 - [ ] auto docstrings
 - [ ] split classes templates
+- [ ] methods
+- [ ] rewrite all
+- [ ] extensions support
