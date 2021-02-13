@@ -78,6 +78,7 @@ class Parser:
         """
 
         def_name = utils.snake_to_camel(def_name)
+        print(def_name)  # DEBUG
         def_type = definition.get("type")
         self.def_reqs.update({def_name: list()})
 
@@ -222,10 +223,11 @@ class Types:
             )
 
     def array(self) -> str:
+        prop_type = PropertiesTypes(self.parser).array(self.definition)
         return utils.form_render(
             "array_class.j2",
             name=self.name,
-            ref=self.parser.parse_ref(self.definition["items"]["$ref"])
+            type=prop_type
         )
 
     def integer(self) -> str:

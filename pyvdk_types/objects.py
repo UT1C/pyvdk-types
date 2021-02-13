@@ -84,6 +84,8 @@ class AccountPushConversationsItem(PydanticModel):
     disabled_until: Optional[int] = None
     peer_id: Optional[int] = None
     sound: Optional["BaseBoolInt"] = None
+    disabled_mentions: Optional["BaseBoolInt"] = None
+    disabled_mass_mentions: Optional["BaseBoolInt"] = None
 
 
 class AccountPushParams(PydanticModel):
@@ -169,8 +171,11 @@ class UsersUserSettingsXtr(PydanticModel):
 
 
 class AccountUserSettings(UsersUserMin, UsersUserSettingsXtr):
+    nick_name: Optional[str] = None
     photo_200: Optional[str] = None
     is_service_account: Optional[bool] = None
+    primary_profile: Optional["AccountUserSettings"] = None
+    edu_signup_required: Optional[bool] = None
 
 
 class AccountUserSettingsInterest(PydanticModel):
@@ -388,6 +393,7 @@ class AdsLookalikeRequestSaveAudienceLevel(PydanticModel):
 class AdsMusician(PydanticModel):
     id: Optional[int] = None
     name: Optional[str] = None
+    avatar: Optional[str] = None
 
 
 class AdsObjectType(enum.Enum):
@@ -673,6 +679,7 @@ class AppsAppMin(PydanticModel):
     background_loader_color: Optional[str] = None
     loader_icon: Optional[str] = None
     icon_75: Optional[str] = None
+    need_policy_confirmation: Optional[bool] = None
 
 
 class AppsApp(AppsAppMin):
@@ -728,8 +735,10 @@ class AppsScope(PydanticModel):
 
 
 class AudioAudio(PydanticModel):
+    access_key: Optional[str] = None
     artist: Optional[str] = None
     id: Optional[int] = None
+    owner_id: Optional[int] = None
     title: Optional[str] = None
     url: Optional[str] = None
     duration: Optional[int] = None
@@ -1223,7 +1232,7 @@ class CallbackMarketComment(PydanticModel):
     from_id: Optional[int] = None
     date: Optional[int] = None
     text: Optional[str] = None
-    market_owner_od: Optional[int] = None
+    market_owner_id: Optional[int] = None
     photo_id: Optional[int] = None
 
 
@@ -1300,7 +1309,7 @@ class CallbackPhotoComment(PydanticModel):
     from_id: Optional[int] = None
     date: Optional[int] = None
     text: Optional[str] = None
-    photo_owner_od: Optional[int] = None
+    photo_owner_id: Optional[int] = None
 
 
 class CallbackPhotoCommentDelete(PydanticModel):
@@ -1344,7 +1353,7 @@ class CallbackVideoComment(PydanticModel):
     from_id: Optional[int] = None
     date: Optional[int] = None
     text: Optional[str] = None
-    video_owner_od: Optional[int] = None
+    video_owner_id: Optional[int] = None
 
 
 class CallbackVideoCommentDelete(PydanticModel):
@@ -1368,6 +1377,7 @@ class CallsCall(PydanticModel):
     state: Optional["CallsEndState"] = None
     time: Optional[int] = None
     video: Optional[bool] = None
+    participants: Optional["CallsParticipants"] = None
 
 
 class CallsEndState(enum.Enum):
@@ -1490,10 +1500,6 @@ class DocsDocTypes(PydanticModel):
     id: Optional[int] = None
     name: Optional[str] = None
     count: Optional[int] = None
-
-
-class DocsDocUploadResponse(PydanticModel):
-    file: Optional[str] = None
 
 
 class DonutDonatorSubscriptionInfo(PydanticModel):
@@ -1903,6 +1909,7 @@ class GroupsFields(enum.Enum):
     CAN_UPLOAD_STORY = "can_upload_story"
     CAN_UPLOAD_DOC = "can_upload_doc"
     CAN_UPLOAD_VIDEO = "can_upload_video"
+    CAN_UPLOAD_CLIP = "can_upload_clip"
     CAN_SEE_ALL_POSTS = "can_see_all_posts"
     CAN_CREATE_TOPIC = "can_create_topic"
     ACTIVITY = "activity"
@@ -1943,6 +1950,7 @@ class GroupsFields(enum.Enum):
     VIDEO_LIVE_COUNT = "video_live_count"
     CLIPS_COUNT = "clips_count"
     IS_BUSINESS = "is_business"
+    TEXTLIVES_COUNT = "textlives_count"
 
 
 class GroupsFilter(enum.Enum):
@@ -2413,6 +2421,9 @@ class GroupsRoleOptions(enum.Enum):
     CREATOR = "creator"
 
 
+GroupsSectionsListItem = List[Union[int, str]]
+
+
 class GroupsSettingsTwitter(PydanticModel):
     status: Optional[str] = None
     name: Optional[str] = None
@@ -2585,6 +2596,8 @@ class MediaRestriction(PydanticModel):
 class MessagesAudioMessage(PydanticModel):
     access_key: Optional[str] = None
     transcript_error: Optional[int] = None
+    transcript_rate_enabled: Optional[bool] = None
+    transcript_update_time: Optional[int] = None
     duration: Optional[int] = None
     id: Optional[int] = None
     link_mp3: Optional[str] = None
@@ -2996,6 +3009,8 @@ class MessagesPushSettings(PydanticModel):
     disabled_forever: Optional[bool] = None
     disabled_until: Optional[int] = None
     no_sound: Optional[bool] = None
+    disabled_mentions: Optional[bool] = None
+    disabled_mass_mentions: Optional[bool] = None
 
 
 class MessagesTemplateActionTypeNames(enum.Enum):
@@ -3040,14 +3055,11 @@ class NewsfeedFilters(enum.Enum):
     PHOTO_TAG = "photo_tag"
     WALL_PHOTO = "wall_photo"
     FRIEND = "friend"
-    RECOMMENDED_GROUPS = "recommended_groups"
     NOTE = "note"
     AUDIO = "audio"
     VIDEO = "video"
     AUDIO_PLAYLIST = "audio_playlist"
-    GAMES_CAROUSEL = "games_carousel"
     CLIP = "clip"
-    RECOMMENDED_GAME = "recommended_game"
 
 
 class NewsfeedIgnoreItemType(enum.Enum):
@@ -3355,8 +3367,7 @@ class NotificationsNotification(PydanticModel):
     type: Optional[str] = None
 
 
-class NotificationsNotificationItem(PydanticModel):
-    pass
+NotificationsNotificationItem = NotificationsNotification
 
 
 class WallWallpostToId(PydanticModel):
@@ -3604,34 +3615,6 @@ class PhotosImageType(enum.Enum):
     W = "w"
 
 
-class PhotosMarketAlbumUploadResponse(PydanticModel):
-    gid: Optional[int] = None
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    server: Optional[int] = None
-
-
-class PhotosMarketUploadResponse(PydanticModel):
-    crop_data: Optional[str] = None
-    crop_hash: Optional[str] = None
-    group_id: Optional[int] = None
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    server: Optional[int] = None
-
-
-class PhotosMessageUploadResponse(PydanticModel):
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    server: Optional[int] = None
-
-
-class PhotosOwnerUploadResponse(PydanticModel):
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    server: Optional[int] = None
-
-
 class PhotosPhotoAlbum(PydanticModel):
     created: Optional[int] = None
     description: Optional[str] = None
@@ -3772,14 +3755,6 @@ class PhotosPhotoUpload(PydanticModel):
     group_id: Optional[int] = None
 
 
-class PhotosPhotoUploadResponse(PydanticModel):
-    aid: Optional[int] = None
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    photos_list: Optional[str] = None
-    server: Optional[int] = None
-
-
 class PhotosPhotoXtrRealOffset(PydanticModel):
     access_key: Optional[str] = None
     album_id: Optional[int] = None
@@ -3845,10 +3820,16 @@ class PhotosTagsSuggestionItemButton(PydanticModel):
     style: Optional[str] = None
 
 
-class PhotosWallUploadResponse(PydanticModel):
-    hash: Optional[str] = None
-    photo: Optional[str] = None
-    server: Optional[int] = None
+class PodcastCover(PydanticModel):
+    sizes: Optional[List["PhotosPhotoSizes"]] = None
+
+
+class PodcastExternalData(PydanticModel):
+    url: Optional[str] = None
+    owner_url: Optional[str] = None
+    title: Optional[str] = None
+    owner_name: Optional[str] = None
+    cover: Optional["PodcastCover"] = None
 
 
 class PollsAnswer(PydanticModel):
@@ -4062,6 +4043,11 @@ class StatusStatus(PydanticModel):
     audio: Optional["AudioAudio"] = None
 
 
+class StickersImageSet(PydanticModel):
+    base_url: Optional[str] = None
+    version: Optional[int] = None
+
+
 class StorageValue(PydanticModel):
     key: Optional[str] = None
     value: Optional[str] = None
@@ -4070,12 +4056,14 @@ class StorageValue(PydanticModel):
 class StoreProduct(PydanticModel):
     id: Optional[int] = None
     type: Optional[str] = None
+    is_new: Optional[bool] = None
     purchased: Optional["BaseBoolInt"] = None
     active: Optional["BaseBoolInt"] = None
     promoted: Optional["BaseBoolInt"] = None
     purchase_date: Optional[int] = None
     title: Optional[str] = None
     stickers: Optional["BaseStickersList"] = None
+    style_sticker_ids: Optional[List[int]] = None
     icon: Optional["StoreProductIcon"] = None
     previews: Optional[List["BaseImage"]] = None
     has_animation: Optional[bool] = None
@@ -4833,6 +4821,7 @@ class WallWallpostAttachmentType(enum.Enum):
     MARKET_MARKET_ALBUM = "market_market_album"
     MARKET = "market"
     EVENT = "event"
+    DONUT_LINK = "donut_link"
 
 
 class WallWallpostCommentsDonut(PydanticModel):
@@ -5070,7 +5059,6 @@ DocsDocPreviewPhoto.update_forward_refs()
 DocsDocPreviewPhotoSizes.update_forward_refs()
 DocsDocPreviewVideo.update_forward_refs()
 DocsDocTypes.update_forward_refs()
-DocsDocUploadResponse.update_forward_refs()
 DonutDonatorSubscriptionInfo.update_forward_refs()
 EventsEventAttach.update_forward_refs()
 FaveBookmark.update_forward_refs()
@@ -5207,7 +5195,6 @@ NotesNote.update_forward_refs()
 NotesNoteComment.update_forward_refs()
 NotificationsFeedback.update_forward_refs()
 NotificationsNotification.update_forward_refs()
-NotificationsNotificationItem.update_forward_refs()
 NotificationsNotificationParent.update_forward_refs()
 NotificationsNotificationsComment.update_forward_refs()
 NotificationsReply.update_forward_refs()
@@ -5224,10 +5211,6 @@ PagesWikipageFull.update_forward_refs()
 PagesWikipageHistory.update_forward_refs()
 PhotosCommentXtrPid.update_forward_refs()
 PhotosImage.update_forward_refs()
-PhotosMarketAlbumUploadResponse.update_forward_refs()
-PhotosMarketUploadResponse.update_forward_refs()
-PhotosMessageUploadResponse.update_forward_refs()
-PhotosOwnerUploadResponse.update_forward_refs()
 PhotosPhoto.update_forward_refs()
 PhotosPhotoAlbum.update_forward_refs()
 PhotosPhotoAlbumFull.update_forward_refs()
@@ -5237,12 +5220,12 @@ PhotosPhotoFullXtrRealOffset.update_forward_refs()
 PhotosPhotoSizes.update_forward_refs()
 PhotosPhotoTag.update_forward_refs()
 PhotosPhotoUpload.update_forward_refs()
-PhotosPhotoUploadResponse.update_forward_refs()
 PhotosPhotoXtrRealOffset.update_forward_refs()
 PhotosPhotoXtrTagInfo.update_forward_refs()
 PhotosTagsSuggestionItem.update_forward_refs()
 PhotosTagsSuggestionItemButton.update_forward_refs()
-PhotosWallUploadResponse.update_forward_refs()
+PodcastCover.update_forward_refs()
+PodcastExternalData.update_forward_refs()
 PollsAnswer.update_forward_refs()
 PollsBackground.update_forward_refs()
 PollsFriend.update_forward_refs()
@@ -5264,6 +5247,7 @@ StatsSexAge.update_forward_refs()
 StatsViews.update_forward_refs()
 StatsWallpostStat.update_forward_refs()
 StatusStatus.update_forward_refs()
+StickersImageSet.update_forward_refs()
 StorageValue.update_forward_refs()
 StoreProduct.update_forward_refs()
 StoreStickersKeyword.update_forward_refs()

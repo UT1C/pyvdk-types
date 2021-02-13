@@ -266,6 +266,10 @@ class AppsGetleaderboardResponse(PydanticModel):
     response: Optional[dict] = None
 
 
+class AppsGetminiapppoliciesResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
 class AppsGetscopesResponse(PydanticModel):
     response: Optional[dict] = None
 
@@ -275,6 +279,10 @@ class AppsGetscoreResponse(PydanticModel):
 
 
 class AppsGetResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class AppsImageUploadResponse(PydanticModel):
     response: Optional[dict] = None
 
 
@@ -372,6 +380,10 @@ class DatabaseGetuniversitiesResponse(PydanticModel):
 
 class DocsAddResponse(PydanticModel):
     response: Optional[int] = None
+
+
+class DocsDocUploadResponse(PydanticModel):
+    response: Optional[dict] = None
 
 
 class DocsGetbyidResponse(PydanticModel):
@@ -882,6 +894,10 @@ class MessagesPinResponse(PydanticModel):
     response: Optional["objects.MessagesPinnedMessage"] = None
 
 
+class MessagesSearchconversationsExtendedResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
 class MessagesSearchconversationsResponse(PydanticModel):
     response: Optional[dict] = None
 
@@ -939,6 +955,10 @@ class NewsfeedGetsuggestedsourcesResponse(PydanticModel):
 
 
 class NewsfeedGetResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class NewsfeedIgnoreItemResponse(PydanticModel):
     response: Optional[dict] = None
 
 
@@ -1138,6 +1158,30 @@ class PhotosGetResponse(PydanticModel):
     response: Optional[dict] = None
 
 
+class PhotosMarketAlbumUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosMarketUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosMessageUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosOwnerCoverUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosOwnerUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosPhotoUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
 class PhotosPuttagResponse(PydanticModel):
     response: Optional[int] = None
 
@@ -1175,6 +1219,14 @@ class PhotosSaveResponse(PydanticModel):
 
 
 class PhotosSearchResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PhotosWallUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
+class PodcastsSearchpodcastResponse(PydanticModel):
     response: Optional[dict] = None
 
 
@@ -1462,6 +1514,10 @@ class VideoSearchResponse(PydanticModel):
     response: Optional[dict] = None
 
 
+class VideoUploadResponse(PydanticModel):
+    response: Optional[dict] = None
+
+
 class WallCreatecommentResponse(PydanticModel):
     response: Optional[dict] = None
 
@@ -1603,9 +1659,11 @@ AppsGetcatalogResponse.update_forward_refs()
 AppsGetfriendslistResponse.update_forward_refs()
 AppsGetleaderboardExtendedResponse.update_forward_refs()
 AppsGetleaderboardResponse.update_forward_refs()
+AppsGetminiapppoliciesResponse.update_forward_refs()
 AppsGetscopesResponse.update_forward_refs()
 AppsGetscoreResponse.update_forward_refs()
 AppsGetResponse.update_forward_refs()
+AppsImageUploadResponse.update_forward_refs()
 AppsSendrequestResponse.update_forward_refs()
 AuthRestoreResponse.update_forward_refs()
 BaseBoolResponse.update_forward_refs()
@@ -1630,6 +1688,7 @@ DatabaseGetschoolclassesResponse.update_forward_refs()
 DatabaseGetschoolsResponse.update_forward_refs()
 DatabaseGetuniversitiesResponse.update_forward_refs()
 DocsAddResponse.update_forward_refs()
+DocsDocUploadResponse.update_forward_refs()
 DocsGetbyidResponse.update_forward_refs()
 DocsGettypesResponse.update_forward_refs()
 DocsGetuploadserver.update_forward_refs()
@@ -1757,6 +1816,7 @@ MessagesIsmessagesfromgroupallowedResponse.update_forward_refs()
 MessagesJoinchatbyinvitelinkResponse.update_forward_refs()
 MessagesMarkasimportantResponse.update_forward_refs()
 MessagesPinResponse.update_forward_refs()
+MessagesSearchconversationsExtendedResponse.update_forward_refs()
 MessagesSearchconversationsResponse.update_forward_refs()
 MessagesSearchExtendedResponse.update_forward_refs()
 MessagesSearchResponse.update_forward_refs()
@@ -1772,6 +1832,7 @@ NewsfeedGetmentionsResponse.update_forward_refs()
 NewsfeedGetrecommendedResponse.update_forward_refs()
 NewsfeedGetsuggestedsourcesResponse.update_forward_refs()
 NewsfeedGetResponse.update_forward_refs()
+NewsfeedIgnoreItemResponse.update_forward_refs()
 NewsfeedSavelistResponse.update_forward_refs()
 NewsfeedSearchExtendedResponse.update_forward_refs()
 NewsfeedSearchResponse.update_forward_refs()
@@ -1821,6 +1882,12 @@ PhotosGetuserphotosResponse.update_forward_refs()
 PhotosGetwalluploadserverResponse.update_forward_refs()
 PhotosGetExtendedResponse.update_forward_refs()
 PhotosGetResponse.update_forward_refs()
+PhotosMarketAlbumUploadResponse.update_forward_refs()
+PhotosMarketUploadResponse.update_forward_refs()
+PhotosMessageUploadResponse.update_forward_refs()
+PhotosOwnerCoverUploadResponse.update_forward_refs()
+PhotosOwnerUploadResponse.update_forward_refs()
+PhotosPhotoUploadResponse.update_forward_refs()
 PhotosPuttagResponse.update_forward_refs()
 PhotosRestorecommentResponse.update_forward_refs()
 PhotosSavemarketalbumphotoResponse.update_forward_refs()
@@ -1831,6 +1898,8 @@ PhotosSaveownerphotoResponse.update_forward_refs()
 PhotosSavewallphotoResponse.update_forward_refs()
 PhotosSaveResponse.update_forward_refs()
 PhotosSearchResponse.update_forward_refs()
+PhotosWallUploadResponse.update_forward_refs()
+PodcastsSearchpodcastResponse.update_forward_refs()
 PollsAddvoteResponse.update_forward_refs()
 PollsCreateResponse.update_forward_refs()
 PollsDeletevoteResponse.update_forward_refs()
@@ -1902,6 +1971,7 @@ VideoRestorecommentResponse.update_forward_refs()
 VideoSaveResponse.update_forward_refs()
 VideoSearchExtendedResponse.update_forward_refs()
 VideoSearchResponse.update_forward_refs()
+VideoUploadResponse.update_forward_refs()
 WallCreatecommentResponse.update_forward_refs()
 WallEditResponse.update_forward_refs()
 WallGetbyidExtendedResponse.update_forward_refs()
