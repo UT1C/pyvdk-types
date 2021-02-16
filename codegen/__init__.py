@@ -1,1 +1,1 @@
-from .main import Generator
+from .objects_gen import Generator as ObjectGenerator

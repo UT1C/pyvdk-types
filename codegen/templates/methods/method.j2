@@ -1,0 +1,6 @@
+    def {{ name }}(
+        self,
+{% for i in args %}
+{% endfor %}
+    ) -> {{ response }}:
+        return self._request("{{ name_src }}", locals())

@@ -1,4 +1,4 @@
-from codegen import Generator
+from codegen import ObjectGenerator
 
 
 files = (
@@ -7,5 +7,5 @@ files = (
 )
 
 for i in files:
-    gen = Generator(fr"codegen\vk-api-schema\{i}.json")
+    gen = ObjectGenerator(fr"codegen\vk-api-schema\{i}.json")
     gen.write_file(fr"pyvdk_types\{i}.py")

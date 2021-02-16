@@ -1,0 +1,14 @@
+from typing import Optional, Union, Any, List, Tuple
+import enum
+
+from . import objects
+from . import responses
+from ..category import Category
+
+
+class {{ category }}(Category):
+    __name__: str = {{ category_src }}
+
+{% for i in methods %}
+{{ i }}
+{% endfor %}
